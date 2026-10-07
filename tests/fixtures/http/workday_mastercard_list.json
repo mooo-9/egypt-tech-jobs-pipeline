@@ -1,0 +1,40 @@
+{
+  "total": 4,
+  "jobPostings": [
+    {
+      "title": "Manager, Specialist Sales, Digital Payments",
+      "externalPath": "/job/Cairo-Egypt/Manager--Specialist-Sales--Digital-Payments_R-290246-1",
+      "locationsText": "Cairo, Egypt",
+      "postedOn": "Posted Yesterday",
+      "bulletFields": [
+        "R-290246"
+      ]
+    },
+    {
+      "title": "Global Markets, Graduate Launch Program 2027 - Cairo, Egypt",
+      "externalPath": "/job/Global-Markets--Graduate-Launch-Program-2027---Cairo--Egypt_R-291972-2",
+      "postedOn": "Posted 10 Days Ago",
+      "bulletFields": [
+        "R-291972"
+      ]
+    },
+    {
+      "title": "Director Specialist Sales - Egypt",
+      "externalPath": "/job/Cairo-Egypt/Director-Specialist-Sales---Egypt_R-286532",
+      "locationsText": "Cairo, Egypt",
+      "postedOn": "Posted Today",
+      "bulletFields": [
+        "R-286532"
+      ]
+    },
+    {
+      "title": "Software Engineer II",
+      "externalPath": "/job/Dubai-UAE/Software-Engineer-II_R-999001",
+      "locationsText": "Dubai, UAE",
+      "postedOn": "Posted Today",
+      "bulletFields": [
+        "R-999001"
+      ]
+    }
+  ]
+}

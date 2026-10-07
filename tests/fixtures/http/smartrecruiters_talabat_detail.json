@@ -1,0 +1,133 @@
+{
+  "id": "744000154060728",
+  "name": "Operations Admin - tMart",
+  "uuid": "49ec6477-1519-4668-a42d-a1e2f76c5283",
+  "jobId": "788ab92b-8bc4-46b3-a71a-bacb12c7d315",
+  "jobAdId": "b016fcb7-3e89-4c49-881c-636613e966f8",
+  "defaultJobAd": true,
+  "refNumber": "JR0086440",
+  "company": {
+    "name": "Delivery Hero",
+    "identifier": "DeliveryHero"
+  },
+  "location": {
+    "city": "Maadi",
+    "country": "eg",
+    "remote": false,
+    "hybrid": false,
+    "fullLocation": "Maadi, , Egypt"
+  },
+  "customField": [
+    {
+      "fieldId": "6564ad3fee5f2f5b84045448",
+      "fieldLabel": "Job Family Group",
+      "valueId": "75439315e97510004b9c1be43b920000",
+      "valueLabel": "Sales"
+    },
+    {
+      "fieldId": "6564ae9ddd552072c3a97453",
+      "fieldLabel": "Time Type",
+      "valueId": "421938a4e1d40118e396324490147300",
+      "valueLabel": "Full time"
+    },
+    {
+      "fieldId": "6564aa853d74d30a33089d2a",
+      "fieldLabel": "Supervisory Organization",
+      "valueId": "b8dcdbbb63d010019ab40564980c0000",
+      "valueLabel": "Tmart Operations - DS - Cairo 2 - HIE10804"
+    },
+    {
+      "fieldId": "COUNTRY",
+      "fieldLabel": "Country/Region",
+      "valueId": "eg",
+      "valueLabel": "Egypt"
+    },
+    {
+      "fieldId": "6564ad09560ccd2ba9e90d24",
+      "fieldLabel": "Management Level",
+      "valueId": "ef2e8d3982de012291a03645d2163d00",
+      "valueLabel": "S2"
+    },
+    {
+      "fieldId": "6564ae71dd552072c3a97452",
+      "fieldLabel": "Worker Sub-Type",
+      "valueId": "ef2e8d3982de01ee8bc85045d2164100",
+      "valueLabel": "Fixed Term (Fixed Term)"
+    },
+    {
+      "fieldId": "655ce69d695b8c5663cf1f55",
+      "fieldLabel": "Brands",
+      "valueId": "talabat",
+      "valueLabel": "talabat"
+    },
+    {
+      "fieldId": "6564ad6b1cf48c421e22419d",
+      "fieldLabel": "Job Family",
+      "valueId": "75439315e97510009157202c017a0000",
+      "valueLabel": "Sales Support"
+    },
+    {
+      "fieldId": "6564abc0d641ff6fc90ebd6d",
+      "fieldLabel": "Primary Location",
+      "valueId": "50e835a314760183633cbd9a9f0139e9",
+      "valueLabel": "Cairo - Maadi"
+    },
+    {
+      "fieldId": "6564ada8e5ee8c3d9bec3405",
+      "fieldLabel": "Job Profile",
+      "valueId": "0b9bd6d5dac7100094a0a05cc79c0000",
+      "valueLabel": "Sales Admin - S2"
+    }
+  ],
+  "releasedDate": "2026-10-07T10:04:40.731Z",
+  "creator": {
+    "name": "",
+    "avatarUrl": ""
+  },
+  "postingUrl": "https://jobs.smartrecruiters.com/DeliveryHero/744000154060728-operations-admin-tmart",
+  "applyUrl": "https://jobs.smartrecruiters.com/DeliveryHero/744000154060728-operations-admin-tmart?oga=true",
+  "referralUrl": "https://jobs.smartrecruiters.com/external-referrals/company/DeliveryHero/publication/49ec6477-1519-4668-a42d-a1e2f76c5283?dcr_ci=DeliveryHero",
+  "jobAd": {
+    "sections": {
+      "companyDescription": {
+        "title": "Company Description",
+        "text": "<p><strong>Who are we?</strong></p><p>When you think of food delivery in the MENA region, we’d be pretty surprised if talabat didn’t pop into your mind first! Since delivering our first order in Kuwait in 2004, we’ve grown quite a lot over the past 17 years.</p><p>Today, we deliver hundreds of millions of food orders, grocery items and other products per year, to our customers in nine countries throughout the region with more than 3,000+ employees! Our food delivery business works with over 27,000 brands and almost 50,000 branches, while our q-commerce concept, talabat mart, now delivers groceries to customers in Bahrain, Egypt, Jordan, Kuwait, Oman Qatar, and the UAE in 30 minutes or less!</p><p>Our philosophy is to make sure we do what is right for our ecosystem - our customers, our partners, our people, our riders, and the communities in which we operate. Our #techforgood program allows our customers a safe and convenient way to contribute to important causes in their community through donating to local and international charities directly on talabat with a focus on food insecurity in the region. Since its inception in 2020, we have facilitated the donation of well over 1 million meals to those in need, as well as donated over $1.5 million to charity with the help of our partners and customers. talabat is part of Delivery Hero, the global leader in online food delivery and q-commerce.</p><p>As Talabat continues to grow and keep ahead of the curve we have launched our very own end-end grocery service across the MENA region: tMart</p>"
+      },
+      "jobDescription": {
+        "title": "Job Description",
+        "text": "<p><strong>Role Summary</strong></p><p>We’re looking for a Admin to join the team and focus on growing our own Grocery Store “tMart”, which is the region’s first cloud store concept offering 30-minutedelivery of groceries at hypermarket prices. The service has expanded rapidly across Kuwait, UAE, Qatar, Jordan, Bahrain, Egypt, Oman and Iraq!</p>"
+      },
+      "qualifications": {
+        "title": "Qualifications",
+        "text": "<p><strong>What’s On Your Plate?</strong></p><ul><li><p>Raising Purchase Orders (Regulars &amp; Promotion) in the system and sending it to suppliers</p></li><li><p>Update Internal database with order details (dates, vendors, quantity) and the suppliers’ details.&#xa0;</p></li><li><p>Track Orders and ensure timely delivery.</p></li><li><p>Communicates with the supplier and with the operations team in regards with the LPO/Delivery</p></li><li><p>Generating and Sending Admin reports (Active Items, Customer Orders, Weekly Cost Update, Pepsi Data Sharing, QFA sales report, Purchase Order MTD)</p></li><li><p>Sending Monthly Data Sharing to suppliers</p></li><li><p>Checking the images in Talabat App weekly and uploading the ones that are missing</p></li><li><p>Changing the barcodes, cost price and description as per operation’s request</p></li><li><p>Updates the google sheet for all the changes in barcodes, price and description.</p></li><li><p>Maintains the country’s Assortment/Google File</p></li><li><p>Printing and stamping of documents</p></li><li><p>Ad hoc related tasks as per managers request</p></li></ul><p>&#xa0;</p><p><strong>What Did We Order?</strong></p><ul><li><p>You have at least 1-2 years of experience within data recording and the administrative field&#xa0;</p></li><li><p>You are very detail-oriented, structured and know how to prioritize -- you consider yourself as someone who delivers solutions and not bottlenecks to be solved.</p></li><li><p>You are able to interact with senior-level executives and can manage the expectations of multiple stakeholders.</p></li><li><p>You are someone energized by the unknown and look forward to learning each day on the job.</p></li><li><p>You have excellent analytical and communication skills, and always like to be hands-on with several tools.</p></li></ul>"
+      },
+      "additionalInformation": {
+        "title": "Additional Information",
+        "text": ""
+      }
+    }
+  },
+  "active": true,
+  "visibility": "PUBLIC",
+  "industry": {
+    "id": "internet",
+    "label": "Internet"
+  },
+  "function": {
+    "id": "sales",
+    "label": "Sales"
+  },
+  "experienceLevel": {
+    "id": "entry_level",
+    "label": "Entry Level"
+  },
+  "typeOfEmployment": {
+    "id": "contract",
+    "label": "Contract"
+  },
+  "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+  }
+}

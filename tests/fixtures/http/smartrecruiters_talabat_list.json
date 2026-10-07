@@ -1,0 +1,325 @@
+{
+  "offset": 0,
+  "limit": 100,
+  "totalFound": 3,
+  "content": [
+    {
+      "id": "744000154060728",
+      "name": "Operations Admin - tMart",
+      "uuid": "49ec6477-1519-4668-a42d-a1e2f76c5283",
+      "jobAdId": "b016fcb7-3e89-4c49-881c-636613e966f8",
+      "defaultJobAd": true,
+      "refNumber": "JR0086440",
+      "company": {
+        "identifier": "DeliveryHero",
+        "name": "Delivery Hero"
+      },
+      "releasedDate": "2026-10-07T10:04:40.731Z",
+      "location": {
+        "city": "Maadi",
+        "country": "eg",
+        "remote": false,
+        "hybrid": false,
+        "fullLocation": "Maadi, , Egypt"
+      },
+      "industry": {
+        "id": "internet",
+        "label": "Internet"
+      },
+      "department": {},
+      "function": {
+        "id": "sales",
+        "label": "Sales"
+      },
+      "typeOfEmployment": {
+        "id": "contract",
+        "label": "Contract"
+      },
+      "experienceLevel": {
+        "id": "entry_level",
+        "label": "Entry Level"
+      },
+      "customField": [
+        {
+          "fieldId": "6564ae9ddd552072c3a97453",
+          "fieldLabel": "Time Type",
+          "valueId": "421938a4e1d40118e396324490147300",
+          "valueLabel": "Full time"
+        },
+        {
+          "fieldId": "655ce69d695b8c5663cf1f55",
+          "fieldLabel": "Brands",
+          "valueId": "talabat",
+          "valueLabel": "talabat"
+        },
+        {
+          "fieldId": "6564ad6b1cf48c421e22419d",
+          "fieldLabel": "Job Family",
+          "valueId": "75439315e97510009157202c017a0000",
+          "valueLabel": "Sales Support"
+        },
+        {
+          "fieldId": "6564ad3fee5f2f5b84045448",
+          "fieldLabel": "Job Family Group",
+          "valueId": "75439315e97510004b9c1be43b920000",
+          "valueLabel": "Sales"
+        },
+        {
+          "fieldId": "6564aa853d74d30a33089d2a",
+          "fieldLabel": "Supervisory Organization",
+          "valueId": "b8dcdbbb63d010019ab40564980c0000",
+          "valueLabel": "Tmart Operations - DS - Cairo 2 - HIE10804"
+        },
+        {
+          "fieldId": "COUNTRY",
+          "fieldLabel": "Country/Region",
+          "valueId": "eg",
+          "valueLabel": "Egypt"
+        },
+        {
+          "fieldId": "6564ad09560ccd2ba9e90d24",
+          "fieldLabel": "Management Level",
+          "valueId": "ef2e8d3982de012291a03645d2163d00",
+          "valueLabel": "S2"
+        },
+        {
+          "fieldId": "6564ae71dd552072c3a97452",
+          "fieldLabel": "Worker Sub-Type",
+          "valueId": "ef2e8d3982de01ee8bc85045d2164100",
+          "valueLabel": "Fixed Term (Fixed Term)"
+        },
+        {
+          "fieldId": "6564abc0d641ff6fc90ebd6d",
+          "fieldLabel": "Primary Location",
+          "valueId": "50e835a314760183633cbd9a9f0139e9",
+          "valueLabel": "Cairo - Maadi"
+        },
+        {
+          "fieldId": "6564ada8e5ee8c3d9bec3405",
+          "fieldLabel": "Job Profile",
+          "valueId": "0b9bd6d5dac7100094a0a05cc79c0000",
+          "valueLabel": "Sales Admin - S2"
+        }
+      ],
+      "visibility": "PUBLIC",
+      "ref": "https://api.smartrecruiters.com/v1/companies/DeliveryHero/postings/744000154060728",
+      "language": {
+        "code": "en",
+        "label": "English",
+        "labelNative": "English (US)"
+      }
+    },
+    {
+      "id": "744000153757015",
+      "name": "Category Manager",
+      "uuid": "01a66efa-24c8-44f1-ba76-00a73f815054",
+      "jobAdId": "40e64e82-4fcf-4698-9705-2d60971f0bb3",
+      "defaultJobAd": true,
+      "refNumber": "JR0087120",
+      "company": {
+        "identifier": "DeliveryHero",
+        "name": "Delivery Hero"
+      },
+      "releasedDate": "2026-10-06T13:21:03.242Z",
+      "location": {
+        "city": "Maadi",
+        "country": "eg",
+        "remote": false,
+        "hybrid": false,
+        "fullLocation": "Maadi, , Egypt"
+      },
+      "industry": {
+        "id": "internet",
+        "label": "Internet"
+      },
+      "department": {},
+      "function": {
+        "id": "sales",
+        "label": "Sales"
+      },
+      "typeOfEmployment": {
+        "id": "contract",
+        "label": "Contract"
+      },
+      "experienceLevel": {
+        "id": "mid_senior_level",
+        "label": "Mid-Senior Level"
+      },
+      "customField": [
+        {
+          "fieldId": "6564ae9ddd552072c3a97453",
+          "fieldLabel": "Time Type",
+          "valueId": "421938a4e1d40118e396324490147300",
+          "valueLabel": "Full time"
+        },
+        {
+          "fieldId": "655ce69d695b8c5663cf1f55",
+          "fieldLabel": "Brands",
+          "valueId": "talabat",
+          "valueLabel": "talabat"
+        },
+        {
+          "fieldId": "6564ad6b1cf48c421e22419d",
+          "fieldLabel": "Job Family",
+          "valueId": "75439315e97510009157202c017a0000",
+          "valueLabel": "Sales Support"
+        },
+        {
+          "fieldId": "6564ad3fee5f2f5b84045448",
+          "fieldLabel": "Job Family Group",
+          "valueId": "75439315e97510004b9c1be43b920000",
+          "valueLabel": "Sales"
+        },
+        {
+          "fieldId": "6564aa853d74d30a33089d2a",
+          "fieldLabel": "Supervisory Organization",
+          "valueId": "cbd8d4e74eca1001412fb2b786cf0000",
+          "valueLabel": "tMart - Egypt, Cairo- Commercial053 - HIE14444"
+        },
+        {
+          "fieldId": "COUNTRY",
+          "fieldLabel": "Country/Region",
+          "valueId": "eg",
+          "valueLabel": "Egypt"
+        },
+        {
+          "fieldId": "6564ad09560ccd2ba9e90d24",
+          "fieldLabel": "Management Level",
+          "valueId": "ef2e8d3982de0147be16f744d2163300",
+          "valueLabel": "IC4"
+        },
+        {
+          "fieldId": "6564ae71dd552072c3a97452",
+          "fieldLabel": "Worker Sub-Type",
+          "valueId": "ef2e8d3982de01ee8bc85045d2164100",
+          "valueLabel": "Fixed Term (Fixed Term)"
+        },
+        {
+          "fieldId": "6564abc0d641ff6fc90ebd6d",
+          "fieldLabel": "Primary Location",
+          "valueId": "50e835a314760183633cbd9a9f0139e9",
+          "valueLabel": "Cairo - Maadi"
+        },
+        {
+          "fieldId": "6564ada8e5ee8c3d9bec3405",
+          "fieldLabel": "Job Profile",
+          "valueId": "236d799776b610015bef0fa93ba50000",
+          "valueLabel": "Category Management - IC4"
+        }
+      ],
+      "visibility": "PUBLIC",
+      "ref": "https://api.smartrecruiters.com/v1/companies/DeliveryHero/postings/744000153757015",
+      "language": {
+        "code": "en",
+        "label": "English",
+        "labelNative": "English (US)"
+      }
+    },
+    {
+      "id": "744000000000001",
+      "name": "Backend Engineer",
+      "uuid": "6d2f220f-0286-4e1f-9b24-efd2b0f69c4b",
+      "jobAdId": "82d21cf6-e886-4c0b-aea2-4d221c3969a9",
+      "defaultJobAd": true,
+      "refNumber": "JR0087121",
+      "company": {
+        "identifier": "DeliveryHero",
+        "name": "Delivery Hero"
+      },
+      "releasedDate": "2026-10-06T13:20:24.817Z",
+      "location": {
+        "city": "Berlin",
+        "country": "de",
+        "remote": false,
+        "hybrid": false,
+        "fullLocation": "Berlin, , Germany"
+      },
+      "industry": {
+        "id": "internet",
+        "label": "Internet"
+      },
+      "department": {},
+      "function": {
+        "id": "sales",
+        "label": "Sales"
+      },
+      "typeOfEmployment": {
+        "id": "contract",
+        "label": "Contract"
+      },
+      "experienceLevel": {
+        "id": "mid_senior_level",
+        "label": "Mid-Senior Level"
+      },
+      "customField": [
+        {
+          "fieldId": "6564ae9ddd552072c3a97453",
+          "fieldLabel": "Time Type",
+          "valueId": "421938a4e1d40118e396324490147300",
+          "valueLabel": "Full time"
+        },
+        {
+          "fieldId": "655ce69d695b8c5663cf1f55",
+          "fieldLabel": "Brands",
+          "valueId": "talabat",
+          "valueLabel": "talabat"
+        },
+        {
+          "fieldId": "6564ad6b1cf48c421e22419d",
+          "fieldLabel": "Job Family",
+          "valueId": "75439315e97510009157202c017a0000",
+          "valueLabel": "Sales Support"
+        },
+        {
+          "fieldId": "6564ad3fee5f2f5b84045448",
+          "fieldLabel": "Job Family Group",
+          "valueId": "75439315e97510004b9c1be43b920000",
+          "valueLabel": "Sales"
+        },
+        {
+          "fieldId": "6564aa853d74d30a33089d2a",
+          "fieldLabel": "Supervisory Organization",
+          "valueId": "cbc7c0cf803e10019108994d53b50000",
+          "valueLabel": "tMart - egypt - commercial team 2023 - HIE12319"
+        },
+        {
+          "fieldId": "COUNTRY",
+          "fieldLabel": "Country/Region",
+          "valueId": "eg",
+          "valueLabel": "Egypt"
+        },
+        {
+          "fieldId": "6564ad09560ccd2ba9e90d24",
+          "fieldLabel": "Management Level",
+          "valueId": "ef2e8d3982de0147be16f744d2163300",
+          "valueLabel": "IC4"
+        },
+        {
+          "fieldId": "6564ae71dd552072c3a97452",
+          "fieldLabel": "Worker Sub-Type",
+          "valueId": "ef2e8d3982de01ee8bc85045d2164100",
+          "valueLabel": "Fixed Term (Fixed Term)"
+        },
+        {
+          "fieldId": "6564abc0d641ff6fc90ebd6d",
+          "fieldLabel": "Primary Location",
+          "valueId": "50e835a314760183633cbd9a9f0139e9",
+          "valueLabel": "Cairo - Maadi"
+        },
+        {
+          "fieldId": "6564ada8e5ee8c3d9bec3405",
+          "fieldLabel": "Job Profile",
+          "valueId": "236d799776b610015bef0fa93ba50000",
+          "valueLabel": "Category Management - IC4"
+        }
+      ],
+      "visibility": "PUBLIC",
+      "ref": "https://api.smartrecruiters.com/v1/companies/DeliveryHero/postings/744000153757244",
+      "language": {
+        "code": "en",
+        "label": "English",
+        "labelNative": "English (US)"
+      }
+    }
+  ]
+}
