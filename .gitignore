@@ -1,0 +1,8 @@
+.venv/
+.superpowers/
+target/
+dbt_packages/
+*.duckdb
+site/
+__pycache__/
+.pytest_cache/

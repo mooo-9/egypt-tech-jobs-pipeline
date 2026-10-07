@@ -1,0 +1,10 @@
+requests
+pyarrow
+PyYAML
+pytest
+responses
+beautifulsoup4
+dbt-core~=1.9
+dbt-duckdb~=1.9
+dbt-postgres~=1.9
+duckdb
