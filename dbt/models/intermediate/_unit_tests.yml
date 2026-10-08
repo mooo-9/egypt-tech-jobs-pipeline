@@ -1,0 +1,64 @@
+version: 2
+
+# The seeds are mocked here (dbt unit tests need every ref mocked); the real seed patterns are
+# checked against the known tricky cases by tests/seed_known_cases.sql.
+unit_tests:
+  - name: int_posting_skills_matches_title_and_latest_description
+    model: int_posting_skills
+    given:
+      - input: ref('stg_postings')
+        rows:
+          - {posting_key: "a", title: "Python Developer", description_clean: null, collected_date: "2026-10-02"}
+          - {posting_key: "b", title: "Engineer", description_clean: "Kafka", collected_date: "2026-10-01"}
+          - {posting_key: "b", title: "Engineer", description_clean: "Airflow", collected_date: "2026-10-02"}
+          - {posting_key: "c", title: "Engineer", description_clean: "Airflow and Apache Airflow", collected_date: "2026-10-02"}
+          - {posting_key: "d", title: "Clerk", description_clean: "Filing", collected_date: "2026-10-02"}
+      - input: ref('skills')
+        rows:
+          - {skill: Python, category: language, pattern: '\bpython\b'}
+          - {skill: Kafka, category: data, pattern: '\bkafka\b'}
+          - {skill: Airflow, category: data, pattern: '\bairflow\b'}
+          - {skill: Airflow, category: data, pattern: '\bapache airflow\b'}
+    expect:
+      rows:
+        - {posting_key: "a", skill: Python, category: language}
+        - {posting_key: "b", skill: Airflow, category: data}
+        - {posting_key: "c", skill: Airflow, category: data}
+
+  - name: int_posting_roles_first_rule_wins_with_defaults
+    model: int_posting_roles
+    given:
+      - input: ref('stg_postings')
+        rows:
+          - {posting_key: "1", title: "Senior Data Engineer", collected_date: "2026-10-02"}
+          - {posting_key: "2", title: "Software Intern", collected_date: "2026-10-02"}
+          - {posting_key: "3", title: "Accountant", collected_date: "2026-10-02"}
+          - {posting_key: "4", title: "Data Analyst", collected_date: "2026-10-01"}
+          - {posting_key: "4", title: "Junior Data Analyst", collected_date: "2026-10-02"}
+      - input: ref('title_rules')
+        rows:
+          - {field: role_family, priority: 20, pattern: '\bsoftware\b', value: software}
+          - {field: role_family, priority: 10, pattern: '\bdata\b', value: data_engineering}
+          - {field: role_family, priority: 30, pattern: '\banalyst\b', value: data_analysis}
+          - {field: seniority, priority: 20, pattern: '\bsenior\b', value: senior}
+          - {field: seniority, priority: 10, pattern: '\bintern\b', value: intern}
+          - {field: seniority, priority: 30, pattern: '\bjunior\b', value: junior}
+    expect:
+      rows:
+        - {posting_key: "1", role_family: data_engineering, seniority: senior}
+        - {posting_key: "2", role_family: software, seniority: intern}
+        - {posting_key: "3", role_family: other, seniority: mid}
+        - {posting_key: "4", role_family: data_engineering, seniority: junior}
+
+  - name: int_posting_lifecycle_open_and_closed
+    model: int_posting_lifecycle
+    given:
+      - input: ref('stg_postings')
+        rows:
+          - {posting_key: "open", company_key: c, title: Old, city: Cairo, url: u, collected_date: "2026-10-01"}
+          - {posting_key: "open", company_key: c, title: New, city: Cairo, url: u, collected_date: "2026-10-02"}
+          - {posting_key: "gone", company_key: c, title: T, city: Cairo, url: u, collected_date: "2026-10-01"}
+    expect:
+      rows:
+        - {posting_key: "open", company_key: c, title: New, city: Cairo, url: u, first_seen: "2026-10-01", last_seen: "2026-10-02", is_open: true, days_open: 2}
+        - {posting_key: "gone", company_key: c, title: T, city: Cairo, url: u, first_seen: "2026-10-01", last_seen: "2026-10-01", is_open: false, days_open: 1}

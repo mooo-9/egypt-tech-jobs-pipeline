@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_posting_lifecycle
+    description: One row per posting, with first/last day seen and whether it is still open.
+    columns:
+      - name: posting_key
+        data_tests: [unique, not_null]
+  - name: int_posting_skills
+    description: Skills mentioned in each posting's title or description (distinct).
+  - name: int_posting_roles
+    description: Role family and seniority of each posting, from the priority-ordered rules in title_rules.
+    columns:
+      - name: posting_key
+        data_tests: [unique, not_null]
+      - name: role_family
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [data_engineering, data_analysis, ai_ml, software, other]
+      - name: seniority
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [intern, junior, mid, senior]
+

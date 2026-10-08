@@ -1,0 +1,8 @@
+field,priority,pattern,value
+role_family,10,"\bdata (engineer|platform|pipeline|infrastructure|architect|warehouse|ops)|\betl\b|\bbig data\b|\banalytics engineer|\bdataops\b|\bdatabase (engineer|developer|administrator)|\bdba\b",data_engineering
+role_family,20,"\b(machine learning|ml|ai|artificial intelligence|deep learning|nlp|computer vision|data scien\w+|llm|genai|generative|mlops|applied scientist|research scientist)\b",ai_ml
+role_family,30,"\bdata analy|\bbi\b|\bbusiness intelligence|\banalytics\b|\bbusiness analy|\binsights?\b|\bpower bi\b|\btableau\b|\bdata visuali|\bstatistic",data_analysis
+role_family,40,"\b(software|developer|programmer|swe|sde|backend|back-end|front-end|frontend|full[- ]?stack|web (developer|engineer)|mobile|android|ios|devops|sre|site reliability|qa|sdet|test automation|cloud (engineer|architect|developer)|embedded|firmware|java|python|\.net|react|node\.?js|golang|flutter|security engineer|solutions? architect)\b",software
+seniority,10,"\b(intern|internship|trainee|apprentice|co-?op)\b",intern
+seniority,20,"\b(senior|sr|lead|principal|staff|head|manager|director|vp|chief|architect|iii)\b",senior
+seniority,30,"\b(junior|jr|graduate|entry[- ]level|fresh|associate|assistant)\b",junior
