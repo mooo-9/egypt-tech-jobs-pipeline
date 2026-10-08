@@ -5,11 +5,6 @@ on:
     - cron: "0 4 * * *"
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 concurrency:
   group: daily-pipeline
   cancel-in-progress: false
@@ -17,6 +12,8 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # push the day's data commit
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -60,6 +57,9 @@ jobs:
   deploy:
     needs: run
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
