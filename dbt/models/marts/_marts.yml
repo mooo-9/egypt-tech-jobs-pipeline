@@ -1,0 +1,92 @@
+version: 2
+
+models:
+  - name: dim_company
+    description: One row per tracked company, from companies.yml (via the companies seed).
+    columns:
+      - name: company_key
+        data_tests: [unique, not_null]
+  - name: fct_postings
+    description: One row per posting with its lifecycle, role family and seniority.
+    columns:
+      - name: posting_key
+        data_tests: [unique, not_null]
+      - name: company_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_company')
+                field: company_key
+  - name: fct_posting_skills
+    description: One row per posting and skill mentioned in it.
+    columns:
+      - name: company_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_company')
+                field: company_key
+  - name: mart_skill_demand_weekly
+    description: >
+      Per week, skill and role scope: open postings in that scope mentioning the skill, and that count
+      over all open postings in the scope. A posting is open in a week when it was collected on at least
+      one day of that week. Scopes: all; data (data_engineering + data_analysis); ai_ml; tech (software +
+      data_engineering + data_analysis + ai_ml, so one non-tech firm's boilerplate cannot dominate).
+    columns:
+      - name: role_scope
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [all, data, ai_ml, tech]
+  - name: mart_role_demand_daily
+    description: One row per collection day and role family seen; open = collected that day, new = first seen that day.
+
+unit_tests:
+  - name: mart_skill_demand_weekly_share_per_scope
+    model: mart_skill_demand_weekly
+    given:
+      - input: ref('stg_postings')
+        rows:
+          - {posting_key: a, collected_date: "2026-10-07"}
+          - {posting_key: b, collected_date: "2026-10-07"}
+          - {posting_key: c, collected_date: "2026-10-08"}
+          - {posting_key: d, collected_date: "2026-10-08"}
+          - {posting_key: a, collected_date: "2026-10-08"}
+      - input: ref('fct_postings')
+        rows:
+          - {posting_key: a, role_family: data_engineering}
+          - {posting_key: b, role_family: software}
+          - {posting_key: c, role_family: other}
+          - {posting_key: d, role_family: ai_ml}
+      - input: ref('fct_posting_skills')
+        rows:
+          - {posting_key: a, skill: SQL, category: language}
+          - {posting_key: c, skill: SQL, category: language}
+          - {posting_key: d, skill: PyTorch, category: ml}
+    expect:
+      rows:
+        - {week_start: "2026-10-05", skill: SQL, category: language, role_scope: all, open_postings: 2, share: 0.5}
+        - {week_start: "2026-10-05", skill: SQL, category: language, role_scope: data, open_postings: 1, share: 1.0}
+        - {week_start: "2026-10-05", skill: SQL, category: language, role_scope: tech, open_postings: 1, share: 0.3333333333333333}
+        - {week_start: "2026-10-05", skill: PyTorch, category: ml, role_scope: all, open_postings: 1, share: 0.25}
+        - {week_start: "2026-10-05", skill: PyTorch, category: ml, role_scope: ai_ml, open_postings: 1, share: 1.0}
+        - {week_start: "2026-10-05", skill: PyTorch, category: ml, role_scope: tech, open_postings: 1, share: 0.3333333333333333}
+
+  - name: mart_role_demand_daily_open_and_new
+    model: mart_role_demand_daily
+    given:
+      - input: ref('stg_postings')
+        rows:
+          - {posting_key: a, collected_date: "2026-10-01"}
+          - {posting_key: a, collected_date: "2026-10-02"}
+          - {posting_key: b, collected_date: "2026-10-02"}
+      - input: ref('fct_postings')
+        rows:
+          - {posting_key: a, role_family: software, first_seen: "2026-10-01"}
+          - {posting_key: b, role_family: other, first_seen: "2026-10-02"}
+    expect:
+      rows:
+        - {day: "2026-10-01", role_family: software, open_postings: 1, new_postings: 1}
+        - {day: "2026-10-01", role_family: other, open_postings: 0, new_postings: 0}
+        - {day: "2026-10-02", role_family: software, open_postings: 1, new_postings: 0}
+        - {day: "2026-10-02", role_family: other, open_postings: 1, new_postings: 1}

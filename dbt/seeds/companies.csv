@@ -1,0 +1,33 @@
+company_key,name,industry,source_system
+pwc,PwC,consulting,workday
+valeo,Valeo,automotive,workday
+dell,Dell Technologies,tech,oracle_cloud
+oracle,Oracle,tech,oracle_cloud
+amazon,Amazon,tech,amazon
+mastercard,Mastercard,payments,workday
+visa,Visa,payments,workday
+ericsson,Ericsson,telecom,eightfold
+unilever,Unilever,fmcg,workday
+pepsico,PepsiCo,fmcg,jibe
+mondelez,Mondelez,fmcg,workday
+bcg,BCG,consulting,phenom
+talabat,Talabat,delivery,smartrecruiters
+maf,Majid Al Futtaim,retail,phenom
+pfizer,Pfizer,pharma,workday
+novartis,Novartis,pharma,workday
+sanofi,Sanofi,pharma,workday
+gsk,GSK,pharma,workday
+thndr,Thndr,fintech,ashby
+tamara,Tamara,fintech,greenhouse
+jumia,Jumia,e-commerce,greenhouse
+foodics,Foodics,saas,workable
+tamatem,Tamatem,gaming,workable
+robusta,Robusta,it-services,workable
+blabs,b_labs,fintech,workable
+dubizzle,Dubizzle Egypt,classifieds,workable
+cequens,Cequens,telecom,workable
+advansys,Advansys,it-services,workable
+nowlun,Nowlun,logistics,workable
+petroapp,PetroApp,logistics,workable
+madar,Madar,logistics,workable
+yassir,Yassir,delivery,lever
