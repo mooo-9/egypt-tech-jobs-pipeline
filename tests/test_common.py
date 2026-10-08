@@ -9,13 +9,6 @@ from pipeline.extract.common import clean_text, http_get_json, in_egypt
 UA = "egypt-tech-jobs-pipeline (+https://github.com/mooo-9/egypt-tech-jobs-pipeline)"
 
 
-@pytest.fixture(autouse=True)
-def no_sleep(monkeypatch):
-    """Tests never wait on retries or rate limiting."""
-    common._last_call.clear()
-    monkeypatch.setattr(common.time, "sleep", lambda s: None)
-
-
 def test_in_egypt_matches_cities():
     assert in_egypt("New Cairo, Egypt")
     assert in_egypt("Giza")

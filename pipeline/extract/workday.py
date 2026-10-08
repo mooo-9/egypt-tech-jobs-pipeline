@@ -1,4 +1,5 @@
 """Workday's public job search, the one behind a company's careers page."""
+import re
 from urllib.parse import urlparse
 
 from pipeline.extract.common import (
@@ -7,6 +8,8 @@ from pipeline.extract.common import (
 
 PAGE = 20  # Workday answers 20 postings at a time
 MAX_POSTINGS = 100  # five pages is past any company's Egypt list
+# A multi-location posting shows as "2 Locations"; the search was already for Egypt.
+_MANY_LOCATIONS = re.compile(r"\d+ Locations", re.IGNORECASE)
 
 
 def _sites(company: dict) -> list[dict]:
@@ -34,11 +37,11 @@ def fetch(company: dict, collected_at: str) -> list[Posting]:
     for site in _sites(company):
         for p in _collect(site):
             where, title, path = p.get("locationsText", ""), p.get("title", ""), p.get("externalPath", "")
-            if not in_egypt(where, title):
+            if not (in_egypt(where, title) or _MANY_LOCATIONS.fullmatch(where)):
                 continue
             postings.append(Posting(
                 source_system="workday", company_key=company["key"],
-                posting_id=path.rsplit("_", 1)[-1],  # the requisition id, e.g. R-290246-1
+                posting_id=f"{site['tenant']}:{path.rsplit('_', 1)[-1]}",  # requisition ids repeat across tenants
                 title=title, location=where, posted_raw=p.get("postedOn", ""),
                 url=f"https://{site['host']}/en-US/{site['site']}{path}",
                 description=None, collected_at=collected_at))

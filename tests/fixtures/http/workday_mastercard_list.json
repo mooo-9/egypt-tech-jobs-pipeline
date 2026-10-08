@@ -1,5 +1,5 @@
 {
-  "total": 4,
+  "total": 5,
   "jobPostings": [
     {
       "title": "Manager, Specialist Sales, Digital Payments",
@@ -25,6 +25,15 @@
       "postedOn": "Posted Today",
       "bulletFields": [
         "R-286532"
+      ]
+    },
+    {
+      "title": "Data Analyst",
+      "externalPath": "/job/2-Locations/Data-Analyst_R-999002",
+      "locationsText": "2 Locations",
+      "postedOn": "Posted Today",
+      "bulletFields": [
+        "R-999002"
       ]
     },
     {
