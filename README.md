@@ -54,7 +54,7 @@ One employer failing never stops the run. It is recorded in the run summary and 
 | Kind | Systems | Employers |
 |---|---|---|
 | Large employers' career sites | Workday (10), Oracle Cloud (2), Phenom (2), Eightfold, Jibe, SmartRecruiters, amazon.jobs | 18, including PwC, Oracle, Mastercard, Visa, Ericsson, Valeo, Talabat, BCG, Amazon |
-| Egyptian tech companies | Workable (10), Greenhouse (2), Ashby, Lever | 14, public job-board APIs |
+| Tech companies hiring in Egypt | Workable (10), Greenhouse (2), Ashby, Lever | 14, public job-board APIs |
 
 Only postings located in Egypt are kept. Descriptions are fetched only for postings not seen before; for the rest the earlier description is carried forward. Requests are limited to one per second per host, with a 20-second timeout, three retries with backoff, and a User-Agent that names this repo. Adding a company is a config change in `companies.yml`.
 
@@ -148,7 +148,7 @@ uv run --no-project python scripts/companies_to_seed.py
 
 ## Data coverage and limits
 
-- The data covers employers with a public career API: 32 employers, 18 large ones and 14 Egyptian tech companies. It is not the whole Egyptian job market.
+- The data covers employers with a public career API: 32 employers, 18 large ones and 14 tech companies hiring in Egypt. It is not the whole Egyptian job market.
 - LinkedIn and Wuzzuf are excluded on purpose. LinkedIn's terms forbid scraping and it blocks cloud IPs. Wuzzuf sits behind a Cloudflare bot check that a cloud runner cannot reliably pass.
 - All data is real and public. It comes from the same endpoints the employers' own careers pages call.
 - Roles and seniority come from regex rules on titles, and skills from regex patterns on the title and description. They are deterministic and testable, and they miss some postings and misread some. 590 of the 745 postings in the first run are classed `other` role family, mostly non-technical roles at large employers.

@@ -73,7 +73,7 @@
   industry: pharma
   workday: [{"host": "gsk.wd5.myworkdayjobs.com", "tenant": "gsk", "site": "GSKCareers"}]
 
-# Egyptian tech companies, or tech companies hiring in Egypt, on the four job-board systems.
+# Tech companies hiring in Egypt, on the four job-board systems.
 # Each was verified with scripts/check_company.py: at least one Egypt posting on the date shown.
 - key: thndr  # checked 2026-10-08: 6 Egypt postings
   name: "Thndr"
