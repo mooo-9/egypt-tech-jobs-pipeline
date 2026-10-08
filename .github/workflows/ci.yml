@@ -26,3 +26,18 @@ jobs:
           RAW_GLOB: ../tests/fixtures/raw/*/postings.parquet
           DBT_DUCKDB_PATH: ${{ runner.temp }}/ci.duckdb
         run: dbt build --profiles-dir . --target duckdb
+
+  spark-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+      - run: pip install -r requirements.txt -r requirements-spark.txt
+      - run: pytest -q tests/test_spark_parity.py

@@ -1,0 +1,2 @@
+# Only for the Spark parity test and spark/skill_demand.py. Needs Java 17 or 21; tested on Python 3.12 with Temurin 21.
+pyspark==4.0.1

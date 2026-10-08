@@ -3,7 +3,7 @@
 [![Tests](https://github.com/mooo-9/egypt-tech-jobs-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/mooo-9/egypt-tech-jobs-pipeline/actions/workflows/ci.yml)
 [![Daily run](https://github.com/mooo-9/egypt-tech-jobs-pipeline/actions/workflows/daily.yml/badge.svg)](https://github.com/mooo-9/egypt-tech-jobs-pipeline/actions/workflows/daily.yml)
 
-A data pipeline that collects job postings from 32 employers hiring in Egypt every day, models them with dbt, and publishes a dashboard of which skills and roles are in demand. It runs on GitHub Actions without anyone's machine being on: Python extractors write append-only Parquet files, dbt rebuilds the warehouse from them in DuckDB, and the dashboard is published to GitHub Pages. If extraction or any dbt test fails, the dashboard is not updated and the previous one stays live. The day's raw data is committed before dbt runs, so a day that fails a dbt test still keeps its files.
+A data pipeline that collects job postings from 32 employers hiring in Egypt every day, models them with dbt, and publishes a dashboard of which skills and roles are in demand. It runs on GitHub Actions without anyone's machine being on: Python extractors write append-only Parquet files, dbt rebuilds the warehouse from them in DuckDB, and the dashboard is published to GitHub Pages. One mart is also rebuilt independently in PySpark, and CI checks that both give the same rows. If extraction or any dbt test fails, the dashboard is not updated and the previous one stays live. The day's raw data is committed before dbt runs, so a day that fails a dbt test still keeps its files.
 
 **Live dashboard: <https://mooo-9.github.io/egypt-tech-jobs-pipeline/>**
 
@@ -80,13 +80,13 @@ Staging models are views and marts are tables. The seeds are `companies`, `skill
 
 | Layer | What is checked |
 |---|---|
-| Python (72 pytest tests) | Each extractor against saved real API responses in `tests/fixtures/http/`, with no network calls, including paging, truncation flags and fields sent as null; the Egypt filter, retries and rate limit; the daily run (one failing company or bad value does not stop it, same-day reruns overwrite only that day, descriptions are stored once); the committed companies seed matches `companies.yml`; the dashboard build; the daily workflow's per-job permissions |
+| Python (78 pytest tests) | Each extractor against saved real API responses in `tests/fixtures/http/`, with no network calls, including paging, truncation flags and fields sent as null; the Egypt filter, retries and rate limit; the daily run (one failing company or bad value does not stop it, same-day reruns overwrite only that day, descriptions are stored once); the committed companies seed matches `companies.yml`; the dashboard build; the daily workflow's per-job permissions; 6 Spark parity tests (see below), which are skipped unless PySpark is installed |
 | dbt data tests (31) | `unique` and `not_null` on keys, `accepted_values` on `role_family` and `seniority`, `relationships` from both facts to `dim_company`, and singular tests: no posting dated in the future or after it was first seen, skill shares between 0 and 1, the latest run loaded at least one row, no duplicate bridge keys |
 | dbt unit tests (9) | Skill matching (including a description stored only on an earlier day), first-rule-wins role classification with defaults, the open/closed lifecycle and the earliest posted date, each on small hand-written inputs |
 | Seed pattern cases | `seed_known_cases` runs the real seed regexes over known texts. "R" must not match every capital R and "Go" must not match "Google" or "Go-to-market" |
 | Freshness | `dbt source freshness`: warn after 1 day, error after 2 |
 
-On every pull request, CI runs pytest and then `dbt build` against two fixed days of sample data in `tests/fixtures/raw/`, so it never depends on live APIs. `dbt build` is 53 steps in total: 1 setup hook, 3 seeds, 9 models, 31 data tests and 9 unit tests.
+On every pull request, CI runs pytest and then `dbt build` against two fixed days of sample data in `tests/fixtures/raw/`, so it never depends on live APIs. A second CI job, `spark-parity`, installs Java and PySpark and runs the Spark parity tests. `dbt build` is 53 steps in total: 1 setup hook, 3 seeds, 9 models, 31 data tests and 9 unit tests.
 
 ## Run it locally
 
@@ -126,6 +126,22 @@ uv run --no-project python scripts/check_company.py greenhouse tamara
 uv run --no-project python scripts/companies_to_seed.py
 ```
 
+## Spark implementation and parity check
+
+`spark/skill_demand.py` rebuilds `mart_skill_demand_weekly` for `role_scope = 'all'` with PySpark, straight from the raw Parquet files and without dbt. It does the same work as the dbt chain: the posting key and collected date, a Monday week start, skills matched case-insensitively on the title plus the latest non-null description using the patterns in `dbt/seeds/skills.csv`, and each skill's share of all postings open that week. dbt stays the production path, and Spark is not part of the daily run. The job exists as a second, independent implementation: if the two ever disagree, one of them has a bug.
+
+`tests/test_spark_parity.py` builds a warehouse with a real `dbt build` over fixture files, runs the Spark job on the same files, and asserts the rows are identical (week, skill, category and open postings exactly; share to 1e-9). The fixtures include a posting whose description is stored only on its first day, a posting seen on several days of one week, and a week boundary. A second test runs every skill pattern through DuckDB and Spark on awkward strings (vertical tabs, Unicode line breaks, accented neighbours). It found that two things differ between DuckDB's regex engine and Java's: `$` also matches before a final line break in Java, and `\s` also matches a vertical tab. `to_java_regex` fixes both, and the test fails without it. CI runs the parity tests on every push in the `spark-parity` job. Run on the real data on 2026-10-08, the Spark job's 27 rows equal the warehouse's.
+
+PySpark is pinned in `requirements-spark.txt` and kept out of `requirements.txt`, so the daily run and the main CI job stay light. It needs Java 17 or 21:
+
+```bash
+uv pip install -r requirements-spark.txt
+uv run --no-project python -m pytest -q tests/test_spark_parity.py
+uv run --no-project python -m spark.skill_demand --raw "data/raw/*/postings.parquet" --skills dbt/seeds/skills.csv --out skill_demand.parquet
+```
+
+The job runs Spark in local mode. It collects the result through Arrow and writes the Parquet file with pyarrow, because Spark's own writer needs Hadoop's `winutils` on Windows.
+
 ## Design decisions
 
 **Full rebuild from append-only Parquet.** The warehouse is rebuilt from every raw file on each run. At a few hundred rows a day this takes seconds, the result is idempotent, and no state carries over between runs, so a bad run is fixed by running again. Raw files are never edited; a rerun on the same day replaces only that day's files.
@@ -138,13 +154,13 @@ uv run --no-project python scripts/companies_to_seed.py
 
 **A `tech` scope.** The skills chart defaults to software, data and AI/ML roles, not all roles. In the all-roles view, AWS and Azure each appear in 64 open postings, and 33 of the AWS ones come from a single firm (PwC), mostly on non-technical roles, where the cloud stack is boilerplate. Filtering to tech roles removes most of that distortion. The all-roles view is still one click away.
 
-**No Spark or Kafka.** The data is about 750 rows a day. DuckDB reads the whole history in seconds on one core, and a batch job that runs once a day has nothing for a message queue to do. Adding either would be extra moving parts with no benefit at this size. At 100 times the volume (tens of millions of rows, many more sources), these things would change first:
+**Spark only as a check, no Kafka.** The data is about 750 rows a day. DuckDB reads the whole history in seconds on one core, and a batch job that runs once a day has nothing for a message queue to do. Making Spark the production engine, or adding Kafka, would be extra moving parts with no benefit at this size; that is why the Spark job is a parity check and not part of the daily run. At 100 times the volume (tens of millions of rows, many more sources), these things would change first:
 
 - Extraction would be split into parallel tasks per source, with Airflow or a similar scheduler handling retries and backfills.
 - Raw files would go to object storage (S3 or GCS) instead of git.
 - Models would be incremental, loading only new partitions, instead of a full rebuild.
 - The warehouse would move from DuckDB to a managed one (BigQuery, Snowflake or Postgres at scale).
-- Spark or Kafka would only come in if sources became streams or single-machine memory became the limit. Neither is likely at this volume.
+- Spark would only become the engine, and Kafka would only come in, if sources became streams or single-machine memory became the limit. Neither is likely at this volume.
 
 ## Data coverage and limits
 
@@ -162,10 +178,12 @@ uv run --no-project python scripts/companies_to_seed.py
 companies.yml           the 32 employers
 pipeline/               extractors (extract/) and the daily run (run.py)
 dbt/                    models, seeds, macros, tests, profiles.yml
+spark/                  PySpark rebuild of mart_skill_demand_weekly, checked against dbt
 dashboard/              build.py and the HTML template
 data/raw/               date=YYYY-MM-DD/postings.parquet and run_summary.json
 scripts/                add-a-company helpers and fixture generators
 tests/                  pytest tests and fixtures
+requirements-spark.txt  PySpark, needed only for the parity test and the Spark job
 .github/workflows/      ci.yml and daily.yml
 docs/                   design spec and the dashboard screenshot
 ```
