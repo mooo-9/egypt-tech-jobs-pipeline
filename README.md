@@ -3,7 +3,7 @@
 [![Tests](https://github.com/mooo-9/egypt-tech-jobs-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/mooo-9/egypt-tech-jobs-pipeline/actions/workflows/ci.yml)
 [![Daily run](https://github.com/mooo-9/egypt-tech-jobs-pipeline/actions/workflows/daily.yml/badge.svg)](https://github.com/mooo-9/egypt-tech-jobs-pipeline/actions/workflows/daily.yml)
 
-A data pipeline that collects job postings from 32 employers hiring in Egypt every day, models them with dbt, and publishes a dashboard of which skills and roles are in demand. It runs on GitHub Actions without anyone's machine being on: Python extractors write append-only Parquet files, dbt rebuilds the warehouse from them in DuckDB, and the dashboard is published to GitHub Pages. If extraction or any dbt test fails, nothing is published and the previous dashboard stays live.
+A data pipeline that collects job postings from 32 employers hiring in Egypt every day, models them with dbt, and publishes a dashboard of which skills and roles are in demand. It runs on GitHub Actions without anyone's machine being on: Python extractors write append-only Parquet files, dbt rebuilds the warehouse from them in DuckDB, and the dashboard is published to GitHub Pages. If extraction or any dbt test fails, the dashboard is not updated and the previous one stays live. The day's raw data is committed before dbt runs, so a day that fails a dbt test still keeps its files.
 
 **Live dashboard: <https://mooo-9.github.io/egypt-tech-jobs-pipeline/>**
 
@@ -15,7 +15,7 @@ First run, 2026-10-08. The dashboard updates daily; these numbers are a dated sn
 
 | | |
 |---|---|
-| Postings collected | 745, from 30 of the 32 employers (Dell and Pfizer had none in Egypt that day) |
+| Postings collected | 745, from 30 of the 32 employers (Dell and Pfizer had none in Egypt that day). Amazon's list was cut at 100 that day; about 110 were open, and it is now read to the end |
 | Open tech postings | 155 (software 113, data analysis 19, AI/ML 19, data engineering 4) |
 | Most-asked skills in tech roles | Git 36%, Python 25%, Docker 25%, Kubernetes 25%, JavaScript 23% |
 
@@ -39,7 +39,7 @@ The solid path is what runs today. The dashed Airflow and Postgres path is plann
 
 A daily run (`.github/workflows/daily.yml`, 04:00 UTC) does this:
 
-1. `python -m pipeline.run` calls every employer's job API and writes that day's `postings.parquet` and a `run_summary.json` (status, rows, error and duration per company).
+1. `python -m pipeline.run` calls every employer's job API and writes that day's `postings.parquet` and a `run_summary.json` (status, rows, error and duration per company, and `truncated` when a capped API listed more postings than were read).
 2. The new files are committed to the repo as `data: YYYY-MM-DD`. The commit is the storage layer.
 3. `dbt source freshness`, then `dbt build`, run against DuckDB: seeds, models, data tests and unit tests.
 4. `python -m dashboard.build` reads the marts and writes the static site.
@@ -56,7 +56,7 @@ One employer failing never stops the run. It is recorded in the run summary and 
 | Large employers' career sites | Workday (10), Oracle Cloud (2), Phenom (2), Eightfold, Jibe, SmartRecruiters, amazon.jobs | 18, including PwC, Oracle, Mastercard, Visa, Ericsson, Valeo, Talabat, BCG, Amazon |
 | Tech companies hiring in Egypt | Workable (10), Greenhouse (2), Ashby, Lever | 14, public job-board APIs |
 
-Only postings located in Egypt are kept. Descriptions are fetched only for postings not seen before; for the rest the earlier description is carried forward. Requests are limited to one per second per host, with a 20-second timeout, three retries with backoff, and a User-Agent that names this repo. Adding a company is a config change in `companies.yml`.
+Only postings located in Egypt are kept. Descriptions are fetched only for postings with none stored yet, and each is stored once, in the row for the first day it is known; later rows carry null, and dbt matches skills on each posting's latest stored description. Requests are limited to one per second per host, with a 20-second timeout, three retries with backoff, and a User-Agent that names this repo. Adding a company is a config change in `companies.yml`.
 
 ## Data model
 
@@ -65,8 +65,8 @@ DuckDB runs the models in CI and on the daily run. `raw.postings` is a view over
 | Layer | Model | Grain | What it does |
 |---|---|---|---|
 | staging | `stg_postings` | posting x day | Casts and trims, standardises the city, turns "Posted 3 Days Ago" style strings into dates |
-| intermediate | `int_posting_lifecycle` | posting | `first_seen`, `last_seen`, `days_open`, `is_open` (seen on the latest collection day) |
-| intermediate | `int_posting_skills` | posting x skill | Matches title and latest description against the `skills` seed (28 regex patterns) |
+| intermediate | `int_posting_lifecycle` | posting | `first_seen`, `last_seen`, `days_open`, `is_open` (seen on the latest collection day), and `posted_date`, the earliest parsed across its rows (so "Posted 30+ Days Ago" does not move forward each day) |
+| intermediate | `int_posting_skills` | posting x skill | Matches title and latest stored description against the `skills` seed (28 regex patterns) |
 | intermediate | `int_posting_roles` | posting | `role_family` and `seniority` from the priority-ordered `title_rules` seed |
 | marts | `dim_company` | company | Name, industry and source system, from `companies.yml` |
 | marts | `fct_postings` | posting | Company, role, seniority, city, lifecycle dates, open flag |
@@ -80,13 +80,13 @@ Staging models are views and marts are tables. The seeds are `companies`, `skill
 
 | Layer | What is checked |
 |---|---|
-| Python (44 pytest tests) | Each extractor against saved real API responses in `tests/fixtures/http/`, with no network calls; the Egypt filter, retries and rate limit; the daily run (one failing company does not stop it, same-day reruns overwrite only that day, descriptions are carried forward); the dashboard build |
-| dbt data tests (30) | `unique` and `not_null` on keys, `accepted_values` on `role_family` and `seniority`, `relationships` from both facts to `dim_company`, and singular tests: no posting dated in the future, skill shares between 0 and 1, the latest run loaded at least one row, no duplicate bridge keys |
-| dbt unit tests (7) | Skill matching, first-rule-wins role classification with defaults, and the open/closed lifecycle, each on small hand-written inputs |
+| Python (72 pytest tests) | Each extractor against saved real API responses in `tests/fixtures/http/`, with no network calls, including paging, truncation flags and fields sent as null; the Egypt filter, retries and rate limit; the daily run (one failing company or bad value does not stop it, same-day reruns overwrite only that day, descriptions are stored once); the committed companies seed matches `companies.yml`; the dashboard build; the daily workflow's per-job permissions |
+| dbt data tests (31) | `unique` and `not_null` on keys, `accepted_values` on `role_family` and `seniority`, `relationships` from both facts to `dim_company`, and singular tests: no posting dated in the future or after it was first seen, skill shares between 0 and 1, the latest run loaded at least one row, no duplicate bridge keys |
+| dbt unit tests (9) | Skill matching (including a description stored only on an earlier day), first-rule-wins role classification with defaults, the open/closed lifecycle and the earliest posted date, each on small hand-written inputs |
 | Seed pattern cases | `seed_known_cases` runs the real seed regexes over known texts. "R" must not match every capital R and "Go" must not match "Google" or "Go-to-market" |
 | Freshness | `dbt source freshness`: warn after 1 day, error after 2 |
 
-On every pull request, CI runs pytest and then `dbt build` against two fixed days of sample data in `tests/fixtures/raw/`, so it never depends on live APIs. `dbt build` is 50 steps in total: 1 setup hook, 3 seeds, 9 models, 30 data tests and 7 unit tests.
+On every pull request, CI runs pytest and then `dbt build` against two fixed days of sample data in `tests/fixtures/raw/`, so it never depends on live APIs. `dbt build` is 53 steps in total: 1 setup hook, 3 seeds, 9 models, 31 data tests and 9 unit tests.
 
 ## Run it locally
 
@@ -130,7 +130,7 @@ uv run --no-project python scripts/companies_to_seed.py
 
 **Full rebuild from append-only Parquet.** The warehouse is rebuilt from every raw file on each run. At a few hundred rows a day this takes seconds, the result is idempotent, and no state carries over between runs, so a bad run is fixed by running again. Raw files are never edited; a rerun on the same day replaces only that day's files.
 
-**Parquet date partitions, committed by the daily run.** GitHub Actions runners keep nothing between runs, so the data has to live somewhere free. Committing each day's zstd Parquet file to the repo gives free storage, a full history that anyone can clone, and keeps the scheduled workflow active (GitHub disables schedules in repos with no activity for 60 days). The first day's file is 0.5 MB, because it includes job descriptions. That is about 190 MB a year; if that becomes a problem, yearly compaction is possible.
+**Parquet date partitions, committed by the daily run.** GitHub Actions runners keep nothing between runs, so the data has to live somewhere free. Committing each day's zstd Parquet file to the repo gives free storage, a full history that anyone can clone, and keeps the scheduled workflow active (GitHub disables schedules in repos with no activity for 60 days). The first day's file is 0.5 MB, because it holds every posting's description. Later days store a description only for postings seen for the first time: re-running the second day against the first wrote 55 KB (742 of its 755 postings were already known). At that size plus each day's new descriptions, the repo grows by roughly 25 MB a year; if that becomes a problem, yearly compaction is possible.
 
 **One dbt project, two targets.** The same models are meant to run on DuckDB (CI and the daily run) and on Postgres (a planned local Airflow setup in Docker Compose, which will run this same package and dbt project). Only the DuckDB target is exercised so far; the Postgres branches of the macros are written but not run.
 

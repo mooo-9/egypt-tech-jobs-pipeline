@@ -59,7 +59,7 @@ extract (Python)  ──►  data/raw/date=YYYY-MM-DD/postings.parquet   (append
 - The logic for Workday, SmartRecruiters, Oracle Cloud, Eightfold, Jibe, Phenom and amazon.jobs is ported from the voice assistant's tested collectors. Greenhouse, Lever, Ashby and Workable are new modules.
 - Only postings located in Egypt are kept. The Egypt location filter is shared by all modules.
 - `Posting` fields: `source_system`, `company_key`, `posting_id` (the system's own ID), `title`, `location`, `posted_raw`, `url`, `description` (nullable), `collected_at`.
-- **Descriptions are fetched only for postings not seen before.** Postings already seen are matched on `(source_system, posting_id)` against earlier raw files, and their description is carried forward.
+- **Descriptions are fetched only for postings not seen before.** Postings already seen are matched on `(source_system, posting_id)` against earlier raw files. A description is stored once, in the row for the first day it is known; later rows carry null, and dbt reads each posting's latest stored description.
 - **Politeness:** at most 1 request per second per host, a 20-second timeout, and 3 retries with backoff. A descriptive User-Agent names the repo.
 - **Isolation:** each company runs in its own try/except. One failing company is recorded in the run summary and never stops the run.
 - **Output:** `data/raw/date=YYYY-MM-DD/postings.parquet` (zstd-compressed) and `data/raw/date=YYYY-MM-DD/run_summary.json` (per company: status, rows, error message, duration). Re-running the same day overwrites only that day's files.
@@ -107,7 +107,7 @@ Regex matching differs between DuckDB and Postgres. A macro, `regex_match(column
 
 - Runs every day at 04:00 UTC (06:00 or 07:00 in Cairo, depending on daylight saving), and can also be started by hand.
 - Steps: set up Python 3.12 → install the pinned requirements → `python -m pipeline.run` → commit the new `data/raw/date=…/` files as `data: YYYY-MM-DD` → `dbt source freshness --target duckdb` → `dbt build --target duckdb` → `python -m dashboard.build` → deploy `site/` to GitHub Pages.
-- If extraction or `dbt build` fails, the job fails, nothing is published, GitHub emails the owner, and the previous dashboard stays live.
+- If extraction or `dbt build` fails, the job fails, the dashboard is not updated, GitHub emails the owner, and the previous dashboard stays live. Raw data is committed before `dbt build`, so it is kept when only dbt fails.
 
 ### GitHub Actions: `ci.yml`
 
