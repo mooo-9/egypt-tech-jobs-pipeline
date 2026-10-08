@@ -1,0 +1,16 @@
+egypt_tech_jobs:
+  target: duckdb
+  outputs:
+    duckdb:
+      type: duckdb
+      path: warehouse.duckdb
+      threads: 1
+    postgres:
+      type: postgres
+      host: "{{ env_var('PG_HOST', 'localhost') }}"
+      port: 5432
+      user: "{{ env_var('PG_USER') }}"
+      password: "{{ env_var('PG_PASSWORD') }}"
+      dbname: "{{ env_var('PG_DB') }}"
+      schema: analytics
+      threads: 1

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: postings
+        description: "One row per posting per day it was seen. DuckDB: a view over the raw Parquet files (see the create_raw_postings macro). Postgres: the table the Airflow load task fills."

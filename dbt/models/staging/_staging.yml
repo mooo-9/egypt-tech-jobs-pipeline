@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: stg_postings
+    description: Cleaned raw postings, one row per posting per day seen.
+    columns:
+      - name: posting_key
+        data_tests:
+          - not_null
+      - name: collected_date
+        data_tests:
+          - not_null
+
+unit_tests:
+  - name: stg_postings_parses_posted_raw
+    model: stg_postings
+    given:
+      - input: source('raw', 'postings')
+        rows:
+          - {source_system: s, posting_id: "1", collected_at: "2026-10-02", posted_raw: "Posted Today"}
+          - {source_system: s, posting_id: "2", collected_at: "2026-10-02", posted_raw: "Posted Yesterday"}
+          - {source_system: s, posting_id: "3", collected_at: "2026-10-02", posted_raw: "Posted 3 Days Ago"}
+          - {source_system: s, posting_id: "4", collected_at: "2026-10-02", posted_raw: "Posted 30+ Days Ago"}
+          - {source_system: s, posting_id: "5", collected_at: "2026-10-02", posted_raw: "2026-09-28"}
+          - {source_system: s, posting_id: "6", collected_at: "2026-10-02", posted_raw: "1727481600000"}
+          - {source_system: s, posting_id: "7", collected_at: "2026-10-02", posted_raw: ""}
+          - {source_system: s, posting_id: "8", collected_at: "2026-10-02", posted_raw: "2026-09-28T10:15:00+03:00"}
+          - {source_system: s, posting_id: "9", collected_at: "2026-10-02", posted_raw: "2026-09-28T10:15:00.000Z"}
+          - {source_system: s, posting_id: "10", collected_at: "2026-10-02", posted_raw: "October  1, 2026"}
+          - {source_system: s, posting_id: "11", collected_at: "2026-10-02", posted_raw: "not a date"}
+    expect:
+      rows:
+        - {posting_id: "1", posted_date: "2026-10-02"}
+        - {posting_id: "2", posted_date: "2026-10-01"}
+        - {posting_id: "3", posted_date: "2026-09-29"}
+        - {posting_id: "4", posted_date: "2026-09-02"}
+        - {posting_id: "5", posted_date: "2026-09-28"}
+        - {posting_id: "6", posted_date: "2024-09-28"}
+        - {posting_id: "7", posted_date: null}
+        - {posting_id: "8", posted_date: "2026-09-28"}
+        - {posting_id: "9", posted_date: "2026-09-28"}
+        - {posting_id: "10", posted_date: "2026-10-01"}
+        - {posting_id: "11", posted_date: null}
+
+  - name: stg_postings_city_and_description
+    model: stg_postings
+    given:
+      - input: source('raw', 'postings')
+        rows:
+          - {source_system: s, posting_id: "1", collected_at: "2026-10-02", location: "Alexandria; Cairo; Dubai", description: "  text  "}
+          - {source_system: s, posting_id: "2", collected_at: "2026-10-02", location: "New Cairo, Egypt", description: " "}
+          - {source_system: s, posting_id: "3", collected_at: "2026-10-02", location: "Nasr City, Egypt"}
+          - {source_system: s, posting_id: "4", collected_at: "2026-10-02", location: "6th of October City, Egypt"}
+          - {source_system: s, posting_id: "5", collected_at: "2026-10-02", location: "Hurghada, Red Sea Governorate, Egypt"}
+          - {source_system: s, posting_id: "6", collected_at: "2026-10-02", location: "4 Locations"}
+          - {source_system: s, posting_id: "7", collected_at: "2026-10-02", location: "Alex, Egypt"}
+    expect:
+      rows:
+        - {posting_id: "1", city: "Alexandria", description_clean: "text"}
+        - {posting_id: "2", city: "Cairo", description_clean: null}
+        - {posting_id: "3", city: "Cairo", description_clean: null}
+        - {posting_id: "4", city: "Giza", description_clean: null}
+        - {posting_id: "5", city: "Egypt (other)", description_clean: null}
+        - {posting_id: "6", city: null, description_clean: null}
+        - {posting_id: "7", city: "Alexandria", description_clean: null}

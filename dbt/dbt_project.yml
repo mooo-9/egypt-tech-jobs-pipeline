@@ -1,0 +1,19 @@
+name: egypt_tech_jobs
+version: "1.0.0"
+config-version: 2
+profile: egypt_tech_jobs
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  egypt_tech_jobs:
+    staging:
+      +materialized: view
+
+on-run-start:
+  - "{{ create_raw_postings() }}"

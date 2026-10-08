@@ -6,3 +6,5 @@ dbt_packages/
 site/
 __pycache__/
 .pytest_cache/
+logs/
+.user.yml
