@@ -35,9 +35,11 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+          cache-dependency-path: requirements*.txt
       - uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: "21"
       - run: pip install -r requirements.txt -r requirements-spark.txt
-      - run: pytest -q tests/test_spark_parity.py
+      - run: python -c "import pyspark"
+      - run: pytest -q -rs tests/test_spark_parity.py
