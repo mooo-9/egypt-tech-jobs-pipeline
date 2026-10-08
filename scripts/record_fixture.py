@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from pipeline.extract.common import http_get_json, http_post_json  # noqa: E402
+from pipeline.extract.common import http_get_json, http_post_json, in_egypt  # noqa: E402
 
 OUT = Path(__file__).resolve().parent.parent / "tests" / "fixtures" / "http"
 
@@ -26,6 +26,10 @@ CONFIGS = {
     ("phenom", "bcg"): {"host": "careers.bcg.com", "ref": "BCG1US"},
     ("phenom", "maf"): {"host": "careers.majidalfuttaim.com", "ref": "MAFMAFGLOBAL"},
     ("amazon", "amazon"): {"country": "EGY"},
+    ("greenhouse", "tamara"): {"board": "tamara"},
+    ("lever", "yassir"): {"site": "Yassir"},
+    ("ashby", "thndr"): {"board": "thndr"},
+    ("workable", "tamatem"): {"account": "tamatem"},
 }
 
 
@@ -78,9 +82,40 @@ def record_amazon(key: str, c: dict) -> None:
         "https://www.amazon.jobs/en/search.json", {"normalized_country_code[]": c["country"], "result_limit": 100}))
 
 
+def trim(jobs: list, where) -> list:
+    """Keep two Egypt postings and one other, so a fixture stays small but shows the filter."""
+    egypt = [j for j in jobs if in_egypt(where(j))]
+    other = [j for j in jobs if not in_egypt(where(j))]
+    return egypt[:2] + other[:1]
+
+
+def record_greenhouse(key: str, c: dict) -> None:
+    page = http_get_json(f"https://boards-api.greenhouse.io/v1/boards/{c['board']}/jobs?content=true")
+    page["jobs"] = trim(page["jobs"], lambda j: j["location"]["name"])
+    save(f"greenhouse_{key}_list.json", page)
+
+
+def record_lever(key: str, c: dict) -> None:
+    jobs = http_get_json(f"https://api.lever.co/v0/postings/{c['site']}?mode=json")
+    save(f"lever_{key}_list.json", trim(jobs, lambda j: " ".join(j["categories"].get("allLocations") or [])))
+
+
+def record_ashby(key: str, c: dict) -> None:
+    page = http_get_json(f"https://api.ashbyhq.com/posting-api/job-board/{c['board']}")
+    page["jobs"] = trim(page["jobs"], lambda j: j["address"]["postalAddress"].get("addressCountry") or "")
+    save(f"ashby_{key}_list.json", page)
+
+
+def record_workable(key: str, c: dict) -> None:
+    page = http_get_json(f"https://apply.workable.com/api/v1/widget/accounts/{c['account']}?details=true")
+    page["jobs"] = trim(page["jobs"], lambda j: f"{j['city']} {j['country']}")
+    save(f"workable_{key}_list.json", page)
+
+
 RECORDERS = {"workday": record_workday, "smartrecruiters": record_smartrecruiters,
              "oracle_cloud": record_oracle_cloud, "eightfold": record_eightfold, "jibe": record_jibe,
-             "phenom": record_phenom, "amazon": record_amazon}
+             "phenom": record_phenom, "amazon": record_amazon, "greenhouse": record_greenhouse,
+             "lever": record_lever, "ashby": record_ashby, "workable": record_workable}
 
 if __name__ == "__main__":
     system, key = sys.argv[1:3]

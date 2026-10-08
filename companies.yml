@@ -1,0 +1,133 @@
+# Companies to collect. One system key per entry; a list value means several sites.
+# First block ported from the voice assistant repo core/career/companies.json (API-backed firms only).
+- key: pwc
+  name: "PwC"
+  industry: consulting
+  workday: [{"host": "pwc.wd3.myworkdayjobs.com", "tenant": "pwc", "site": "Global_Campus_Careers"}, {"host": "pwc.wd3.myworkdayjobs.com", "tenant": "pwc", "site": "global_experienced_careers"}]
+- key: valeo
+  name: "Valeo"
+  industry: automotive
+  workday: [{"host": "valeo.wd3.myworkdayjobs.com", "tenant": "valeo", "site": "valeo_jobs"}]
+- key: dell
+  name: "Dell Technologies"
+  industry: tech
+  oracle_cloud: [{"host": "enterpriseplatform.dell.com", "site": "CX_1001", "job_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/"}]
+- key: oracle
+  name: "Oracle"
+  industry: tech
+  oracle_cloud: [{"host": "eeho.fa.us2.oraclecloud.com", "site": "CX_45001", "job_url": "https://careers.oracle.com/en/sites/jobsearch/job/"}]
+- key: amazon
+  name: "Amazon"
+  industry: tech
+  amazon: [{"country": "EGY"}]
+- key: mastercard
+  name: "Mastercard"
+  industry: payments
+  workday: [{"host": "mastercard.wd1.myworkdayjobs.com", "tenant": "mastercard", "site": "CorporateCareers"}]
+- key: visa
+  name: "Visa"
+  industry: payments
+  workday: [{"host": "visa.wd5.myworkdayjobs.com", "tenant": "visa", "site": "Visa"}]
+- key: ericsson
+  name: "Ericsson"
+  industry: telecom
+  eightfold: [{"host": "jobs.ericsson.com", "domain": "ericsson.com"}]
+- key: unilever
+  name: "Unilever"
+  industry: fmcg
+  workday: [{"host": "unilever.wd3.myworkdayjobs.com", "tenant": "unilever", "site": "Unilever_Experienced_Professionals"}, {"host": "unilever.wd3.myworkdayjobs.com", "tenant": "unilever", "site": "Unilever_Early_Careers"}]
+- key: pepsico
+  name: "PepsiCo"
+  industry: fmcg
+  jibe: [{"host": "www.pepsicojobs.com"}]
+- key: mondelez
+  name: "Mondelez"
+  industry: fmcg
+  workday: [{"host": "mdlz.wd3.myworkdayjobs.com", "tenant": "mdlz", "site": "External"}]
+- key: bcg
+  name: "BCG"
+  industry: consulting
+  phenom: [{"host": "careers.bcg.com", "ref": "BCG1US"}]
+- key: talabat
+  name: "Talabat"
+  industry: delivery
+  smartrecruiters: [{"company": "DeliveryHero"}]
+- key: maf
+  name: "Majid Al Futtaim"
+  industry: retail
+  phenom: [{"host": "careers.majidalfuttaim.com", "ref": "MAFMAFGLOBAL"}]
+- key: pfizer
+  name: "Pfizer"
+  industry: pharma
+  workday: [{"host": "pfizer.wd1.myworkdayjobs.com", "tenant": "pfizer", "site": "PfizerCareers"}]
+- key: novartis
+  name: "Novartis"
+  industry: pharma
+  workday: [{"host": "novartis.wd3.myworkdayjobs.com", "tenant": "novartis", "site": "Novartis_Careers"}]
+- key: sanofi
+  name: "Sanofi"
+  industry: pharma
+  workday: [{"host": "sanofi.wd3.myworkdayjobs.com", "tenant": "sanofi", "site": "SanofiCareers"}]
+- key: gsk
+  name: "GSK"
+  industry: pharma
+  workday: [{"host": "gsk.wd5.myworkdayjobs.com", "tenant": "gsk", "site": "GSKCareers"}]
+
+# Egyptian tech companies, or tech companies hiring in Egypt, on the four job-board systems.
+# Each was verified with scripts/check_company.py: at least one Egypt posting on the date shown.
+- key: thndr  # checked 2026-10-08: 6 Egypt postings
+  name: "Thndr"
+  industry: fintech
+  ashby: {"board": "thndr"}
+- key: tamara  # checked 2026-10-08: 8 Egypt postings
+  name: "Tamara"
+  industry: fintech
+  greenhouse: {"board": "tamara"}
+- key: jumia  # checked 2026-10-08: 1 Egypt posting
+  name: "Jumia"
+  industry: e-commerce
+  greenhouse: {"board": "jumia"}
+- key: foodics  # checked 2026-10-08: 1 Egypt posting
+  name: "Foodics"
+  industry: saas
+  workable: {"account": "foodics"}
+- key: tamatem  # checked 2026-10-08: 3 Egypt postings
+  name: "Tamatem"
+  industry: gaming
+  workable: {"account": "tamatem"}
+- key: robusta  # checked 2026-10-08: 46 Egypt postings
+  name: "Robusta"
+  industry: it-services
+  workable: {"account": "robusta"}
+- key: blabs  # checked 2026-10-08: 9 Egypt postings
+  name: "b_labs"
+  industry: fintech
+  workable: {"account": "blabs"}
+- key: dubizzle  # checked 2026-10-08: 59 Egypt postings
+  name: "Dubizzle Egypt"
+  industry: classifieds
+  workable: {"account": "dubizzlemena"}
+- key: cequens  # checked 2026-10-08: 5 Egypt postings
+  name: "Cequens"
+  industry: telecom
+  workable: {"account": "cequens"}
+- key: advansys  # checked 2026-10-08: 50 Egypt postings
+  name: "Advansys"
+  industry: it-services
+  workable: {"account": "advansys-esc-1"}
+- key: nowlun  # checked 2026-10-08: 19 Egypt postings
+  name: "Nowlun"
+  industry: logistics
+  workable: {"account": "nowlun"}
+- key: petroapp  # checked 2026-10-08: 18 Egypt postings
+  name: "PetroApp"
+  industry: logistics
+  workable: {"account": "petroapp"}
+- key: madar  # checked 2026-10-08: 1 Egypt posting
+  name: "Madar"
+  industry: logistics
+  workable: {"account": "madarplatform"}
+- key: yassir  # checked 2026-10-08: 54 Egypt postings
+  name: "Yassir"
+  industry: delivery
+  lever: {"site": "Yassir"}

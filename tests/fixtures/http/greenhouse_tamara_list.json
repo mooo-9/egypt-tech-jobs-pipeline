@@ -1,0 +1,182 @@
+{
+  "jobs": [
+    {
+      "absolute_url": "https://job-boards.eu.greenhouse.io/tamara/jobs/4901328101",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 4488749101,
+      "location": {
+        "name": "Cairo, Egypt "
+      },
+      "metadata": [
+        {
+          "id": 15763658101,
+          "name": "Website Mapping",
+          "value": "Operations",
+          "value_type": "single_select"
+        }
+      ],
+      "id": 4901328101,
+      "updated_at": "2026-10-06T05:09:42-04:00",
+      "requisition_id": "1879",
+      "title": "Collections Advisor ",
+      "company_name": "Tamara",
+      "first_published": "2026-06-24T03:33:04-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;About Us&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Tamara is a leading fintech platform in Saudi Arabia and the GCC region with a mission to help people own their dreams built on being simple, trusted, and everywhere our customers need us. Today, more than 25 million customers and over 130,000 partner merchants depend on Tamara every day for reliable financial solutions across retail, travel, education, healthcare, and beyond. Tamara is backed by Sanabil Investments, a wholly owned company of the Public Investment Fund (PIF), and SNB Capital, among others.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Your Role&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Tamara is looking for a detail-oriented and proactive &lt;strong&gt;Collections Associate&lt;/strong&gt; to join our Collections Team. In this role, you will act as a vital link for customers navigating the collection process—investigating complaints, validating information, and driving swift resolutions. This position is ideal for a person who can deep dive in customer payments information and&amp;nbsp; thrives in a fast-paced fintech environment and can transform complex escalations into clear, actionable solutions. This role is based in our Egypt office, located in New Cairo.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Your Responsibilities&lt;/strong&gt;&lt;/p&gt;\n&lt;ol&gt;\n&lt;li&gt;&lt;strong&gt; Escalation Management&lt;/strong&gt;&lt;/li&gt;\n&lt;/ol&gt;\n&lt;ul&gt;\n&lt;li&gt;Take full ownership of day-to-day collection escalation tickets.&lt;/li&gt;\n&lt;li&gt;Coordinate with cross-functional teams to ensure timely resolution of customer grievances.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ol&gt;\n&lt;li&gt;&lt;strong&gt; Regulatory Compliance &amp;amp; RCA&lt;/strong&gt;&lt;/li&gt;\n&lt;/ol&gt;\n&lt;ul&gt;\n&lt;li&gt;Conduct in-depth &lt;strong&gt;Root Cause Analysis (RCA)&lt;/strong&gt; for all &lt;strong&gt;regulatory and Legal escalations&lt;/strong&gt;.&lt;/li&gt;\n&lt;li&gt;Draft professional, accurate, and compliant responses on Salesfroce portal and Emails.&lt;/li&gt;\n&lt;li&gt;Identify systemic issues within the collection flow through the collection tickets&amp;nbsp; and suggest process improvements to mitigate future risks.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ol&gt;\n&lt;li&gt;&lt;strong&gt; Quality &amp;amp; Operations Support&lt;/strong&gt;&lt;/li&gt;\n&lt;/ol&gt;\n&lt;ul&gt;\n&lt;li&gt;Perform daily &quot;mundane&quot; but critical ad-hoc tasks, including &lt;strong&gt;call audits&lt;/strong&gt; and transcript reviews.&lt;/li&gt;\n&lt;li&gt;Monitor chat and email interactions to ensure agents are adhering to collection guidelines and local regulations.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;Your Expertise&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;strong&gt;Experience:&lt;/strong&gt; At least &lt;strong&gt;1 year&lt;/strong&gt; of experience in a high-volume Customer Care or Collections role, specifically within &lt;strong&gt;Chat or Email processes&lt;/strong&gt;.&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;Bilingual Proficiency:&lt;/strong&gt; Native or professional fluency in both &lt;strong&gt;Arabic and English&lt;/strong&gt; is mandatory, as you will be handling legal documentation and communicating with diverse stakeholders.&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;Analytical Skills:&lt;/strong&gt; Ability to dissect a problem, find the &quot;why&quot; behind an error (RCA), and document it clearly.&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;Tech-Savvy:&lt;/strong&gt; Familiarity with CRM tools (Zendesk, Salesforce, etc.) and a high level of comfort with Excel/Google Sheets.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;Preferred Skills&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Previous experience in the &lt;strong&gt;Fintech or BNPL&lt;/strong&gt; (Buy Now, Pay Later) sector.&lt;/li&gt;\n&lt;li&gt;Basic understanding of SAMA and CBUAE regulations regarding debt collection.&lt;/li&gt;\n&lt;li&gt;A &quot;customer-first&quot; attitude even when dealing with difficult financial conversations.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;",
+      "departments": [
+        {
+          "id": 4058415101,
+          "name": "Credit",
+          "child_ids": [
+            4058416101,
+            4058417101,
+            4058418101
+          ],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4010529101,
+          "name": "Egypt",
+          "location": "Egypt ",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": null,
+      "include_ai_disclaimer": false,
+      "ai_opt_out_request_url": "http://s101.recruiting.eu.greenhouse.io/ai_opt_out_request/job_post/4901328101/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.eu.greenhouse.io/tamara/jobs/4920917101",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 4498001101,
+      "location": {
+        "name": "Cairo, Egypt"
+      },
+      "metadata": [
+        {
+          "id": 15763658101,
+          "name": "Website Mapping",
+          "value": "Care",
+          "value_type": "single_select"
+        }
+      ],
+      "id": 4920917101,
+      "updated_at": "2026-10-06T05:09:42-04:00",
+      "requisition_id": "1926",
+      "title": "Customer Care Manager - UAE",
+      "company_name": "Tamara",
+      "first_published": "2026-08-19T11:03:39-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About us&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Tamara is a leading fintech platform in Saudi Arabia and the GCC region with a mission to help people own their dreams built on being simple, trusted, and everywhere our customers need us. Today, more than 25 million customers and over 130,000 partner merchants depend on Tamara every day for reliable financial solutions across retail, travel, education, healthcare, and beyond. Tamara is backed by Sanabil Investments, a wholly owned company of the Public Investment Fund (PIF), and SNB Capital, among others.&lt;/p&gt;\n&lt;p&gt;Tamara is Saudi&#39;s first fintech unicorn and is backed by Sanabil Investments, SNB Capital, Checkout.com, amongst others, operating out its headquarters in Riyadh, Saudi Arabia with other regional and global support offices.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;About the role&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;We&#39;re looking for an experienced Customer Care Manager to lead UAE customer care from our Cairo site. This is a role for a strong leader who manages through Team Leaders but knows the operation cold — someone who leads with full context and credibility, never secondhand. You won&#39;t get blocked by operational detail, you won&#39;t lean on your team to understand your own numbers, and you&#39;ll contribute substantively to how the operation runs. You own the effectiveness and performance of the UAE Customer Care Team. You set the standard and hold the team to it.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Your role&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Operational Leadership &amp;amp; Performance Management&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Provide strategic to the Team Leaders, overseeing the daily output and supervision of operational performance to ensure interactions reflect positively on the company&lt;/li&gt;\n&lt;li&gt;Owns department KPIs, including service level agreements, average handling time, customer satisfaction,..etc. and read the raw contact-center and survey data yourself, well enough to know what&#39;s happening without being told.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Manage performance and identify gaps, and drive resolution at the team level&amp;nbsp; coaching, reslotting, queue and workflow adjustments within your operation&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Quality Assurance &amp;amp; Continuous Improvement&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Partner with Quality Assurance and Training Teams to oversee onboarding training, continuous coaching, and upskilling for better service delivery.&lt;/li&gt;\n&lt;li&gt;Act as the ultimate escalation point for complex or sensitive UAE customer grievances, resolving issues with high ownership and speed.&lt;/li&gt;\n&lt;li&gt;Review and analyze customer surveys to gather structured data and research customer opinions of services and the team performance&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;People Development &amp;amp; Culture&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Build a highly motivated team, and high retention culture through transparent performance management, coaching, and regular feedback&lt;/li&gt;\n&lt;li&gt;Conduct structured performance reviews with Team Leaders, nurturing their leadership capabilities.&lt;/li&gt;\n&lt;li&gt;Lead recruitment activities to build a top tier talent pool&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Candidate Profile &amp;amp; Requirements:&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Experience&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Proven experience leading managers and Team Leaders in a high-volume, fast-paced, multi-channel customer care operation — ideally owning a contact-center operation end-to-end.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Deep, hands-on operational fluency: you operate the tools, read the data, and know the workflows yourself — a credible operator who leads, not a delegator who relies on the team for context.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Skills and Qualifications&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Advanced hands-on experience with modern CRM, telephony, and channel tools (e.g., Zendesk, Salesforce). Strong capability utilizing data visualization tools to track metrics.&lt;/li&gt;\n&lt;li&gt;Data-driven, emotionally intelligent leader capable of program-managing critical structural changes while maintaining high team morale across an offshore site.&lt;/li&gt;\n&lt;li&gt;Exceptional ability to interpret raw contact center analytics and survey data into actionable performance improvement plans.&lt;/li&gt;\n&lt;li&gt;A high bar across the board - from your own contributions to the people you work with to the tools you work on&lt;/li&gt;\n&lt;li&gt;Strong attention to detail &amp;amp; project management skills&lt;/li&gt;\n&lt;li&gt;Balance attention to detail with swift execution - we need to do things quickly, and we need to do them well. Juggling those can be challenging, and this should be a strength&lt;/li&gt;\n&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4042652101,
+          "name": "Care",
+          "child_ids": [
+            4045758101,
+            4058322101,
+            4045757101,
+            4081827101
+          ],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4010529101,
+          "name": "Egypt",
+          "location": "Egypt ",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": null,
+      "include_ai_disclaimer": false,
+      "ai_opt_out_request_url": "http://s101.recruiting.eu.greenhouse.io/ai_opt_out_request/job_post/4920917101/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.eu.greenhouse.io/tamara/jobs/4971774101",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 4520488101,
+      "location": {
+        "name": "Riyadh, Saudi Arabia"
+      },
+      "metadata": [
+        {
+          "id": 15763658101,
+          "name": "Website Mapping",
+          "value": "Other",
+          "value_type": "single_select"
+        }
+      ],
+      "id": 4971774101,
+      "updated_at": "2026-10-06T05:09:42-04:00",
+      "requisition_id": "2079",
+      "title": "AML Officer ",
+      "company_name": "Tamara",
+      "first_published": "2026-09-30T08:12:41-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;About Us&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Tamara is a leading fintech platform in Saudi Arabia and the GCC region with a mission to help people own their dreams built on being simple, trusted, and everywhere our customers need us. Today, more than 25 million customers and over 130,000 partner merchants depend on Tamara every day for reliable financial solutions across retail, travel, education, healthcare, and beyond. Tamara is backed by Sanabil Investments, a wholly owned company of the Public Investment Fund (PIF), and SNB Capital, among others.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Your role&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;We&#39;re seeking an AML (Anti Money Laundering) Officer for our team. As AML Officer, you will be crucial in ensuring compliance with regulations by effectively applying them in daily operations.&lt;/p&gt;\n&lt;p&gt;Drawing on your proficiency in utilizing compliance testing to monitor and inspect various company units, ensuring they operate within established legal and organizational frameworks, you will be responsible for reporting compliance findings, escalating non-compliance to create unique experiences only Tamara can provide.&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;With a proven track record of maintaining an organized and efficient compliance program, ensuring timely action and effective communication across all levels, and ultimately revolutionize the way millions of users shop, pay, and bank.&lt;/p&gt;\n&lt;p&gt;You are a driven, determined, curious team player, knowing that collective strength means we all win. With a positive outlook, you are solution-oriented–persevering regardless of circumstances, always finding a way through, no matter the challenges.&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;You will effectively find a way to work with everyone through empathy and respect. You will be driven and comfortable with responding quickly with urgency, with the ability to change course without losing momentum and energy, resulting in great success.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Your responsibilities&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;To be able to read and understand the rules and regulations that govern the business and translate that into practice.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Verify merchants KYC as a second line of defense before granting an approval for onboarding and log all verified merchants for reporting purposes.&lt;/li&gt;\n&lt;li&gt;Ensure that all consumer KYCs are obtained by conducting periodic sampling and reports of any shortcomings.&lt;/li&gt;\n&lt;li&gt;Ensure that all merchants have been assigned the appropriate MCC code and risk level from an AML perspective (Jurisdiction, Products, channels, and Legal form of the company).&lt;/li&gt;\n&lt;li&gt;Ensure that all transactions are monitored and all AML/fraud scenarios are in place and updated periodically.&lt;/li&gt;\n&lt;li&gt;Monitoring and inspecting of Company divisions /units through Compliance testing to ensure compliance with regulations and requirements.&lt;/li&gt;\n&lt;li&gt;Prepare a report of the findings/observations, and escalate in case of breeches.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Set an action plan with the concerned department to resolve the breach and find a solution to prevent future violations.&lt;/li&gt;\n&lt;li&gt;Review of marketing and promotional materials and share feedback with the Director of Compliance.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;strong&gt;Your expertise&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Bachelor Degree in Law or Business Administration or a related field.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;2+ years in a similar field under SAMA.&lt;/li&gt;\n&lt;li&gt;Fintech and payments related to experience is highly preferred.&lt;/li&gt;\n&lt;li&gt;To be able to read and understand the rules and regulations that govern the business and translate that into practice.&lt;/li&gt;\n&lt;li&gt;Excellent communication and presentation skills.&lt;/li&gt;\n&lt;li&gt;Excellent organizational and time management skills.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Customer oriented with strong negotiation skills.&amp;nbsp;&lt;/li&gt;\n&lt;li&gt;Analytical and data driven problem solver.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;",
+      "departments": [
+        {
+          "id": 4031967101,
+          "name": "Risk",
+          "child_ids": [
+            4031968101,
+            4031970101,
+            4031969101
+          ],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4000279101,
+          "name": "Saudi Arabia ",
+          "location": "Riyadh, Saudi Arabia",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": null,
+      "include_ai_disclaimer": false,
+      "ai_opt_out_request_url": "http://s101.recruiting.eu.greenhouse.io/ai_opt_out_request/job_post/4971774101/ai_opt_out"
+    }
+  ],
+  "meta": {
+    "total": 31
+  }
+}
