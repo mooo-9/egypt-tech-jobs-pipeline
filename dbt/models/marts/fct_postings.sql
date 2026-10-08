@@ -4,7 +4,7 @@ select
     l.title,
     l.city,
     l.url,
-    p.posted_date,
+    l.posted_date,
     l.first_seen,
     l.last_seen,
     l.is_open,
@@ -13,4 +13,3 @@ select
     r.seniority
 from {{ ref('int_posting_lifecycle') }} as l
 join {{ ref('int_posting_roles') }} as r on r.posting_key = l.posting_key
-join {{ latest_postings() }} as p on p.posting_key = l.posting_key

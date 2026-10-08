@@ -62,3 +62,17 @@ unit_tests:
       rows:
         - {posting_key: "open", company_key: c, title: New, city: Cairo, url: u, first_seen: "2026-10-01", last_seen: "2026-10-02", is_open: true, days_open: 2}
         - {posting_key: "gone", company_key: c, title: T, city: Cairo, url: u, first_seen: "2026-10-01", last_seen: "2026-10-01", is_open: false, days_open: 1}
+
+  - name: int_posting_lifecycle_posted_date_is_the_earliest
+    model: int_posting_lifecycle
+    description: >
+      "Posted 30+ Days Ago" parses to collected_date - 30, which moves forward every day the posting is seen;
+      the posting keeps the date from its first day.
+    given:
+      - input: ref('stg_postings')
+        rows:
+          - {posting_key: "p", company_key: c, title: T, city: Cairo, url: u, posted_date: "2026-09-01", collected_date: "2026-10-01"}
+          - {posting_key: "p", company_key: c, title: T, city: Cairo, url: u, posted_date: "2026-09-02", collected_date: "2026-10-02"}
+    expect:
+      rows:
+        - {posting_key: "p", posted_date: "2026-09-01", first_seen: "2026-10-01"}

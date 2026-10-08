@@ -1,10 +1,13 @@
 -- is_open: the posting was still there on the latest day anything was collected.
+-- posted_date: the earliest parsed date across the posting's rows. Relative strings ("Posted 30+ Days Ago")
+-- count back from each day's collection date, so a later row would move the date forward.
 with seen as (
 
     select
         posting_key,
         min(collected_date) as first_seen,
-        max(collected_date) as last_seen
+        max(collected_date) as last_seen,
+        min(posted_date) as posted_date
     from {{ ref('stg_postings') }}
     group by posting_key
 
@@ -16,6 +19,7 @@ select
     p.title,
     p.city,
     p.url,
+    seen.posted_date,
     seen.first_seen,
     seen.last_seen,
     seen.last_seen = (select max(collected_date) from {{ ref('stg_postings') }}) as is_open,
