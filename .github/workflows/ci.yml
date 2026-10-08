@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: pytest -q
+      - name: dbt build against the fixtures
+        working-directory: dbt
+        env:
+          RAW_GLOB: ../tests/fixtures/raw/*/postings.parquet
+          DBT_DUCKDB_PATH: ${{ runner.temp }}/ci.duckdb
+        run: dbt build --profiles-dir . --target duckdb

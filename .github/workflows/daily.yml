@@ -1,0 +1,67 @@
+name: Daily pipeline
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      # A run where every company returns zero rows exits 1 and stops the job here.
+      - name: Collect today's postings
+        run: python -m pipeline.run
+
+      - name: Commit the raw data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw
+          if git diff --cached --quiet; then
+            echo "No data changes to commit"
+          else
+            git commit -m "data: $(date -u +%F)"
+            git push
+          fi
+
+      - name: Source freshness
+        working-directory: dbt
+        run: dbt source freshness --profiles-dir . --target duckdb
+
+      - name: Build the models (seeds, models, tests)
+        working-directory: dbt
+        run: dbt build --profiles-dir . --target duckdb
+
+      - name: Build the dashboard
+        run: python -m dashboard.build --db dbt/warehouse.duckdb --raw data/raw --out site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: run
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
