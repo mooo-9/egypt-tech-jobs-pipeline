@@ -19,20 +19,20 @@ ROOT = Path(__file__).resolve().parent.parent
 SCHEMA = pa.schema([(f.name, pa.string()) for f in fields(Posting)])  # description is nullable by default
 
 
-def _known_descriptions(raw_dir: Path, day: str) -> dict[tuple[str, str], str]:
-    """Descriptions already collected on earlier days; the latest day wins."""
-    known = {}
+def _known_descriptions(raw_dir: Path, day: str) -> set[tuple[str, str]]:
+    """Postings whose description was stored on an earlier day."""
+    known = set()
     for path in sorted(raw_dir.glob("date=*/postings.parquet")):
         if path.parent.name.removeprefix("date=") >= day:
             continue
         table = pq.read_table(path, columns=["source_system", "posting_id", "description"])
         for row in table.to_pylist():
             if row["description"] is not None:
-                known[(row["source_system"], row["posting_id"])] = row["description"]
+                known.add((row["source_system"], row["posting_id"]))
     return known
 
 
-def _collect(company: dict, day: str, known: dict, seen: set) -> tuple[list[Posting], int]:
+def _collect(company: dict, day: str, known: set, seen: set) -> tuple[list[Posting], int]:
     """One company's new rows plus the count of failed description fetches."""
     system = next(k for k in company if k in EXTRACTORS)
     rows, describe_errors = [], 0
@@ -41,8 +41,9 @@ def _collect(company: dict, day: str, known: dict, seen: set) -> tuple[list[Post
         if key in seen:
             continue
         seen.add(key)
-        if p.description is None and key in known:
-            p = replace(p, description=known[key])
+        if key in known:
+            # a description is stored once, on the first day it is known; dbt reads it from that row
+            p = replace(p, description=None)
         elif p.description is None and system in DESCRIBERS:
             try:
                 p = replace(p, description=DESCRIBERS[system](company, p))

@@ -74,7 +74,7 @@ def test_duplicate_postings_written_once(tmp_path, companies, fake):
     assert summary["rows"] == 1
 
 
-def test_description_carried_forward_not_refetched(tmp_path, companies, fake, monkeypatch):
+def test_description_stored_once_not_refetched(tmp_path, companies, fake, monkeypatch):
     raw = tmp_path / "raw"
     fake(lambda c, day: [posting("X", day=day, description="old text")])
     run_mod.run("2026-01-01", companies("a"), raw)
@@ -84,12 +84,27 @@ def test_description_carried_forward_not_refetched(tmp_path, companies, fake, mo
         calls.append(p.posting_id)
         return "new text"
     monkeypatch.setitem(DESCRIBERS, "fake", describe)
-    fake(lambda c, day: [posting("X", day=day), posting("Y", day=day)])
+    # X comes back with its text again (as list APIs send it every day); Y is new and has none
+    fake(lambda c, day: [posting("X", day=day, description="old text"), posting("Y", day=day)])
     run_mod.run("2026-01-02", companies("a"), raw)
 
     got = {r["posting_id"]: r["description"] for r in read(raw, "2026-01-02").to_pylist()}
-    assert got == {"X": "old text", "Y": "new text"}
+    assert got == {"X": None, "Y": "new text"}  # X's text lives only in its first day's row
     assert calls == ["Y"]
+    assert read(raw, "2026-01-01").to_pylist()[0]["description"] == "old text"
+
+
+def test_known_description_not_refetched_on_later_days(tmp_path, companies, fake, monkeypatch):
+    raw = tmp_path / "raw"
+    fake(lambda c, day: [posting("X", day=day, description="text")])
+    run_mod.run("2026-01-01", companies("a"), raw)
+    calls = []
+    monkeypatch.setitem(DESCRIBERS, "fake", lambda company, p: calls.append(p.posting_id) or "again")
+    fake(lambda c, day: [posting("X", day=day)])
+    run_mod.run("2026-01-02", companies("a"), raw)
+    run_mod.run("2026-01-03", companies("a"), raw)  # day 2 holds null; day 1 still counts as known
+    assert calls == []
+    assert read(raw, "2026-01-03").to_pylist()[0]["description"] is None
 
 
 def test_describer_failure_keeps_company_and_is_counted(tmp_path, companies, fake, monkeypatch):
