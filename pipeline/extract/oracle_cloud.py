@@ -1,5 +1,5 @@
 """Oracle Recruiting Cloud public search, as a company careers page asks it for Egypt."""
-from pipeline.extract.common import EXTRACTORS, Posting, configs, http_get_json, in_egypt
+from pipeline.extract.common import EXTRACTORS, TRUNCATED, Posting, configs, http_get_json, in_egypt
 
 
 def fetch(company: dict, collected_at: str) -> list[Posting]:
@@ -9,8 +9,11 @@ def fetch(company: dict, collected_at: str) -> list[Posting]:
                "?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values"
                f"&finder=findReqs;siteNumber={site['site']},facetsList=LOCATIONS%3BFLEX_FIELDS,"
                "limit=100,location=Egypt,sortBy=POSTING_DATES_DESC")
-        # ponytail: one page of 100, no paging; add an offset loop if a company lists more in Egypt
-        for r in http_get_json(url)["items"][0]["requisitionList"]:
+        # ponytail: one page of 100, no paging; add an offset loop if a company lists more in Egypt (the run summary flags it)
+        found = http_get_json(url)["items"][0]
+        if (found.get("TotalJobsCount") or 0) > len(found["requisitionList"]):
+            TRUNCATED.add(company["key"])
+        for r in found["requisitionList"]:
             where = r.get("PrimaryLocation", "")
             if not in_egypt(where, r["Title"]):
                 continue

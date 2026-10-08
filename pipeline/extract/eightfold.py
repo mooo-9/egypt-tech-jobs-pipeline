@@ -21,7 +21,7 @@ def fetch(company: dict, collected_at: str) -> list[Posting]:
     for site in configs(company, "eightfold"):
         for p in _collect(site):
             # a posting open in several countries keeps only its Egypt locations
-            where = "; ".join(l for l in p.get("locations", []) if in_egypt(l))
+            where = "; ".join(l for l in (p.get("locations") or []) if in_egypt(l))
             if not in_egypt(where, p["name"]):
                 continue
             ts = p.get("postedTs")

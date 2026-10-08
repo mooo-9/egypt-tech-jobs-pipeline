@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 import responses
 
-from pipeline.extract import amazon, eightfold, jibe, oracle_cloud, phenom
-from pipeline.extract.common import DESCRIBERS, EXTRACTORS, in_egypt
+from pipeline.extract import amazon, eightfold, jibe, oracle_cloud, phenom, smartrecruiters, workday
+from pipeline.extract.common import DESCRIBERS, EXTRACTORS, TRUNCATED, in_egypt
 
 FIXTURES = Path(__file__).parent / "fixtures" / "http"
 TODAY = "2026-10-07"
@@ -114,3 +114,88 @@ def test_jibe_stops_at_max_pages():
     responses.add(responses.GET, re.compile(r"https://www\.pepsicojobs\.com/api/jobs.*"), json=page)
     jibe.fetch(SYSTEMS["jibe"][1], TODAY)
     assert len(responses.calls) == jibe.MAX_PAGES == 20
+
+
+@responses.activate
+def test_amazon_pages_with_offset_until_hits():
+    _, company, fixture_name, method, url, *_ = SYSTEMS["amazon"]
+    first, second = fixture(fixture_name), fixture(fixture_name)
+    first["hits"] = second["hits"] = 6  # 4 jobs on page one, the last 2 on page two
+    for i, j in enumerate(second["jobs"][:2]):
+        j["id_icims"] = f"page2-{i}"
+    second["jobs"] = second["jobs"][:2]
+    responses.add(method, re.compile(url), json=first)
+    responses.add(method, re.compile(url), json=second)
+    ids = [p.posting_id for p in amazon.fetch(company, TODAY)]
+    assert "page2-0" in ids and "page2-1" in ids
+    offsets = [re.search(r"offset=(\d+)", c.request.url).group(1) for c in responses.calls]
+    assert offsets == ["0", "4"]
+    assert "amazon" not in TRUNCATED
+
+
+# system -> (module, company, fixture, method, url, how the fixture reports more results than any cap reads)
+CAPPED = {
+    **{s: SYSTEMS[s][:5] for s in ("oracle_cloud", "jibe", "phenom", "amazon")},
+    "workday": (workday, {"key": "mastercard", "workday": {"host": "mastercard.wd1.myworkdayjobs.com",
+                                                           "tenant": "mastercard", "site": "CorporateCareers"}},
+                "workday_mastercard_list.json", responses.POST, r"https://mastercard\.wd1\.myworkdayjobs\.com/.*"),
+    "smartrecruiters": (smartrecruiters, {"key": "talabat", "smartrecruiters": {"company": "DeliveryHero"}},
+                        "smartrecruiters_talabat_list.json", responses.GET, r"https://api\.smartrecruiters\.com/.*"),
+}
+INFLATE = {
+    "oracle_cloud": lambda d: d["items"][0].update(TotalJobsCount=10_000),
+    "jibe": lambda d: d.update(totalCount=10_000),
+    "phenom": lambda d: d["refineSearch"].update(totalHits=10_000),
+    "amazon": lambda d: d.update(hits=10_000),
+    "workday": lambda d: d.update(total=10_000),
+    "smartrecruiters": lambda d: d.update(totalFound=10_000),
+}
+
+
+@pytest.mark.parametrize("system", CAPPED)
+@pytest.mark.parametrize("more", [False, True])
+@responses.activate
+def test_capped_extractor_reports_truncation(system, more):
+    module, company, fixture_name, method, url = CAPPED[system]
+    page = fixture(fixture_name)
+    if more:
+        INFLATE[system](page)
+    responses.add(method, re.compile(url), json=page)
+    assert module.fetch(company, TODAY)
+    assert (company["key"] in TRUNCATED) == more
+
+
+def _jobs(system, page):
+    """The list of job dicts inside one fixture page."""
+    return {"smartrecruiters": lambda: page["content"], "jibe": lambda: [j["data"] for j in page["jobs"]],
+            "phenom": lambda: page["refineSearch"]["data"]["jobs"], "amazon": lambda: page["jobs"],
+            "workday": lambda: page["jobPostings"], "eightfold": lambda: page["data"]["positions"]}[system]()
+
+
+ALL = {**CAPPED, "eightfold": SYSTEMS["eightfold"][:5]}
+POSTED = {"smartrecruiters": "releasedDate", "jibe": "posted_date", "phenom": "postedDate",
+          "amazon": "posted_date", "workday": "postedOn"}
+LOCATION = {"smartrecruiters": "location", "amazon": "location", "workday": "locationsText", "eightfold": "locations"}
+
+
+@pytest.mark.parametrize("system", POSTED)
+@responses.activate
+def test_null_posted_date_keeps_the_posting(system):
+    module, company, fixture_name, method, url = ALL[system]
+    page = fixture(fixture_name)
+    for j in _jobs(system, page):
+        j[POSTED[system]] = None  # JSON null, not a missing key
+    responses.add(method, re.compile(url), json=page)
+    postings = module.fetch(company, TODAY)
+    assert postings and all(p.posted_raw == "" for p in postings)
+
+
+@pytest.mark.parametrize("system", LOCATION)
+@responses.activate
+def test_null_location_does_not_raise(system):
+    module, company, fixture_name, method, url = ALL[system]
+    page = fixture(fixture_name)
+    for j in _jobs(system, page):
+        j[LOCATION[system]] = None
+    responses.add(method, re.compile(url), json=page)
+    module.fetch(company, TODAY)

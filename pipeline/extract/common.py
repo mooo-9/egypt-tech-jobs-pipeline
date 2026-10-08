@@ -35,6 +35,8 @@ class Posting:
 # Filled by the extractor modules as they are imported (see load_all).
 EXTRACTORS: dict[str, Callable[[dict, str], list[Posting]]] = {}
 DESCRIBERS: dict[str, Callable[[dict, Posting], str | None]] = {}
+# Keys of companies whose API reported more postings than a capped extractor read; run.py reports them.
+TRUNCATED: set[str] = set()
 
 
 def in_egypt(location: str, title: str = "") -> bool:

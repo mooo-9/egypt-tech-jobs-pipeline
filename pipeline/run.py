@@ -13,7 +13,7 @@ import pyarrow.parquet as pq
 import yaml
 
 from pipeline.extract import load_all
-from pipeline.extract.common import DESCRIBERS, EXTRACTORS, Posting
+from pipeline.extract.common import DESCRIBERS, EXTRACTORS, TRUNCATED, Posting
 
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMA = pa.schema([(f.name, pa.string()) for f in fields(Posting)])  # description is nullable by default
@@ -65,18 +65,21 @@ def run(day: str, companies_path: Path, raw_dir: Path) -> dict:
     t0 = time.monotonic()
     known = _known_descriptions(Path(raw_dir), day)
     seen: set = set()
-    postings: list[Posting] = []
+    tables: list[pa.Table] = []
     results = []
     for company in companies:
         t = time.monotonic()
         entry = {"key": company["key"], "status": "ok", "rows": 0, "error": None, "describe_errors": 0}
+        TRUNCATED.discard(company["key"])
         try:
             rows, entry["describe_errors"] = _collect(company, day, known, seen)
+            # converted here, so a value of the wrong type fails only this company
+            tables.append(pa.Table.from_pylist([dict(zip(SCHEMA.names, astuple(p))) for p in rows], schema=SCHEMA))
             entry["rows"] = len(rows)
             entry["status"] = "ok" if rows else "empty"
-            postings += rows
         except Exception as e:
             entry["status"], entry["error"] = "error", f"{type(e).__name__}: {e}"
+        entry["truncated"] = company["key"] in TRUNCATED  # the API listed more than the extractor's cap read
         entry["duration_s"] = round(time.monotonic() - t, 2)
         results.append(entry)
 
@@ -84,12 +87,12 @@ def run(day: str, companies_path: Path, raw_dir: Path) -> dict:
         "date": day,
         "started_at": started.isoformat(),
         "duration_s": round(time.monotonic() - t0, 2),
-        "rows": len(postings),
+        "rows": sum(t.num_rows for t in tables),
         "companies": results,
     }
     out = Path(raw_dir) / f"date={day}"
     out.mkdir(parents=True, exist_ok=True)
-    table = pa.Table.from_pylist([dict(zip(SCHEMA.names, astuple(p))) for p in postings], schema=SCHEMA)
+    table = pa.concat_tables(tables) if tables else SCHEMA.empty_table()
     _write_atomic(out / "postings.parquet", lambda p: pq.write_table(table, p, compression="zstd"))
     _write_atomic(out / "run_summary.json", lambda p: p.write_text(json.dumps(summary, indent=2), encoding="utf-8"))
     return summary

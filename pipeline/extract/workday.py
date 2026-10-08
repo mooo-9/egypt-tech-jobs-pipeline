@@ -3,7 +3,7 @@ import re
 from urllib.parse import urlparse
 
 from pipeline.extract.common import (
-    DESCRIBERS, EXTRACTORS, Posting, clean_text, http_get_json, http_post_json, in_egypt,
+    DESCRIBERS, EXTRACTORS, TRUNCATED, Posting, clean_text, http_get_json, http_post_json, in_egypt,
 )
 
 PAGE = 20  # Workday answers 20 postings at a time
@@ -17,7 +17,7 @@ def _sites(company: dict) -> list[dict]:
     return [config] if isinstance(config, dict) else config
 
 
-def _collect(site: dict) -> list[dict]:
+def _collect(company: dict, site: dict) -> list[dict]:
     """Every listed posting for one site. Workday gives the total only on the first page."""
     url = f"https://{site['host']}/wday/cxs/{site['tenant']}/{site['site']}/jobs"
     found, total = [], None
@@ -29,20 +29,22 @@ def _collect(site: dict) -> list[dict]:
         total = page.get("total", 0) if total is None else total
         if not batch or len(found) >= total:
             break
+    if total and total > len(found):
+        TRUNCATED.add(company["key"])
     return found
 
 
 def fetch(company: dict, collected_at: str) -> list[Posting]:
     postings = []
     for site in _sites(company):
-        for p in _collect(site):
-            where, title, path = p.get("locationsText", ""), p.get("title", ""), p.get("externalPath", "")
+        for p in _collect(company, site):
+            where, title, path = p.get("locationsText") or "", p.get("title") or "", p.get("externalPath") or ""
             if not (in_egypt(where, title) or _MANY_LOCATIONS.fullmatch(where)):
                 continue
             postings.append(Posting(
                 source_system="workday", company_key=company["key"],
                 posting_id=f"{site['tenant']}:{path.rsplit('_', 1)[-1]}",  # requisition ids repeat across tenants
-                title=title, location=where, posted_raw=p.get("postedOn", ""),
+                title=title, location=where, posted_raw=p.get("postedOn") or "",
                 url=f"https://{site['host']}/en-US/{site['site']}{path}",
                 description=None, collected_at=collected_at))
     return postings

@@ -6,7 +6,7 @@ import pytest
 import yaml
 
 from pipeline import run as run_mod
-from pipeline.extract.common import DESCRIBERS, EXTRACTORS, Posting
+from pipeline.extract.common import DESCRIBERS, EXTRACTORS, TRUNCATED, Posting
 
 
 def posting(pid, company="a", description=None, day="2026-01-02", system="fake"):
@@ -114,3 +114,27 @@ def test_rerun_same_day_overwrites_only_that_day(tmp_path, companies, fake):
     run_mod.run("2026-01-02", companies("a"), raw)
     assert [r["posting_id"] for r in read(raw, "2026-01-02").to_pylist()] == ["3"]
     assert (raw / "date=2026-01-01" / "postings.parquet").read_bytes() == before
+
+
+def test_summary_flags_truncated_companies(tmp_path, companies, fake):
+    def rows(c, day):
+        if c["key"] == "big":
+            TRUNCATED.add(c["key"])  # what a capped extractor does when the API reports more
+        return [posting(c["key"], c["key"], day=day)]
+    fake(rows)
+    summary = run_mod.run("2026-01-02", companies("big", "small"), tmp_path / "raw")
+    assert {c["key"]: c["truncated"] for c in summary["companies"]} == {"big": True, "small": False}
+
+
+def test_bad_value_from_one_company_is_its_error_not_the_run_s(tmp_path, companies, fake):
+    def rows(c, day):
+        if c["key"] == "bad":
+            return [Posting("fake", "bad", 12345, "t", "Cairo", "today", "u", None, day)]  # int id: not a string
+        return [posting(c["key"], c["key"], day=day)]
+    fake(rows)
+    summary = run_mod.run("2026-01-02", companies("a", "bad", "c"), tmp_path / "raw")
+    by_key = {c["key"]: c for c in summary["companies"]}
+    assert by_key["bad"]["status"] == "error" and "ArrowTypeError" in by_key["bad"]["error"]
+    assert by_key["a"]["status"] == by_key["c"]["status"] == "ok"
+    assert summary["rows"] == 2
+    assert sorted(r["posting_id"] for r in read(tmp_path / "raw", "2026-01-02").to_pylist()) == ["a", "c"]
