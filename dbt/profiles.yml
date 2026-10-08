@@ -3,7 +3,7 @@ egypt_tech_jobs:
   outputs:
     duckdb:
       type: duckdb
-      path: warehouse.duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', 'warehouse.duckdb') }}"
       threads: 1
     postgres:
       type: postgres

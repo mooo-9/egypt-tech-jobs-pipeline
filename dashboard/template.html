@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Egypt Tech Jobs Pipeline</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f172a; --card: #1e293b; --line: #334155; --text: #e2e8f0; --muted: #94a3b8;
+    --accent: #14b8a6; --warn: #f59e0b; --bad: #f87171;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  h1 span { color: var(--accent); }
+  h2 { font-size: 1.05rem; margin: 0 0 2px; }
+  .sub { color: var(--muted); font-size: .85rem; margin: 0 0 12px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 16px; }
+  .grid > * { min-width: 0; }
+  @media (min-width: 800px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .tiles { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; min-width: 0; }
+  .tile b { display: block; font-size: 1.5rem; color: var(--accent); line-height: 1.2; }
+  .tile small { color: var(--muted); font-size: .78rem; }
+  .tile.stale b { color: var(--warn); }
+  .chart { position: relative; width: 100%; }
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .filters button { background: transparent; color: var(--muted); border: 1px solid var(--line);
+                    border-radius: 999px; padding: 6px 14px; font: inherit; font-size: .85rem; cursor: pointer; }
+  .filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #042f2e; font-weight: 600; }
+  .filters button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0; }
+  dt { color: var(--muted); }
+  dd { margin: 0; overflow-wrap: anywhere; }
+  .ok { color: var(--accent); } .bad { color: var(--bad); } .warn { color: var(--warn); }
+  footer { color: var(--muted); font-size: .82rem; margin-top: 24px; }
+  @media (max-width: 420px) { h1 { font-size: 1.35rem; } .tile b { font-size: 1.2rem; } main { padding-top: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Egypt Tech <span>Jobs</span></h1>
+  <p class="sub">What employers in Egypt are asking for, rebuilt every day from their public career pages.</p>
+
+  <div class="tiles">
+    <div class="tile"><b id="t-open"></b><small>postings open now</small></div>
+    <div class="tile"><b id="t-co"></b><small>employers hiring</small></div>
+    <div class="tile" id="t-run-tile"><b id="t-run"></b><small>last run</small></div>
+  </div>
+
+  <section class="card" style="margin-top:16px">
+    <h2>Most-wanted skills this week</h2>
+    <p class="sub" id="skills-sub"></p>
+    <div class="filters" id="filters" role="group" aria-label="Role filter"></div>
+    <div class="chart" id="skills-wrap"><canvas id="skills" role="img" aria-label="Top skills this week"></canvas></div>
+  </section>
+
+  <section class="card" style="margin-top:16px">
+    <h2>Weekly demand for the top 10 skills</h2>
+    <p class="sub" id="trend-sub"></p>
+    <div class="chart" style="height:300px"><canvas id="trend" role="img" aria-label="Weekly demand trend"></canvas></div>
+  </section>
+
+  <div class="grid two">
+    <section class="card">
+      <h2>Open now by role family</h2>
+      <p class="sub">Postings seen on the latest collection day.</p>
+      <div class="chart" id="roles-wrap"><canvas id="roles" role="img" aria-label="Open postings by role family"></canvas></div>
+    </section>
+    <section class="card">
+      <h2>Open now by seniority</h2>
+      <p class="sub">Postings seen on the latest collection day.</p>
+      <div class="chart" id="seniority-wrap"><canvas id="seniority" role="img" aria-label="Open postings by seniority"></canvas></div>
+    </section>
+  </div>
+
+  <div class="grid two">
+    <section class="card">
+      <h2>Top hiring companies</h2>
+      <p class="sub">Most open postings now.</p>
+      <div class="chart" id="companies-wrap"><canvas id="companies" role="img" aria-label="Top hiring companies"></canvas></div>
+    </section>
+    <section class="card">
+      <h2>Pipeline health</h2>
+      <p class="sub">A stale run time means the daily refresh is failing.</p>
+      <dl id="health"></dl>
+    </section>
+  </div>
+
+  <footer id="note"></footer>
+</main>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const $ = id => document.getElementById(id);
+const label = s => ({ai_ml: 'AI / ML', data_engineering: 'Data engineering', data_analysis: 'Data analysis',
+  software: 'Software', other: 'Other'}[s] || s.charAt(0).toUpperCase() + s.slice(1));
+const TEAL = '#14b8a6', MUTED = '#94a3b8', GRID = '#334155';
+const PALETTE = ['#14b8a6', '#f59e0b', '#60a5fa', '#f472b6', '#a78bfa', '#4ade80', '#fb923c', '#22d3ee', '#f87171', '#e2e8f0'];
+
+if (window.Chart) {
+  Chart.defaults.color = MUTED;
+  Chart.defaults.borderColor = GRID;
+  Chart.defaults.font.family = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+}
+
+// draws each bar's value just past its end, so phones (no hover) still see numbers
+const valueLabels = {id: 'valueLabels', afterDatasetsDraw(chart) {
+  const {ctx} = chart; ctx.save(); ctx.fillStyle = '#e2e8f0'; ctx.font = '12px system-ui'; ctx.textBaseline = 'middle';
+  chart.getDatasetMeta(0).data.forEach((bar, i) => ctx.fillText(chart.data.datasets[0].texts[i], bar.x + 6, bar.y));
+  ctx.restore();
+}};
+
+function hbar(canvasId, labels, values, texts, tooltip) {
+  const wrap = $(canvasId).parentElement;
+  wrap.style.height = Math.max(120, labels.length * 28 + 24) + 'px';
+  return new Chart($(canvasId), {
+    type: 'bar', plugins: [valueLabels],
+    data: {labels, datasets: [{data: values, texts, backgroundColor: TEAL, borderRadius: 4, barPercentage: .8}]},
+    options: {indexAxis: 'y', responsive: true, maintainAspectRatio: false, layout: {padding: {right: 64}},
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: c => tooltip(c.dataIndex)}}},
+      scales: {x: {display: false, beginAtZero: true}, y: {grid: {display: false}, ticks: {autoSkip: false}}}}
+  });
+}
+
+// --- tiles
+$('t-open').textContent = D.coverage.postings_open;
+$('t-co').textContent = D.coverage.companies;
+const last = D.health.last_run ? new Date(D.health.last_run) : null;
+const hours = last ? (Date.now() - last) / 36e5 : Infinity;
+const ago = h => h < 1 ? 'under an hour ago' : h < 48 ? Math.round(h) + ' h ago' : Math.round(h / 24) + ' days ago';
+$('t-run').textContent = last ? ago(hours) : 'never';
+if (hours > 36) $('t-run-tile').classList.add('stale');
+
+// --- skills with role filter
+const FILTERS = [['tech', 'Tech'], ['data', 'Data'], ['ai_ml', 'AI / ML'], ['all', 'All roles']];
+let skillsChart;
+function showSkills(scope) {
+  const rows = D.skills_this_week[scope];
+  document.querySelectorAll('#filters button').forEach(b => b.setAttribute('aria-pressed', b.dataset.scope === scope));
+  $('skills-sub').textContent = 'Week of ' + D.skills_week_start +
+    '. Share of postings that mention the skill; a posting counts if it was collected at any point this week.';
+  if (skillsChart) skillsChart.destroy();
+  skillsChart = hbar('skills', rows.map(r => r.skill), rows.map(r => r.open_postings),
+    rows.map(r => r.open_postings + '  (' + Math.round(r.share * 100) + '%)'),
+    i => rows[i].open_postings + ' postings, ' + Math.round(rows[i].share * 100) + '% (' + rows[i].category + ')');
+}
+FILTERS.forEach(([scope, text]) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.textContent = text; b.dataset.scope = scope;
+  b.addEventListener('click', () => showSkills(scope));
+  $('filters').appendChild(b);
+});
+showSkills('tech');
+
+// --- trend (follows the Tech filter)
+const T = D.skill_trend;
+$('trend-sub').textContent = 'Tech roles, postings per week mentioning each skill. ' +
+  (T.weeks.length < 2 ? 'Only one week collected so far; the lines fill in as weeks accumulate.' : '');
+new Chart($('trend'), {
+  type: 'line',
+  data: {labels: T.weeks, datasets: Object.entries(T.series).map(([skill, counts], i) => ({
+    label: skill, data: counts, borderColor: PALETTE[i % 10], backgroundColor: PALETTE[i % 10],
+    pointRadius: 4, tension: .25}))},
+  options: {responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {position: 'bottom', labels: {boxWidth: 12, boxHeight: 12}}},
+    scales: {y: {beginAtZero: true, title: {display: true, text: 'postings'}}}}
+});
+
+// --- roles, seniority, companies
+const simple = (id, rows, key) => hbar(id, rows.map(r => key === 'name' ? r.name : label(r[key])),
+  rows.map(r => r.open_postings), rows.map(r => String(r.open_postings)), i => rows[i].open_postings + ' open');
+simple('roles', D.roles, 'role_family');
+simple('seniority', D.seniority, 'seniority');
+simple('companies', D.top_companies, 'name');
+
+// --- health
+const H = D.health, row = (k, v, cls) => `<dt>${k}</dt><dd class="${cls || ''}">${v}</dd>`;
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;'}[c]));
+$('health').innerHTML =
+  row('Last run', last ? last.toUTCString().replace('GMT', 'UTC') + ' (' + ago(hours) + ')' : 'never', hours > 36 ? 'warn' : 'ok') +
+  row('Postings collected', H.rows) +
+  row('Sources ok', H.sources_ok, 'ok') +
+  row('Sources empty', H.sources_empty.length ? esc(H.sources_empty.join(', ')) : 'none') +
+  row('Sources failed', H.sources_failed.length ? esc(H.sources_failed.join(', ')) : 'none', H.sources_failed.length ? 'bad' : 'ok') +
+  row('Page built', new Date(D.generated_at).toUTCString().replace('GMT', 'UTC'));
+
+$('note').textContent = 'Source: public career APIs of ' + D.coverage.companies +
+  ' employers hiring in Egypt, collected daily. This is not the whole market: employers without a public ' +
+  'careers API, and postings on job boards, are not counted.';
+</script>
+</body>
+</html>
