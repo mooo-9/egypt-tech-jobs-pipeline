@@ -1,5 +1,5 @@
 # Companies to collect. One system key per entry; a list value means several sites.
-# First block ported from the voice assistant repo core/career/companies.json (API-backed firms only).
+# First block: large employers with API-backed careers sites.
 - key: pwc
   name: "PwC"
   industry: consulting
