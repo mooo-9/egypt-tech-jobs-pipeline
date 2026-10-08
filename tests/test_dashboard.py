@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 import pytest
+import yaml
 
 from dashboard.build import build
 
@@ -69,3 +70,26 @@ def test_health_lists_failed_sources(warehouse, tmp_path):
     data, _ = _build(warehouse, tmp_path, OK + [{"key": "broken", "status": "error", "rows": 0, "error": "boom"}])
     assert data["health"]["sources_failed"] == ["broken"]
     assert data["health"]["sources_ok"] == 1
+
+
+def _script(out):
+    html = (out / "index.html").read_text(encoding="utf-8")
+    return html[html.index("const D = JSON.parse"):]
+
+
+def test_health_and_note_render_even_without_chart_js(warehouse, tmp_path):
+    """If the Chart.js CDN fails, the first new Chart would throw; health and the source note must already be filled."""
+    _, out = _build(warehouse, tmp_path, OK)
+    script = _script(out)
+    guard = script.index("if (window.Chart) {")
+    assert script.index("$('health').innerHTML") < guard
+    assert script.index("$('note').textContent") < guard
+    assert script.count("new Chart") == script[guard:].count("new Chart") > 0  # every chart is behind the guard
+
+
+def test_footer_counts_open_of_tracked_employers(warehouse, tmp_path):
+    data, out = _build(warehouse, tmp_path, OK)
+    tracked = len(yaml.safe_load((ROOT / "companies.yml").read_text(encoding="utf-8")))
+    assert data["coverage"]["companies_tracked"] == tracked  # from the companies seed in the warehouse
+    assert 0 < data["coverage"]["companies"] <= tracked
+    assert "D.coverage.companies + ' of ' + D.coverage.companies_tracked + ' employers" in _script(out)

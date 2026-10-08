@@ -55,11 +55,12 @@ def build(db: Path, raw: Path, out: Path) -> dict:
             group by c.name order by open_postings desc, c.name limit 10""")
         postings_open, companies = con.execute(
             "select count(*), count(distinct company_key) from fct_postings where is_open").fetchone()
+        tracked = con.execute("select count(*) from dim_company").fetchone()[0]
     finally:
         con.close()
 
     data = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "coverage": {"companies": companies, "postings_open": postings_open},
+            "coverage": {"companies": companies, "companies_tracked": tracked, "postings_open": postings_open},
             "skills_week_start": str(week), "skills_this_week": skills,
             "skill_trend": {"weeks": weeks, "series": series},
             "roles": roles, "seniority": seniority,
