@@ -79,3 +79,9 @@ def http_get_json(url: str, params: dict | None = None) -> dict:
 
 def http_post_json(url: str, body: dict) -> dict:
     return _request_json("POST", url, json=body)
+
+
+def configs(company: dict, system: str) -> list[dict]:
+    """A company's config for one system: one dict, or a list when it has several sites."""
+    config = company[system]
+    return [config] if isinstance(config, dict) else config

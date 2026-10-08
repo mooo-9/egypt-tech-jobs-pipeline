@@ -17,6 +17,15 @@ CONFIGS = {
     ("workday", "pfizer"): {"host": "pfizer.wd1.myworkdayjobs.com", "tenant": "pfizer", "site": "PfizerCareers"},
     ("workday", "pwc"): {"host": "pwc.wd3.myworkdayjobs.com", "tenant": "pwc", "site": "global_experienced_careers"},
     ("smartrecruiters", "talabat"): {"company": "DeliveryHero"},
+    ("oracle_cloud", "dell"): {"host": "enterpriseplatform.dell.com", "site": "CX_1001",
+                               "job_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/"},
+    ("oracle_cloud", "oracle"): {"host": "eeho.fa.us2.oraclecloud.com", "site": "CX_45001",
+                                 "job_url": "https://careers.oracle.com/en/sites/jobsearch/job/"},
+    ("eightfold", "ericsson"): {"host": "jobs.ericsson.com", "domain": "ericsson.com"},
+    ("jibe", "pepsico"): {"host": "www.pepsicojobs.com"},
+    ("phenom", "bcg"): {"host": "careers.bcg.com", "ref": "BCG1US"},
+    ("phenom", "maf"): {"host": "careers.majidalfuttaim.com", "ref": "MAFMAFGLOBAL"},
+    ("amazon", "amazon"): {"country": "EGY"},
 }
 
 
@@ -41,6 +50,38 @@ def record_smartrecruiters(key: str, c: dict) -> None:
     save(f"smartrecruiters_{key}_detail.json", http_get_json(f"{base}/{page['content'][0]['id']}"))
 
 
+def record_oracle_cloud(key: str, c: dict) -> None:
+    url = (f"https://{c['host']}/hcmRestApi/resources/latest/recruitingCEJobRequisitions"
+           "?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values"
+           f"&finder=findReqs;siteNumber={c['site']},facetsList=LOCATIONS%3BFLEX_FIELDS,"
+           "limit=100,location=Egypt,sortBy=POSTING_DATES_DESC")
+    save(f"oracle_cloud_{key}_list.json", http_get_json(url))
+
+
+def record_eightfold(key: str, c: dict) -> None:
+    save(f"eightfold_{key}_list.json", http_get_json(
+        f"https://{c['host']}/api/pcsx/search", {"domain": c["domain"], "query": "", "location": "Egypt", "start": 0}))
+
+
+def record_jibe(key: str, c: dict) -> None:
+    save(f"jibe_{key}_list.json", http_get_json(f"https://{c['host']}/api/jobs", {"location": "Egypt", "page": 1}))
+
+
+def record_phenom(key: str, c: dict) -> None:
+    save(f"phenom_{key}_list.json", http_post_json(f"https://{c['host']}/widgets", {
+        "ddoKey": "refineSearch", "refNum": c["ref"], "lang": "en_global", "siteType": "external",
+        "from": 0, "size": 100, "jobs": True, "selected_fields": {"country": ["Egypt"]}}))
+
+
+def record_amazon(key: str, c: dict) -> None:
+    save(f"amazon_{key}_list.json", http_get_json(
+        "https://www.amazon.jobs/en/search.json", {"normalized_country_code[]": c["country"], "result_limit": 100}))
+
+
+RECORDERS = {"workday": record_workday, "smartrecruiters": record_smartrecruiters,
+             "oracle_cloud": record_oracle_cloud, "eightfold": record_eightfold, "jibe": record_jibe,
+             "phenom": record_phenom, "amazon": record_amazon}
+
 if __name__ == "__main__":
     system, key = sys.argv[1:3]
-    {"workday": record_workday, "smartrecruiters": record_smartrecruiters}[system](key, CONFIGS[(system, key)])
+    RECORDERS[system](key, CONFIGS[(system, key)])

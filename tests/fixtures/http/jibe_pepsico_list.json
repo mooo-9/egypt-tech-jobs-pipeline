@@ -1,0 +1,965 @@
+{
+  "jobs": [
+    {
+      "data": {
+        "slug": "468410",
+        "language": "en-us",
+        "languages": [
+          "en-us"
+        ],
+        "req_id": "468410",
+        "title": "Electrical Maintenance Engineer",
+        "description": "Overview We Are PepsiCo PepsiCo is a leading name in North Africa’s food and beverage industry, where our products are enjoyed by consumers daily across the region. We offer a robust portfolio of beloved brands like PEPSI, SEVEN-UP, DORITOS, CHEETOS and CHIPSY, designed to cater to the tastes and pr",
+        "location_name": "Assuit Plant Snacks-EGY",
+        "street_address": "Abnoob Industrial zone",
+        "city": "Assiut",
+        "country": "Egypt",
+        "country_code": "EG",
+        "location_type": "LAT_LNG",
+        "latitude": 27.2649791,
+        "longitude": 31.1540901,
+        "categories": [
+          {
+            "name": "Supply Chain"
+          }
+        ],
+        "tags": [
+          "No"
+        ],
+        "tags1": [
+          "Abdelrahman Ahmed"
+        ],
+        "tags3": [
+          "Professional"
+        ],
+        "tags4": [
+          "No"
+        ],
+        "tags5": [
+          "Northern Africa"
+        ],
+        "tags6": [
+          "MENAPAK Foods"
+        ],
+        "tags7": [
+          "Yes - Standard"
+        ],
+        "tags8": [
+          "L05"
+        ],
+        "tags9": [
+          "Supply Chain"
+        ],
+        "promotion_value": 0,
+        "employment_type": "FULL_TIME",
+        "qualifications": "- Bachelor Engineering Graduate (Electrical department or any equivalent) - (2-3) years of Experience in the maintenance field (Most preferred in the food industry - Leadership skills. Communication & Presentation skills - Write and speak English. - Good computer skills. - Time Management. - Problem",
+        "hiring_organization": "PepsiCo",
+        "hiring_organization_logo": "https://cms.jibecdn.com/prod/pepsico/assets/OPENGRAPH-IMAGE-en-us-1768577512249.png",
+        "responsibilities": "Maintain the equipment within the required efficiency - Applying maintenance procedures and ensuring people and equipment safety. - Lead/support the working team administratively and technically on daily basis. - Achieve and analyze maintenance key performance indicators and issue periodic follow-up",
+        "posted_date": "2026-09-07T11:09:00+0000",
+        "apply_url": "https://globalcareers-pepsico.icims.com/jobs/468410/login",
+        "internal": false,
+        "external": false,
+        "searchable": true,
+        "applyable": true,
+        "li_easy_applyable": true,
+        "ats_code": "icims",
+        "isFrontLineAIJob": false,
+        "isApplyFlowJob": false,
+        "meta_data": {
+          "client_code": "pepsico",
+          "googlejobs": {
+            "jobName": "projects/helpful-passage-853/jobs/77813921326473926",
+            "companyName": "projects/helpful-passage-853/companies/80e5882e-c741-4094-b5f9-74787a74c162",
+            "jobHash": "122a145b59a192d96b122958e372a782",
+            "derivedInfo": {
+              "jobCategories": [
+                "SCIENCE_AND_ENGINEERING",
+                "INSTALLATION_MAINTENANCE_AND_REPAIR"
+              ],
+              "locations": [
+                {
+                  "latLng": {
+                    "latitude": 27.2649791,
+                    "longitude": 31.1540901
+                  },
+                  "locationType": "POSTAL_CODE",
+                  "postalAddress": {
+                    "addressLines": [
+                      "Abnub, Assiut Governorate 2251540, Egypt"
+                    ],
+                    "administrativeArea": "Assiut Governorate",
+                    "languageCode": "",
+                    "locality": "Abnub",
+                    "organization": "",
+                    "postalCode": "2251540",
+                    "recipients": [],
+                    "regionCode": "EG",
+                    "revision": 0,
+                    "sortingCode": "",
+                    "sublocality": ""
+                  },
+                  "radiusInMiles": 7.744004962231311e-05
+                }
+              ]
+            },
+            "jobSummary": "Maintain the equipment within the required efficiency - Applying maintenance procedures and ensuring people and equipment safety. - Lead/support the working team administratively and technically on daily basis. - Achieve and analyze maintenance key performance indicators and issue periodic follow-up reports. - Troubleshooting different control problems (PLC, Drives ,…etc.) - Aware of different electrical instrumentation devices. - Achieve & follow-up the electricity, water and fuel consumption targets. Control the maintenance expenses daily. - - Revise and sign on SPs (Spare Parts). - Cooperate with purchasing department regarding any technical issues. - Revise spare parts strategic items on annual basis. - Revise the work orders completion with spare parts withdrawal and ensure that the replaced used parts are returned to the Store. - Review and modify the spare parts item cards limit to ensure spare parts availability. - Review and sign on to purchasing orders and technically approve supplier’s offers. - Revise, check and approve imported spare parts orders. - Technically inspect/accept new spare parts and receive on the system. - Make sure that all workshop equipment is working properly. - Participate in planning and preparation for projects. - Follow up on contractors’ daily performance & onsite activities progress, ensuring quality & conformity to specifications. - Annual revise for equipment fixed assists registry. - Responsible for implementing PEMM (Pepsico Maintenance Methodology), AIBI (American Institute for Baking Industry Audit), TPM (Total Productive Maintenance), GEHSMS (Global EHS management system), QAS (Quality audit system), ERP (Employee Risk Protection) systems. - Enhance equipment performance by updating the PM (preventive maintenance) programs. - Raising-up team skills through internal technical training and coaching new team members. - Follow up on the Proper execution of the TPM processes and ensure proper implementation of the required aspects in each step - Supporting the team during the audits (PEMM, TPM, GEHSMS, AIB, QAS….)",
+            "jobTitleSnippet": "",
+            "searchTextSnippet": ""
+          },
+          "icims": {
+            "config_keys": {
+              "ccc.attract.portal.url": "https://pepsicojobs.com",
+              "icims.config.web.indeed.easy.apply": "0",
+              "icims.external.xml.feeds": "icims.indeed.xml.enabled,icims.resume-library.xml.enabled,icims.direct-employers.xml.enabled,icims.monster.xml.enabled,icims.adzuna.xml.enabled,icims.careerbuilder.xml.enabled,icims.ziprecruiter.xml.enabled,icims.craigslist.xml.enabled,icims.itjobscafe.xml.enabled,icims.recruitnet.xml.enabled,icims.upward.xml.enabled,icims.jobbio.xml.enabled,icims.propellum.xml.enabled,icims.snagajob.xml.enabled,icims.inhersight.xml.enabled,icims.pallet-labs.xml.enabled,icims.qkly.xml.enabled,icims.cv-library.xml.enabled,icims.linkedin.xml.enabled,icims.zippia.xml.enabled,icims.puck.xml.enabled,icims.offerup.xml.enabled,icims.jobted.xml.enabled,icims.edtech.xml.enabled,icims.jobgether.xml.enabled,icims.referio.xml.enabled,icims.careerjet.xml.enabled,icims.advantageai.xml.enabled,icims.unpostedjobs.xml.enabled,icims.allyenergy.xml.enabled,icims.stealthstartup.xml.enabled,icims.hiringcafe.xml.enabled,icims.retailappointment.xml.enabled,icims.jobget.xml.enabled,icims.hirebase.xml.enabled,icims.shaker.xml.enabled,icims.tariangroup.xml.enabled,icims.flatworld.xml.enabled,icims.nexxt.xml.enabled,icims.intelycare.xml.enabled,icims.calibersourcing.xml.enabled,icims.almazlabs.xml.enabled,icims.dentalpost.xml.enabled,icims.nejoflexco.xml.enabled,icims.skillsire.xml.enabled,icims.handshake.xml.enabled,icims.hackajob.xml.enabled,icims.jooobs.xml.enabled,icims.openai.xml.enabled",
+              "jobposting.external.company.name": "PepsiCo",
+              "jobposting.external.indeed.screenerquestions": "0",
+              "jobposting.external.parent.organization.name": "PepsiCo",
+              "portal.id": "160"
+            },
+            "date_updated": "2026-09-08T14:59:44Z",
+            "jps_is_public": true,
+            "primary_posted_site_object": {
+              "datePosted": "2026-09-07T11:09:00+0000",
+              "site": "globalcareers-pepsico",
+              "siteId": "13fec90b-acf8-4c01-bd5c-145b0977ae88",
+              "siteType": "ATTRACT",
+              "tenantId": "12481"
+            },
+            "revision_int": 5,
+            "uuid": "4cdf378d-7451-408e-a05e-47860da8b771"
+          },
+          "import_id": "d613e275-57a7-417f-836a-3b87c01105b0",
+          "import_source": "ImporterService",
+          "redirectOnApply": true,
+          "canonical_url": "https://www.pepsicojobs.com/jobs/468410?lang=en-us",
+          "last_mod": "2026-10-06T08:02:21+0000",
+          "gdpr": false
+        },
+        "update_date": "2026-10-06T08:02:21+0000",
+        "create_date": "2026-09-24T06:40:12+0000",
+        "category": [
+          " Supply Chain"
+        ],
+        "full_location": "Assiut, Egypt",
+        "short_location": "Assiut, Egypt",
+        "multipleLocations": false
+      }
+    },
+    {
+      "data": {
+        "slug": "471276",
+        "language": "en-us",
+        "languages": [
+          "en-us"
+        ],
+        "req_id": "471276",
+        "title": "People Operations Asst Analyst",
+        "description": "Overview People Experience & Operations Asst Analyst is the on-site HR SPOC for employees. Typically, responsible for managing the day-to-day operations, acting as a first-tier support for all HR related matters on site. Starting from onboarding coordination and throughout the employment duration. T",
+        "location_name": "October Plant Snacks-EGY",
+        "street_address": "Industrial Zone number 4\nBeside banking area",
+        "city": "Giza",
+        "country": "Egypt",
+        "country_code": "EG",
+        "location_type": "LAT_LNG",
+        "latitude": 29.9314985,
+        "longitude": 30.8875399,
+        "categories": [
+          {
+            "name": "HR"
+          }
+        ],
+        "tags": [
+          "No"
+        ],
+        "tags1": [
+          "Hana Gamil"
+        ],
+        "tags3": [
+          "Professional"
+        ],
+        "tags4": [
+          "No"
+        ],
+        "tags5": [
+          "People Experience & Ops"
+        ],
+        "tags6": [
+          "Global S&T"
+        ],
+        "tags7": [
+          "No"
+        ],
+        "tags8": [
+          "L05"
+        ],
+        "tags9": [
+          "HR"
+        ],
+        "promotion_value": 0,
+        "employment_type": "FULL_TIME",
+        "qualifications": "1–3 years of experience, preferably with HR Operations experience. Customer Orientation. Technical / Functional Skills & Knowledge of HR Tools and Interfaces. Experience or understanding of HR Operations / Shared Services environment. Change management and agility. Must possess strong influencing sk",
+        "hiring_organization": "PepsiCo",
+        "hiring_organization_logo": "https://cms.jibecdn.com/prod/pepsico/assets/OPENGRAPH-IMAGE-en-us-1768577512249.png",
+        "responsibilities": "Onboarding & New Hire Integration Manage hiring documentation, including physical receipt and collection of required wet signatures. Coordinate end-to-end onboarding experience, including site walkthrough and facilitation of business tools/assets handover from relevant departments. Follow up with Hi",
+        "posted_date": "2026-09-14T11:47:00+0000",
+        "apply_url": "https://globalcareers-pepsico.icims.com/jobs/471276/login",
+        "internal": false,
+        "external": false,
+        "searchable": true,
+        "applyable": true,
+        "li_easy_applyable": true,
+        "ats_code": "icims",
+        "isFrontLineAIJob": false,
+        "isApplyFlowJob": false,
+        "meta_data": {
+          "client_code": "pepsico",
+          "googlejobs": {
+            "jobName": "projects/helpful-passage-853/jobs/101721702160835270",
+            "companyName": "projects/helpful-passage-853/companies/80e5882e-c741-4094-b5f9-74787a74c162",
+            "jobHash": "1fda7c6408401ad658b0431806c098dc",
+            "derivedInfo": {
+              "jobCategories": [
+                "BUSINESS_OPERATIONS"
+              ],
+              "locations": [
+                {
+                  "latLng": {
+                    "latitude": 29.9314985,
+                    "longitude": 30.8875399
+                  },
+                  "locationType": "STREET_ADDRESS",
+                  "postalAddress": {
+                    "addressLines": [
+                      "No. 20- 3, 6th of October City (2), Giza Governorate 3222415, Egypt"
+                    ],
+                    "administrativeArea": "Giza Governorate",
+                    "languageCode": "",
+                    "locality": "6th of October City",
+                    "organization": "",
+                    "postalCode": "3222415",
+                    "recipients": [],
+                    "regionCode": "EG",
+                    "revision": 0,
+                    "sortingCode": "",
+                    "sublocality": ""
+                  },
+                  "radiusInMiles": 0.0001073799116440939
+                }
+              ]
+            },
+            "jobSummary": "Onboarding & New Hire Integration Manage hiring documentation, including physical receipt and collection of required wet signatures. Coordinate end-to-end onboarding experience, including site walkthrough and facilitation of business tools/assets handover from relevant departments. Follow up with Hiring Managers to ensure completion of onboarding tasks. Train new hires on PEP tools and systems to enable smooth integration. Systems, Tools & Digital Adoption Drive effective utilization of HR systems and tools by: Training employees on platforms such as MyServices, iCIMS, MS Teams, Smiles, etc. Monitoring systemsadoption and partnering with stakeholders to improve usage. Compliance, Employee Relations & Governance Ensure compliance with internal policies and local regulations by: Maintaining legally required documentation and up-to-date health certificates. Running periodic audits aligned with government and legal requirements. Supporting site government inspections, handling queries, and reporting outcomes to the legal & ER teams. Communicating ER, Compliance & Ethics, and Legal outcomes from internal investigations to employees and ensuring proper acknowledgment (wet signature and system capture). Supporting communication cascade through available channels and encouraging activities participation. Offboarding & Employee Exit Management Ensure smooth employee exit processes by tracking and following up on clearance activities through myServices and other relevant systems. Coordinate with stakeholders to ensure timely completion of exit requirements and approvals. Maintain proper documentation and employee acknowledgements in line with compliance and legal requirements. Learning & Development Support the learning agenda by: Managing logistics for training sessions (venue booking, meeting room readiness, catering). Delivering, tracking, and following up on compliance, ethics, and TM-related face-to-face training sessions. Monitoring trainings participation and completion rates.",
+            "jobTitleSnippet": "",
+            "searchTextSnippet": ""
+          },
+          "icims": {
+            "config_keys": {
+              "ccc.attract.portal.url": "https://pepsicojobs.com",
+              "icims.config.web.indeed.easy.apply": "0",
+              "icims.external.xml.feeds": "icims.indeed.xml.enabled,icims.resume-library.xml.enabled,icims.direct-employers.xml.enabled,icims.monster.xml.enabled,icims.adzuna.xml.enabled,icims.careerbuilder.xml.enabled,icims.ziprecruiter.xml.enabled,icims.craigslist.xml.enabled,icims.itjobscafe.xml.enabled,icims.recruitnet.xml.enabled,icims.upward.xml.enabled,icims.jobbio.xml.enabled,icims.propellum.xml.enabled,icims.snagajob.xml.enabled,icims.inhersight.xml.enabled,icims.pallet-labs.xml.enabled,icims.qkly.xml.enabled,icims.cv-library.xml.enabled,icims.linkedin.xml.enabled,icims.zippia.xml.enabled,icims.puck.xml.enabled,icims.offerup.xml.enabled,icims.jobted.xml.enabled,icims.edtech.xml.enabled,icims.jobgether.xml.enabled,icims.referio.xml.enabled,icims.careerjet.xml.enabled,icims.advantageai.xml.enabled,icims.unpostedjobs.xml.enabled,icims.allyenergy.xml.enabled,icims.stealthstartup.xml.enabled,icims.hiringcafe.xml.enabled,icims.retailappointment.xml.enabled,icims.jobget.xml.enabled,icims.hirebase.xml.enabled,icims.shaker.xml.enabled,icims.tariangroup.xml.enabled,icims.flatworld.xml.enabled,icims.nexxt.xml.enabled,icims.intelycare.xml.enabled,icims.calibersourcing.xml.enabled,icims.almazlabs.xml.enabled,icims.dentalpost.xml.enabled,icims.nejoflexco.xml.enabled,icims.skillsire.xml.enabled,icims.handshake.xml.enabled,icims.hackajob.xml.enabled,icims.jooobs.xml.enabled,icims.openai.xml.enabled",
+              "jobposting.external.company.name": "PepsiCo",
+              "jobposting.external.indeed.screenerquestions": "0",
+              "jobposting.external.parent.organization.name": "PepsiCo",
+              "portal.id": "160"
+            },
+            "date_updated": "2026-09-15T13:40:54Z",
+            "jps_is_public": true,
+            "primary_posted_site_object": {
+              "datePosted": "2026-09-14T11:47:00+0000",
+              "site": "globalcareers-pepsico",
+              "siteId": "13fec90b-acf8-4c01-bd5c-145b0977ae88",
+              "siteType": "ATTRACT",
+              "tenantId": "12481"
+            },
+            "revision_int": 4,
+            "uuid": "a48b60bd-bb19-4465-a49a-918548c25b65"
+          },
+          "import_id": "d613e275-57a7-417f-836a-3b87c01105b0",
+          "import_source": "ImporterService",
+          "redirectOnApply": true,
+          "canonical_url": "https://www.pepsicojobs.com/jobs/471276?lang=en-us",
+          "last_mod": "2026-10-06T08:02:51+0000",
+          "gdpr": false
+        },
+        "update_date": "2026-10-06T08:02:51+0000",
+        "create_date": "2026-09-24T06:40:38+0000",
+        "category": [
+          " HR"
+        ],
+        "full_location": "Giza, Egypt",
+        "short_location": "Giza, Egypt",
+        "multipleLocations": false
+      }
+    },
+    {
+      "data": {
+        "slug": "900001",
+        "language": "en-us",
+        "languages": [
+          "en-us"
+        ],
+        "req_id": "900001",
+        "title": "Hand-made Berlin Analyst",
+        "description": "Overview We Are PepsiCo PepsiCo is a leading name in North Africa’s food and beverage industry, where our products are enjoyed by consumers daily across the region. We offer a robust portfolio of beloved brands like PEPSI, SEVEN-UP, DORITOS, CHEETOS and CHIPSY, designed to cater to the tastes and pr",
+        "location_name": "Assuit Plant Snacks-EGY",
+        "street_address": "Abnoob Industrial zone",
+        "city": "Berlin",
+        "country": "Germany",
+        "country_code": "DE",
+        "location_type": "LAT_LNG",
+        "latitude": 27.2649791,
+        "longitude": 31.1540901,
+        "categories": [
+          {
+            "name": "Supply Chain"
+          }
+        ],
+        "tags": [
+          "No"
+        ],
+        "tags1": [
+          "Abdelrahman Ahmed"
+        ],
+        "tags3": [
+          "Professional"
+        ],
+        "tags4": [
+          "No"
+        ],
+        "tags5": [
+          "Northern Africa"
+        ],
+        "tags6": [
+          "MENAPAK Foods"
+        ],
+        "tags7": [
+          "Yes - Standard"
+        ],
+        "tags8": [
+          "L05"
+        ],
+        "tags9": [
+          "Supply Chain"
+        ],
+        "promotion_value": 0,
+        "employment_type": "FULL_TIME",
+        "qualifications": "- Bachelor Engineering Graduate (Electrical department or any equivalent) - (2-3) years of Experience in the maintenance field (Most preferred in the food industry - Leadership skills. Communication & Presentation skills - Write and speak English. - Good computer skills. - Time Management. - Problem",
+        "hiring_organization": "PepsiCo",
+        "hiring_organization_logo": "https://cms.jibecdn.com/prod/pepsico/assets/OPENGRAPH-IMAGE-en-us-1768577512249.png",
+        "responsibilities": "Maintain the equipment within the required efficiency - Applying maintenance procedures and ensuring people and equipment safety. - Lead/support the working team administratively and technically on daily basis. - Achieve and analyze maintenance key performance indicators and issue periodic follow-up",
+        "posted_date": "2026-09-07T11:09:00+0000",
+        "apply_url": "https://globalcareers-pepsico.icims.com/jobs/468410/login",
+        "internal": false,
+        "external": false,
+        "searchable": true,
+        "applyable": true,
+        "li_easy_applyable": true,
+        "ats_code": "icims",
+        "isFrontLineAIJob": false,
+        "isApplyFlowJob": false,
+        "meta_data": {
+          "client_code": "pepsico",
+          "googlejobs": {
+            "jobName": "projects/helpful-passage-853/jobs/77813921326473926",
+            "companyName": "projects/helpful-passage-853/companies/80e5882e-c741-4094-b5f9-74787a74c162",
+            "jobHash": "122a145b59a192d96b122958e372a782",
+            "derivedInfo": {
+              "jobCategories": [
+                "SCIENCE_AND_ENGINEERING",
+                "INSTALLATION_MAINTENANCE_AND_REPAIR"
+              ],
+              "locations": [
+                {
+                  "latLng": {
+                    "latitude": 27.2649791,
+                    "longitude": 31.1540901
+                  },
+                  "locationType": "POSTAL_CODE",
+                  "postalAddress": {
+                    "addressLines": [
+                      "Abnub, Assiut Governorate 2251540, Egypt"
+                    ],
+                    "administrativeArea": "Assiut Governorate",
+                    "languageCode": "",
+                    "locality": "Abnub",
+                    "organization": "",
+                    "postalCode": "2251540",
+                    "recipients": [],
+                    "regionCode": "EG",
+                    "revision": 0,
+                    "sortingCode": "",
+                    "sublocality": ""
+                  },
+                  "radiusInMiles": 7.744004962231311e-05
+                }
+              ]
+            },
+            "jobSummary": "Maintain the equipment within the required efficiency - Applying maintenance procedures and ensuring people and equipment safety. - Lead/support the working team administratively and technically on daily basis. - Achieve and analyze maintenance key performance indicators and issue periodic follow-up reports. - Troubleshooting different control problems (PLC, Drives ,…etc.) - Aware of different electrical instrumentation devices. - Achieve & follow-up the electricity, water and fuel consumption targets. Control the maintenance expenses daily. - - Revise and sign on SPs (Spare Parts). - Cooperate with purchasing department regarding any technical issues. - Revise spare parts strategic items on annual basis. - Revise the work orders completion with spare parts withdrawal and ensure that the replaced used parts are returned to the Store. - Review and modify the spare parts item cards limit to ensure spare parts availability. - Review and sign on to purchasing orders and technically approve supplier’s offers. - Revise, check and approve imported spare parts orders. - Technically inspect/accept new spare parts and receive on the system. - Make sure that all workshop equipment is working properly. - Participate in planning and preparation for projects. - Follow up on contractors’ daily performance & onsite activities progress, ensuring quality & conformity to specifications. - Annual revise for equipment fixed assists registry. - Responsible for implementing PEMM (Pepsico Maintenance Methodology), AIBI (American Institute for Baking Industry Audit), TPM (Total Productive Maintenance), GEHSMS (Global EHS management system), QAS (Quality audit system), ERP (Employee Risk Protection) systems. - Enhance equipment performance by updating the PM (preventive maintenance) programs. - Raising-up team skills through internal technical training and coaching new team members. - Follow up on the Proper execution of the TPM processes and ensure proper implementation of the required aspects in each step - Supporting the team during the audits (PEMM, TPM, GEHSMS, AIB, QAS….)",
+            "jobTitleSnippet": "",
+            "searchTextSnippet": ""
+          },
+          "icims": {
+            "config_keys": {
+              "ccc.attract.portal.url": "https://pepsicojobs.com",
+              "icims.config.web.indeed.easy.apply": "0",
+              "icims.external.xml.feeds": "icims.indeed.xml.enabled,icims.resume-library.xml.enabled,icims.direct-employers.xml.enabled,icims.monster.xml.enabled,icims.adzuna.xml.enabled,icims.careerbuilder.xml.enabled,icims.ziprecruiter.xml.enabled,icims.craigslist.xml.enabled,icims.itjobscafe.xml.enabled,icims.recruitnet.xml.enabled,icims.upward.xml.enabled,icims.jobbio.xml.enabled,icims.propellum.xml.enabled,icims.snagajob.xml.enabled,icims.inhersight.xml.enabled,icims.pallet-labs.xml.enabled,icims.qkly.xml.enabled,icims.cv-library.xml.enabled,icims.linkedin.xml.enabled,icims.zippia.xml.enabled,icims.puck.xml.enabled,icims.offerup.xml.enabled,icims.jobted.xml.enabled,icims.edtech.xml.enabled,icims.jobgether.xml.enabled,icims.referio.xml.enabled,icims.careerjet.xml.enabled,icims.advantageai.xml.enabled,icims.unpostedjobs.xml.enabled,icims.allyenergy.xml.enabled,icims.stealthstartup.xml.enabled,icims.hiringcafe.xml.enabled,icims.retailappointment.xml.enabled,icims.jobget.xml.enabled,icims.hirebase.xml.enabled,icims.shaker.xml.enabled,icims.tariangroup.xml.enabled,icims.flatworld.xml.enabled,icims.nexxt.xml.enabled,icims.intelycare.xml.enabled,icims.calibersourcing.xml.enabled,icims.almazlabs.xml.enabled,icims.dentalpost.xml.enabled,icims.nejoflexco.xml.enabled,icims.skillsire.xml.enabled,icims.handshake.xml.enabled,icims.hackajob.xml.enabled,icims.jooobs.xml.enabled,icims.openai.xml.enabled",
+              "jobposting.external.company.name": "PepsiCo",
+              "jobposting.external.indeed.screenerquestions": "0",
+              "jobposting.external.parent.organization.name": "PepsiCo",
+              "portal.id": "160"
+            },
+            "date_updated": "2026-09-08T14:59:44Z",
+            "jps_is_public": true,
+            "primary_posted_site_object": {
+              "datePosted": "2026-09-07T11:09:00+0000",
+              "site": "globalcareers-pepsico",
+              "siteId": "13fec90b-acf8-4c01-bd5c-145b0977ae88",
+              "siteType": "ATTRACT",
+              "tenantId": "12481"
+            },
+            "revision_int": 5,
+            "uuid": "4cdf378d-7451-408e-a05e-47860da8b771"
+          },
+          "import_id": "d613e275-57a7-417f-836a-3b87c01105b0",
+          "import_source": "ImporterService",
+          "redirectOnApply": true,
+          "canonical_url": "https://www.pepsicojobs.com/jobs/468410?lang=en-us",
+          "last_mod": "2026-10-06T08:02:21+0000",
+          "gdpr": false
+        },
+        "update_date": "2026-10-06T08:02:21+0000",
+        "create_date": "2026-09-24T06:40:12+0000",
+        "category": [
+          " Supply Chain"
+        ],
+        "full_location": "Berlin, Germany",
+        "short_location": "Berlin, Germany",
+        "multipleLocations": false
+      }
+    }
+  ],
+  "locations": [
+    "Egypt"
+  ],
+  "totalCount": 3,
+  "request_id": false,
+  "meta_data": {
+    "ResponseMetadata": {
+      "requestId": "93a352bc-3224-43c7-878c-3288dd5482c6:APAb7ISZwE6zxQ65evVSjAqsWzoiQ8yqjQ=="
+    }
+  },
+  "count": 94,
+  "languageCounts": {
+    "en-us": {
+      "displayName": "English",
+      "count": 94
+    },
+    "pt-br": {
+      "displayName": "Português",
+      "count": 2
+    }
+  },
+  "filter": {
+    "facetList": {
+      "country": [
+        {
+          "term": "Brazil",
+          "count": 2
+        },
+        {
+          "term": "Egypt",
+          "count": 90
+        },
+        {
+          "term": "Georgia",
+          "count": 2
+        },
+        {
+          "term": "India",
+          "count": 2
+        },
+        {
+          "term": "Ireland",
+          "count": 1
+        },
+        {
+          "term": "Kazakhstan",
+          "count": 4
+        },
+        {
+          "term": "Poland",
+          "count": 2
+        },
+        {
+          "term": "Spain",
+          "count": 1
+        },
+        {
+          "term": "Turkey",
+          "count": 1
+        }
+      ],
+      "tags4": [
+        {
+          "term": "No",
+          "count": 90
+        },
+        {
+          "term": "Yes",
+          "count": 9
+        }
+      ],
+      "tags8": [
+        {
+          "term": "FR-0",
+          "count": 2
+        },
+        {
+          "term": "L03",
+          "count": 5
+        },
+        {
+          "term": "L04",
+          "count": 5
+        },
+        {
+          "term": "L05",
+          "count": 42
+        },
+        {
+          "term": "L06",
+          "count": 12
+        },
+        {
+          "term": "L07",
+          "count": 11
+        },
+        {
+          "term": "L08",
+          "count": 4
+        },
+        {
+          "term": "L09",
+          "count": 8
+        },
+        {
+          "term": "L10",
+          "count": 9
+        },
+        {
+          "term": "L11",
+          "count": 1
+        }
+      ]
+    },
+    "displayLimit": 10,
+    "brands": {
+      "all": [],
+      "shortlist": []
+    },
+    "categories": {
+      "all": [
+        {
+          "category": "Продажи",
+          "numJobs": 1
+        },
+        {
+          "category": "Data & Analytics",
+          "numJobs": 3
+        },
+        {
+          "category": "Design",
+          "numJobs": 1
+        },
+        {
+          "category": "Finance",
+          "numJobs": 6
+        },
+        {
+          "category": "Global Procurement",
+          "numJobs": 2
+        },
+        {
+          "category": "GM",
+          "numJobs": 1
+        },
+        {
+          "category": "Health & Safety",
+          "numJobs": 2
+        },
+        {
+          "category": "HR",
+          "numJobs": 8
+        },
+        {
+          "category": "Insights",
+          "numJobs": 2
+        },
+        {
+          "category": "Marketing",
+          "numJobs": 1
+        },
+        {
+          "category": "R&D",
+          "numJobs": 2
+        },
+        {
+          "category": "Sales",
+          "numJobs": 15
+        },
+        {
+          "category": "Supply Chain",
+          "numJobs": 53
+        },
+        {
+          "category": "Vendas",
+          "numJobs": 2
+        }
+      ],
+      "shortlist": [
+        {
+          "category": "Продажи",
+          "numJobs": 1
+        },
+        {
+          "category": "Data & Analytics",
+          "numJobs": 3
+        },
+        {
+          "category": "Design",
+          "numJobs": 1
+        },
+        {
+          "category": "Finance",
+          "numJobs": 6
+        },
+        {
+          "category": "Global Procurement",
+          "numJobs": 2
+        },
+        {
+          "category": "GM",
+          "numJobs": 1
+        },
+        {
+          "category": "Health & Safety",
+          "numJobs": 2
+        },
+        {
+          "category": "HR",
+          "numJobs": 8
+        },
+        {
+          "category": "Insights",
+          "numJobs": 2
+        },
+        {
+          "category": "Marketing",
+          "numJobs": 1
+        },
+        {
+          "category": "R&D",
+          "numJobs": 2
+        },
+        {
+          "category": "Sales",
+          "numJobs": 15
+        },
+        {
+          "category": "Supply Chain",
+          "numJobs": 53
+        },
+        {
+          "category": "Vendas",
+          "numJobs": 2
+        }
+      ]
+    },
+    "locations": {
+      "all": [
+        {
+          "city": "4.Levent",
+          "state": "Istanbul",
+          "country": "Turkey",
+          "count": 1
+        },
+        {
+          "city": "Hyderabad",
+          "state": "Telangana",
+          "country": "India",
+          "count": 2
+        },
+        {
+          "city": "Kraków",
+          "state": "Malopolskie",
+          "country": "Poland",
+          "count": 1
+        },
+        {
+          "city": "São Paulo",
+          "state": "São Paulo",
+          "country": "Brazil",
+          "count": 2
+        },
+        {
+          "city": "Vitoria",
+          "state": "Alava",
+          "country": "Spain",
+          "count": 1
+        },
+        {
+          "city": "Alex",
+          "state": null,
+          "country": "Egypt",
+          "count": 2
+        },
+        {
+          "city": "Almaty",
+          "state": null,
+          "country": "Kazakhstan",
+          "count": 4
+        },
+        {
+          "city": "Assiut",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Beni Suef",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Cairo",
+          "state": null,
+          "country": "Egypt",
+          "count": 11
+        },
+        {
+          "city": "Dublin 2",
+          "state": null,
+          "country": "Ireland",
+          "count": 1
+        },
+        {
+          "city": "Giza,",
+          "state": null,
+          "country": "Egypt",
+          "count": 3
+        },
+        {
+          "city": "Giza",
+          "state": null,
+          "country": "Egypt",
+          "count": 10
+        },
+        {
+          "city": "Ismailia",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Mansoura",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Menia",
+          "state": null,
+          "country": "Egypt",
+          "count": 3
+        },
+        {
+          "city": "Menofia",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "New Cairo",
+          "state": null,
+          "country": "Egypt",
+          "count": 53
+        },
+        {
+          "city": "Qena",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Tanta",
+          "state": null,
+          "country": "Egypt",
+          "count": 2
+        },
+        {
+          "city": "Tbilisi",
+          "state": null,
+          "country": "Georgia",
+          "count": 2
+        },
+        {
+          "city": "Warsaw",
+          "state": null,
+          "country": "Poland",
+          "count": 1
+        },
+        {
+          "city": "Omsk",
+          "state": null,
+          "country": null,
+          "count": 1
+        }
+      ],
+      "shortlist": [
+        {
+          "city": "4.Levent",
+          "state": "Istanbul",
+          "country": "Turkey",
+          "count": 1
+        },
+        {
+          "city": "Hyderabad",
+          "state": "Telangana",
+          "country": "India",
+          "count": 2
+        },
+        {
+          "city": "Kraków",
+          "state": "Malopolskie",
+          "country": "Poland",
+          "count": 1
+        },
+        {
+          "city": "São Paulo",
+          "state": "São Paulo",
+          "country": "Brazil",
+          "count": 2
+        },
+        {
+          "city": "Vitoria",
+          "state": "Alava",
+          "country": "Spain",
+          "count": 1
+        },
+        {
+          "city": "Alex",
+          "state": null,
+          "country": "Egypt",
+          "count": 2
+        },
+        {
+          "city": "Almaty",
+          "state": null,
+          "country": "Kazakhstan",
+          "count": 4
+        },
+        {
+          "city": "Assiut",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Beni Suef",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Cairo",
+          "state": null,
+          "country": "Egypt",
+          "count": 11
+        },
+        {
+          "city": "Dublin 2",
+          "state": null,
+          "country": "Ireland",
+          "count": 1
+        },
+        {
+          "city": "Giza,",
+          "state": null,
+          "country": "Egypt",
+          "count": 3
+        },
+        {
+          "city": "Giza",
+          "state": null,
+          "country": "Egypt",
+          "count": 10
+        },
+        {
+          "city": "Ismailia",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Mansoura",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Menia",
+          "state": null,
+          "country": "Egypt",
+          "count": 3
+        },
+        {
+          "city": "Menofia",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "New Cairo",
+          "state": null,
+          "country": "Egypt",
+          "count": 53
+        },
+        {
+          "city": "Qena",
+          "state": null,
+          "country": "Egypt",
+          "count": 1
+        },
+        {
+          "city": "Tanta",
+          "state": null,
+          "country": "Egypt",
+          "count": 2
+        },
+        {
+          "city": "Tbilisi",
+          "state": null,
+          "country": "Georgia",
+          "count": 2
+        },
+        {
+          "city": "Warsaw",
+          "state": null,
+          "country": "Poland",
+          "count": 1
+        },
+        {
+          "city": "Omsk",
+          "state": null,
+          "country": null,
+          "count": 1
+        }
+      ]
+    },
+    "experienceLevels": {
+      "all": [],
+      "shortlist": []
+    }
+  }
+}

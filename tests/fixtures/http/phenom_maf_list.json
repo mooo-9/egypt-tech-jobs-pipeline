@@ -1,0 +1,246 @@
+{
+  "refineSearch": {
+    "status": 200,
+    "hits": 3,
+    "totalHits": 3,
+    "data": {
+      "jobs": [
+        {
+          "ml_skills": [
+            "real estate law",
+            "construction law",
+            "contract negotiation",
+            "legal compliance",
+            "risk assessment",
+            "dispute resolution",
+            "legal strategy development",
+            "bilingual communication",
+            "interpersonal skills",
+            "strategic thinking",
+            "problem solving",
+            "project management"
+          ],
+          "type": "Regular",
+          "siteType": "external",
+          "multi_category": [
+            "Legal, Finance & Audit"
+          ],
+          "reqId": "20193",
+          "city": "Cairo",
+          "latitude": "30.06263",
+          "multi_location": [
+            "Cairo"
+          ],
+          "address": "Cairo, Egypt",
+          "ml_job_parser": {
+            "descriptionTeaser": "Become part of our team as a Senior Legal Counsel, leading all legal aspects of MAF Properties’ Egypt Development Business. Provide expert legal advice, support business growth, and manage complex projects. Ideal for experienced legal professionals with deep expertise in real estate and construction law within Egypt’s development sector.",
+            "descriptionTeaser_first200": "JOB TITLE. Senior Legal Counsel | MAF Properties | Development. ROLE SUMMARY. The Senior Legal Counsel will be responsible to lead and handle all legal aspects of Majid Al Futtaim Properties Egypt ...",
+            "descriptionTeaser_keyword": "JOB TITLE. Senior Legal Counsel | MAF Properties | Development. ROLE SUMMARY. The Senior Legal Counsel will be responsible to lead and handle all legal aspects of Majid Al Futtaim Properties Egypt – D...",
+            "descriptionTeaser_ats": ""
+          },
+          "externalApply": false,
+          "cityState": "Cairo",
+          "country": "Egypt",
+          "postalCode": "",
+          "visibilityType": "External",
+          "longitude": "31.24967",
+          "jobId": "20193",
+          "locale": "en_GLOBAL",
+          "title": "Senior Legal Counsel",
+          "jobSeqNo": "MAFMAFGLOBAL20193EXTERNALENGLOBAL",
+          "postedDate": "2026-06-01T08:22:09.000+0000",
+          "dateCreated": "2025-10-30T11:17:44.930+0000",
+          "company": "3",
+          "cityStateCountry": "Cairo, Egypt",
+          "department": "Development",
+          "jobType": "Regular",
+          "jobVisibility": [
+            "external"
+          ],
+          "location": "Cairo",
+          "category": "Legal, Finance & Audit",
+          "isMultiLocation": false,
+          "multi_location_array": [
+            {
+              "latlong": {
+                "lon": 31.24967,
+                "lat": 30.06263
+              },
+              "location": "Cairo"
+            }
+          ],
+          "isMultiCategory": false,
+          "multi_category_array": [
+            {
+              "category": "Legal, Finance & Audit"
+            }
+          ],
+          "badge": "",
+          "descriptionTeaser": "Become part of our team as a Senior Legal Counsel, leading all legal aspects of MAF Properties’ Egypt Development Business. Provide expert legal advice, support business growth, and manage complex projects. Ideal for experienced legal professionals with deep expertise in real estate and construction law within Egypt’s development sector."
+        },
+        {
+          "ml_skills": [
+            "vendor account management",
+            "payment processing",
+            "account reconciliation",
+            "travel and expense management",
+            "supplier query resolution",
+            "financial reporting",
+            "policy compliance",
+            "cost accounting",
+            "customer service",
+            "microsoft excel",
+            "accounting",
+            "interpersonal skills",
+            "mentorship",
+            "problem solving",
+            "attention to detail",
+            "communication skills"
+          ],
+          "type": "Full Time",
+          "descriptionTeaser": "Seeking an Associate Accountant for People with Disabilities to support vendor account management and payment processing. Key responsibilities include reviewing payment requests and resolving supplier queries. Ideal for candidates with a finance or accounting background and up to two years’ experience in finance or accounts payable.",
+          "state": "Cairo Governorate",
+          "siteType": "external",
+          "reqId": "P-100059",
+          "city": "Cairo",
+          "latitude": "30.06263",
+          "multi_location": [
+            "Cairo, Cairo Governorate, Egypt"
+          ],
+          "ml_job_parser": {
+            "descriptionTeaser": "Seeking an Associate Accountant for People with Disabilities to support vendor account management and payment processing. Key responsibilities include reviewing payment requests and resolving supplier queries. Ideal for candidates with a finance or accounting background and up to two years’ experience in finance or accounts payable.",
+            "descriptionTeaser_ats": "Job Requirements Role SummaryThis position within our Finance team will be responsible for People with Disabilities that provides an opportunity to get a firsthand real-life work experience in the cor",
+            "descriptionTeaser_keyword": "Job Requirements. This position within our Finance team will be responsible for People with Disabilities that provides an opportunity to get a firsthand real-life work experience in the corporate worl...",
+            "descriptionTeaser_first200": "Job Requirements . This position within our Finance team will be responsible for People with Disabilities that provides an opportunity to get a firsthand real-life work experience in the corporate ..."
+          },
+          "externalApply": false,
+          "cityState": "Cairo, Cairo Governorate",
+          "country": "Egypt",
+          "experience": "<p><strong>Requirements</strong></p><br/><ul><li>Bachelor’s degree in finance/accounting is a must</li><li>0 to 2 years of experience working in Finance Department including some experience within Accounts Payables function.</li><li>Availability of People with Diverse Abilities Government Card. If not, please highlight in the application.</li></ul>",
+          "visibilityType": "External",
+          "longitude": "31.24967",
+          "jobId": "P-100059",
+          "locale": "en_GLOBAL",
+          "title": "Associate Accountant for People with Disabilities",
+          "jobSeqNo": "MAFMAFGLOBALP100059EXTERNALENGLOBAL",
+          "postedDate": "2026-04-01T00:00:00.000+0000",
+          "dateCreated": "2026-03-31T14:56:42.915+0000",
+          "cityStateCountry": "Cairo, Cairo Governorate, Egypt",
+          "department": "",
+          "jobVisibility": [
+            "external"
+          ],
+          "location": "Cairo, Cairo Governorate, Egypt",
+          "category": "Legal Finance & Audit",
+          "isMultiLocation": false,
+          "multi_location_array": [
+            {
+              "latlong": {
+                "lon": 31.24967,
+                "lat": 30.06263
+              },
+              "location": "Cairo, Cairo Governorate, Egypt"
+            }
+          ],
+          "isMultiCategory": false,
+          "badge": ""
+        },
+        {
+          "ml_skills": [
+            "real estate law",
+            "construction law",
+            "contract negotiation",
+            "legal compliance",
+            "risk assessment",
+            "dispute resolution",
+            "legal strategy development",
+            "bilingual communication",
+            "interpersonal skills",
+            "strategic thinking",
+            "problem solving",
+            "project management"
+          ],
+          "type": "Regular",
+          "siteType": "external",
+          "multi_category": [
+            "Legal, Finance & Audit"
+          ],
+          "reqId": "20193",
+          "city": "Cairo",
+          "latitude": "30.06263",
+          "multi_location": [
+            "Cairo"
+          ],
+          "address": "Cairo, Egypt",
+          "ml_job_parser": {
+            "descriptionTeaser": "Become part of our team as a Senior Legal Counsel, leading all legal aspects of MAF Properties’ Egypt Development Business. Provide expert legal advice, support business growth, and manage complex projects. Ideal for experienced legal professionals with deep expertise in real estate and construction law within Egypt’s development sector.",
+            "descriptionTeaser_first200": "JOB TITLE. Senior Legal Counsel | MAF Properties | Development. ROLE SUMMARY. The Senior Legal Counsel will be responsible to lead and handle all legal aspects of Majid Al Futtaim Properties Egypt ...",
+            "descriptionTeaser_keyword": "JOB TITLE. Senior Legal Counsel | MAF Properties | Development. ROLE SUMMARY. The Senior Legal Counsel will be responsible to lead and handle all legal aspects of Majid Al Futtaim Properties Egypt – D...",
+            "descriptionTeaser_ats": ""
+          },
+          "externalApply": false,
+          "cityState": "Cairo",
+          "country": "United Arab Emirates",
+          "postalCode": "",
+          "visibilityType": "External",
+          "longitude": "31.24967",
+          "jobId": "900001",
+          "locale": "en_GLOBAL",
+          "title": "Hand-made Dubai Manager",
+          "jobSeqNo": "MAFMAFGLOBAL20193EXTERNALENGLOBAL",
+          "postedDate": "2026-06-01T08:22:09.000+0000",
+          "dateCreated": "2025-10-30T11:17:44.930+0000",
+          "company": "3",
+          "department": "Development",
+          "jobType": "Regular",
+          "jobVisibility": [
+            "external"
+          ],
+          "location": "Dubai",
+          "category": "Legal, Finance & Audit",
+          "isMultiLocation": false,
+          "multi_location_array": [
+            {
+              "latlong": {
+                "lon": 31.24967,
+                "lat": 30.06263
+              },
+              "location": "Cairo"
+            }
+          ],
+          "isMultiCategory": false,
+          "multi_category_array": [
+            {
+              "category": "Legal, Finance & Audit"
+            }
+          ],
+          "badge": "",
+          "descriptionTeaser": "Become part of our team as a Senior Legal Counsel, leading all legal aspects of MAF Properties’ Egypt Development Business. Provide expert legal advice, support business growth, and manage complex projects. Ideal for experienced legal professionals with deep expertise in real estate and construction law within Egypt’s development sector."
+        }
+      ],
+      "SEARCH_CONFIG": {
+        "contextualSearch": false,
+        "isSuggestionsEnabled": true
+      },
+      "suggestions": {},
+      "ui_skills_selection": null,
+      "ui_selections": {
+        "country": [
+          "Egypt"
+        ]
+      }
+    },
+    "eid": {
+      "trialIndex": -1,
+      "eid": "6ac6f75d6410b6fe91eb178e",
+      "searchType": "location",
+      "isMultiLingualVectorApplied": false,
+      "query": "Egypt",
+      "variant": 0,
+      "banditId": "",
+      "keywordLanguage": "en"
+    }
+  },
+  "hits": 3,
+  "totalHits": 3
+}

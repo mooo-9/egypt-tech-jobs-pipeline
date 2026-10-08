@@ -1,0 +1,1085 @@
+{
+  "status": 200,
+  "error": {
+    "message": "",
+    "body": ""
+  },
+  "data": {
+    "positions": [
+      {
+        "id": 563121777323844,
+        "displayJobId": "791834",
+        "name": "Solution Architect",
+        "locations": [
+          "Cairo,Cairo,Egypt"
+        ],
+        "standardizedLocations": [
+          "Cairo, Cairo Governorate, EG"
+        ],
+        "postedTs": 1790684509,
+        "solrScore": null,
+        "stars": 0,
+        "department": "82 Service Delivery",
+        "creationTs": 1790356832,
+        "isHot": 0,
+        "workLocationOption": "onsite",
+        "locationFlexibility": null,
+        "atsJobId": "791834",
+        "positionUrl": "/careers/job/563121777323844",
+        "efcustomTextJobfuntionAdvancefilterpcs": [
+          "Service Delivery"
+        ]
+      },
+      {
+        "id": 563121777263694,
+        "displayJobId": "791376",
+        "name": "BSS Integration Engineer",
+        "locations": [
+          "Lahore,Punjab,Pakistan",
+          "Smart Village,Cairo,Egypt",
+          "Cairo,Cairo,Egypt",
+          "Lagos,Lagos,Nigeria",
+          "Islamabad,Federal,Pakistan"
+        ],
+        "standardizedLocations": [
+          "Lahore, Punjab, PK",
+          "Cairo, Cairo Governorate, EG",
+          "Cairo, Cairo Governorate, EG",
+          "Lagos, LA, NG",
+          "Islamabad, Islamabad Capital Territory, PK"
+        ],
+        "postedTs": 1790851963,
+        "solrScore": null,
+        "stars": 0,
+        "department": "82 Service Delivery",
+        "creationTs": 1789646677,
+        "isHot": 0,
+        "workLocationOption": "onsite",
+        "locationFlexibility": null,
+        "atsJobId": "791376",
+        "positionUrl": "/careers/job/563121777263694",
+        "efcustomTextJobfuntionAdvancefilterpcs": [
+          "Service Delivery"
+        ]
+      },
+      {
+        "id": 900000000000001,
+        "displayJobId": "900001",
+        "name": "Hand-made Lahore Engineer",
+        "locations": [
+          "Lahore,Punjab,Pakistan"
+        ],
+        "standardizedLocations": [
+          "Cairo, Cairo Governorate, EG"
+        ],
+        "postedTs": 1790684509,
+        "solrScore": null,
+        "stars": 0,
+        "department": "82 Service Delivery",
+        "creationTs": 1790356832,
+        "isHot": 0,
+        "workLocationOption": "onsite",
+        "locationFlexibility": null,
+        "atsJobId": "791834",
+        "positionUrl": "/careers/job/900000000000001",
+        "efcustomTextJobfuntionAdvancefilterpcs": [
+          "Service Delivery"
+        ]
+      }
+    ],
+    "filterDef": {
+      "facets": {
+        "locations": [
+          [
+            "Remote",
+            999999
+          ],
+          [
+            "Stockholm, Stockholm County, Sweden",
+            68
+          ],
+          [
+            "Plano, TX, United States",
+            66
+          ],
+          [
+            "Noida, UP, India",
+            56
+          ],
+          [
+            "Bengaluru, KA, India",
+            39
+          ],
+          [
+            "Lund, Skåne County, Sweden",
+            30
+          ],
+          [
+            "México D.F., CDMX, Mexico",
+            24
+          ],
+          [
+            "Gurugram, HR, India",
+            21
+          ],
+          [
+            "Ottawa, ON, Canada",
+            20
+          ],
+          [
+            "Yokohama, Kanagawa, Japan",
+            18
+          ],
+          [
+            "Reading, England, United Kingdom",
+            17
+          ]
+        ]
+      },
+      "smartFilters": [
+        {
+          "type": "toggle",
+          "filterName": "include_remote",
+          "title": "Include Eligible Remote Jobs",
+          "options": null,
+          "tooltip": "When selected, the results will include remote job opportunities",
+          "extraData": {},
+          "displayCount": 10,
+          "translateOptions": false,
+          "allowFreeText": false
+        }
+      ],
+      "allFilters": [
+        {
+          "type": "multi_select_facet_search",
+          "filterName": "skills",
+          "title": "Your Relevant Skills",
+          "options": [
+            {
+              "label": "Delivering Results",
+              "value": "Delivering Results"
+            },
+            {
+              "label": "Creativity and Innovation",
+              "value": "Creativity and Innovation"
+            },
+            {
+              "label": "Collaboration",
+              "value": "Collaboration"
+            },
+            {
+              "label": "Building Relationships",
+              "value": "Building Relationships"
+            },
+            {
+              "label": "Planning and Organizing",
+              "value": "Planning and Organizing"
+            },
+            {
+              "label": "Adaptability",
+              "value": "Adaptability"
+            },
+            {
+              "label": "Critical Thinking",
+              "value": "Critical Thinking"
+            },
+            {
+              "label": "Communication",
+              "value": "Communication"
+            },
+            {
+              "label": "Product Development Process",
+              "value": "Product Development Process"
+            },
+            {
+              "label": "Continuous Improvement and Innovation",
+              "value": "Continuous Improvement and Innovation"
+            },
+            {
+              "label": "Coaching, Mentoring and Networking",
+              "value": "Coaching, Mentoring and Networking"
+            },
+            {
+              "label": "Communication and Teamwork",
+              "value": "Communication and Teamwork"
+            },
+            {
+              "label": "Market and Customer Insights",
+              "value": "Market and Customer Insights"
+            },
+            {
+              "label": "Applying Expertise and Technology",
+              "value": "Applying Expertise and Technology"
+            },
+            {
+              "label": "Technical Expertise in Hardware Development",
+              "value": "Technical Expertise in Hardware Development"
+            },
+            {
+              "label": "Domain Specific Knowledge",
+              "value": "Domain Specific Knowledge"
+            },
+            {
+              "label": "Technical Expertise in Systems Development",
+              "value": "Technical Expertise in Systems Development"
+            },
+            {
+              "label": "Technical Expertise in Software Development",
+              "value": "Technical Expertise in Software Development"
+            },
+            {
+              "label": "Technical Troubleshooting and Support",
+              "value": "Technical Troubleshooting and Support"
+            },
+            {
+              "label": "Artificial Intelligence",
+              "value": "Artificial Intelligence"
+            },
+            {
+              "label": "Stakeholder Management",
+              "value": "Stakeholder Management"
+            },
+            {
+              "label": "Automation",
+              "value": "Automation"
+            },
+            {
+              "label": "Learning",
+              "value": "Learning"
+            },
+            {
+              "label": "Financial Acumen",
+              "value": "Financial Acumen"
+            },
+            {
+              "label": "Ericsson Portfolio",
+              "value": "Ericsson Portfolio"
+            },
+            {
+              "label": "Network Security",
+              "value": "Network Security"
+            },
+            {
+              "label": "Initiative",
+              "value": "Initiative"
+            },
+            {
+              "label": "Influence",
+              "value": "Influence"
+            },
+            {
+              "label": "Leadership",
+              "value": "Leadership"
+            },
+            {
+              "label": "Python",
+              "value": "Python"
+            },
+            {
+              "label": "Problem Solving",
+              "value": "Problem Solving"
+            },
+            {
+              "label": "Troubleshooting",
+              "value": "Troubleshooting"
+            },
+            {
+              "label": "Decision Making",
+              "value": "Decision Making"
+            },
+            {
+              "label": "Data Analytics",
+              "value": "Data Analytics"
+            },
+            {
+              "label": "Technology and Product Leadership",
+              "value": "Technology and Product Leadership"
+            },
+            {
+              "label": "Change & Improvement Management",
+              "value": "Change & Improvement Management"
+            },
+            {
+              "label": "Cross-Functional Collaboration",
+              "value": "Cross-Functional Collaboration"
+            },
+            {
+              "label": "AI",
+              "value": "AI"
+            },
+            {
+              "label": "Commercial Thinking",
+              "value": "Commercial Thinking"
+            },
+            {
+              "label": "Ethics and Values",
+              "value": "Ethics and Values"
+            },
+            {
+              "label": "Requirements and Backlog Management",
+              "value": "Requirements and Backlog Management"
+            },
+            {
+              "label": "Negotiation",
+              "value": "Negotiation"
+            },
+            {
+              "label": "Consultative Skills",
+              "value": "Consultative Skills"
+            },
+            {
+              "label": "Linux",
+              "value": "Linux"
+            },
+            {
+              "label": "Process Management",
+              "value": "Process Management"
+            },
+            {
+              "label": "Service Delivery Business Understanding",
+              "value": "Service Delivery Business Understanding"
+            },
+            {
+              "label": "Storytelling",
+              "value": "Storytelling"
+            },
+            {
+              "label": "Kubernetes",
+              "value": "Kubernetes"
+            },
+            {
+              "label": "5G",
+              "value": "5G"
+            },
+            {
+              "label": "Environmental Compliance",
+              "value": "Environmental Compliance"
+            },
+            {
+              "label": "Innovation",
+              "value": "Innovation"
+            },
+            {
+              "label": "Teamwork",
+              "value": "Teamwork"
+            },
+            {
+              "label": "C++",
+              "value": "C++"
+            },
+            {
+              "label": "Research Study",
+              "value": "Research Study"
+            },
+            {
+              "label": "Analytical Research",
+              "value": "Analytical Research"
+            },
+            {
+              "label": "Basic Research",
+              "value": "Basic Research"
+            },
+            {
+              "label": "IPR creation",
+              "value": "IPR creation"
+            },
+            {
+              "label": "Research Communication",
+              "value": "Research Communication"
+            },
+            {
+              "label": "Research Computational Tools",
+              "value": "Research Computational Tools"
+            },
+            {
+              "label": "Research Networking",
+              "value": "Research Networking"
+            },
+            {
+              "label": "Technology Area Intelligence",
+              "value": "Technology Area Intelligence"
+            },
+            {
+              "label": "Research Cooperation",
+              "value": "Research Cooperation"
+            },
+            {
+              "label": "Research Ways of Working",
+              "value": "Research Ways of Working"
+            },
+            {
+              "label": "Cloud Engineering",
+              "value": "Cloud Engineering"
+            },
+            {
+              "label": "Troubleshooting skills",
+              "value": "Troubleshooting skills"
+            },
+            {
+              "label": "Telecommunications",
+              "value": "Telecommunications"
+            },
+            {
+              "label": "Business Acumen",
+              "value": "Business Acumen"
+            },
+            {
+              "label": "Knowledge Sharing & Collaboration",
+              "value": "Knowledge Sharing & Collaboration"
+            },
+            {
+              "label": "Commercial Management",
+              "value": "Commercial Management"
+            },
+            {
+              "label": "Consultative Selling",
+              "value": "Consultative Selling"
+            },
+            {
+              "label": "Working Level Agreement (WLA) & Service Level Agreement (SLA)",
+              "value": "Working Level Agreement (WLA) & Service Level Agreement (SLA)"
+            },
+            {
+              "label": "Customer Insights",
+              "value": "Customer Insights"
+            },
+            {
+              "label": "Deployments",
+              "value": "Deployments"
+            },
+            {
+              "label": "Ericsson Operations Engine - Mode Of Operations",
+              "value": "Ericsson Operations Engine - Mode Of Operations"
+            },
+            {
+              "label": "Data Analysis",
+              "value": "Data Analysis"
+            },
+            {
+              "label": "Dependability",
+              "value": "Dependability"
+            },
+            {
+              "label": "Network Performance",
+              "value": "Network Performance"
+            },
+            {
+              "label": "Financial Analysis",
+              "value": "Financial Analysis"
+            },
+            {
+              "label": "Cloud Infrastructure",
+              "value": "Cloud Infrastructure"
+            },
+            {
+              "label": "Coaching & Mentoring",
+              "value": "Coaching & Mentoring"
+            },
+            {
+              "label": "Git",
+              "value": "Git"
+            },
+            {
+              "label": "Insight Selling",
+              "value": "Insight Selling"
+            },
+            {
+              "label": "Java",
+              "value": "Java"
+            },
+            {
+              "label": "Sales Presentation",
+              "value": "Sales Presentation"
+            },
+            {
+              "label": "Testing",
+              "value": "Testing"
+            },
+            {
+              "label": "Time Management",
+              "value": "Time Management"
+            },
+            {
+              "label": "Identity And Access Management",
+              "value": "Identity And Access Management"
+            },
+            {
+              "label": "LTE",
+              "value": "LTE"
+            },
+            {
+              "label": "Market insights",
+              "value": "Market insights"
+            },
+            {
+              "label": "C",
+              "value": "C"
+            },
+            {
+              "label": "Docker",
+              "value": "Docker"
+            },
+            {
+              "label": "Machine Learning",
+              "value": "Machine Learning"
+            },
+            {
+              "label": "Sense making",
+              "value": "Sense making"
+            },
+            {
+              "label": "Virtual Customer Engagement",
+              "value": "Virtual Customer Engagement"
+            },
+            {
+              "label": "Contract Negotiation",
+              "value": "Contract Negotiation"
+            },
+            {
+              "label": "Customer Solution Design",
+              "value": "Customer Solution Design"
+            },
+            {
+              "label": "Productivity",
+              "value": "Productivity"
+            },
+            {
+              "label": "value argumentation",
+              "value": "value argumentation"
+            },
+            {
+              "label": "Artificial Intelligence (AI)",
+              "value": "Artificial Intelligence (AI)"
+            },
+            {
+              "label": "Business Coaching",
+              "value": "Business Coaching"
+            },
+            {
+              "label": "Business Understanding",
+              "value": "Business Understanding"
+            },
+            {
+              "label": "Resilience",
+              "value": "Resilience"
+            },
+            {
+              "label": "Situational agility",
+              "value": "Situational agility"
+            },
+            {
+              "label": "Active Listening",
+              "value": "Active Listening"
+            },
+            {
+              "label": "CI/CD",
+              "value": "CI/CD"
+            },
+            {
+              "label": "Customer expansion",
+              "value": "Customer expansion"
+            },
+            {
+              "label": "Information Security Knowledge",
+              "value": "Information Security Knowledge"
+            },
+            {
+              "label": "Program/Project Finance Management",
+              "value": "Program/Project Finance Management"
+            },
+            {
+              "label": "Project Management",
+              "value": "Project Management"
+            },
+            {
+              "label": "Communication Platform as a Service",
+              "value": "Communication Platform as a Service"
+            },
+            {
+              "label": "Maintenance",
+              "value": "Maintenance"
+            },
+            {
+              "label": "Service Improvement",
+              "value": "Service Improvement"
+            },
+            {
+              "label": "Solution Architect",
+              "value": "Solution Architect"
+            },
+            {
+              "label": "Accounting & reporting",
+              "value": "Accounting & reporting"
+            },
+            {
+              "label": "Change Management",
+              "value": "Change Management"
+            },
+            {
+              "label": "Google GCP",
+              "value": "Google GCP"
+            },
+            {
+              "label": "Servant Leadership",
+              "value": "Servant Leadership"
+            },
+            {
+              "label": "Applications Of Artificial Intelligence",
+              "value": "Applications Of Artificial Intelligence"
+            },
+            {
+              "label": "Documentation",
+              "value": "Documentation"
+            },
+            {
+              "label": "Growth Mindset",
+              "value": "Growth Mindset"
+            },
+            {
+              "label": "Hardware, Architecture, Virtual Environment, Technology, Protocol and Interface",
+              "value": "Hardware, Architecture, Virtual Environment, Technology, Protocol and Interface"
+            },
+            {
+              "label": "Market Analysis",
+              "value": "Market Analysis"
+            },
+            {
+              "label": "Security",
+              "value": "Security"
+            },
+            {
+              "label": "Solution Delivery",
+              "value": "Solution Delivery"
+            },
+            {
+              "label": "Strategic Thinking",
+              "value": "Strategic Thinking"
+            },
+            {
+              "label": "Consensus building",
+              "value": "Consensus building"
+            },
+            {
+              "label": "Engineering",
+              "value": "Engineering"
+            },
+            {
+              "label": "ITSM Framework",
+              "value": "ITSM Framework"
+            },
+            {
+              "label": "RAN",
+              "value": "RAN"
+            },
+            {
+              "label": "Technical Sales",
+              "value": "Technical Sales"
+            },
+            {
+              "label": "5G Technology",
+              "value": "5G Technology"
+            },
+            {
+              "label": "Business Partnering",
+              "value": "Business Partnering"
+            },
+            {
+              "label": "Customer Success",
+              "value": "Customer Success"
+            },
+            {
+              "label": "Executive Leadership",
+              "value": "Executive Leadership"
+            },
+            {
+              "label": "Operational Efficiency",
+              "value": "Operational Efficiency"
+            },
+            {
+              "label": "Operations",
+              "value": "Operations"
+            },
+            {
+              "label": "Presentation",
+              "value": "Presentation"
+            },
+            {
+              "label": "Project Planning",
+              "value": "Project Planning"
+            },
+            {
+              "label": "Business Risk Management",
+              "value": "Business Risk Management"
+            },
+            {
+              "label": "Digital Transformation",
+              "value": "Digital Transformation"
+            },
+            {
+              "label": "ITIL",
+              "value": "ITIL"
+            },
+            {
+              "label": "Language Skills",
+              "value": "Language Skills"
+            },
+            {
+              "label": "Management of ASP",
+              "value": "Management of ASP"
+            },
+            {
+              "label": "Networking",
+              "value": "Networking"
+            },
+            {
+              "label": "Problem management",
+              "value": "Problem management"
+            },
+            {
+              "label": "SQL",
+              "value": "SQL"
+            },
+            {
+              "label": "Taxation",
+              "value": "Taxation"
+            },
+            {
+              "label": "Trade Compliance",
+              "value": "Trade Compliance"
+            },
+            {
+              "label": "Workforce Management",
+              "value": "Workforce Management"
+            },
+            {
+              "label": "API",
+              "value": "API"
+            },
+            {
+              "label": "Architecture",
+              "value": "Architecture"
+            },
+            {
+              "label": "Audit & Assessment",
+              "value": "Audit & Assessment"
+            },
+            {
+              "label": "Competitor Analysis",
+              "value": "Competitor Analysis"
+            },
+            {
+              "label": "Customer Experience",
+              "value": "Customer Experience"
+            },
+            {
+              "label": "Customer Relationship Building",
+              "value": "Customer Relationship Building"
+            },
+            {
+              "label": "DevSecOps",
+              "value": "DevSecOps"
+            },
+            {
+              "label": "Ericsson Business Process",
+              "value": "Ericsson Business Process"
+            },
+            {
+              "label": "G/L Account reconciliation",
+              "value": "G/L Account reconciliation"
+            },
+            {
+              "label": "G/L Account reconciliation and PEC",
+              "value": "G/L Account reconciliation and PEC"
+            },
+            {
+              "label": "Helm",
+              "value": "Helm"
+            },
+            {
+              "label": "IT security & compliance",
+              "value": "IT security & compliance"
+            },
+            {
+              "label": "Infra Capacity,Perf Analysis&Sol Def",
+              "value": "Infra Capacity,Perf Analysis&Sol Def"
+            },
+            {
+              "label": "Knowledge sharing and learning",
+              "value": "Knowledge sharing and learning"
+            },
+            {
+              "label": "Network API standards",
+              "value": "Network API standards"
+            },
+            {
+              "label": "Presales",
+              "value": "Presales"
+            },
+            {
+              "label": "Project and Program Management",
+              "value": "Project and Program Management"
+            },
+            {
+              "label": "TCP/IP",
+              "value": "TCP/IP"
+            },
+            {
+              "label": "Account Management",
+              "value": "Account Management"
+            },
+            {
+              "label": "Anti-corruption",
+              "value": "Anti-corruption"
+            },
+            {
+              "label": "Cloud Security Architecture",
+              "value": "Cloud Security Architecture"
+            },
+            {
+              "label": "Customer Problem Management",
+              "value": "Customer Problem Management"
+            },
+            {
+              "label": "DNS",
+              "value": "DNS"
+            },
+            {
+              "label": "Design",
+              "value": "Design"
+            },
+            {
+              "label": "Financial Model",
+              "value": "Financial Model"
+            },
+            {
+              "label": "Financial processes and directives",
+              "value": "Financial processes and directives"
+            },
+            {
+              "label": "ITIL Framework",
+              "value": "ITIL Framework"
+            },
+            {
+              "label": "Incident management",
+              "value": "Incident management"
+            },
+            {
+              "label": "Influencing",
+              "value": "Influencing"
+            },
+            {
+              "label": "Lifecycle Management",
+              "value": "Lifecycle Management"
+            },
+            {
+              "label": "MATLAB",
+              "value": "MATLAB"
+            },
+            {
+              "label": "Microsoft Excel",
+              "value": "Microsoft Excel"
+            },
+            {
+              "label": "OpenStack",
+              "value": "OpenStack"
+            },
+            {
+              "label": "Python Scripting",
+              "value": "Python Scripting"
+            },
+            {
+              "label": "Reporting",
+              "value": "Reporting"
+            },
+            {
+              "label": "Service Delivery Models and Strategy",
+              "value": "Service Delivery Models and Strategy"
+            },
+            {
+              "label": "Software Development",
+              "value": "Software Development"
+            },
+            {
+              "label": "Statistical Reporting",
+              "value": "Statistical Reporting"
+            },
+            {
+              "label": "Subscriber data management Security",
+              "value": "Subscriber data management Security"
+            },
+            {
+              "label": "Virtual Machines",
+              "value": "Virtual Machines"
+            },
+            {
+              "label": "Automated Machine Learning",
+              "value": "Automated Machine Learning"
+            },
+            {
+              "label": "CNIS Solution Design",
+              "value": "CNIS Solution Design"
+            },
+            {
+              "label": "Cloud - Operations",
+              "value": "Cloud - Operations"
+            },
+            {
+              "label": "Core Network",
+              "value": "Core Network"
+            },
+            {
+              "label": "Database Management Systems",
+              "value": "Database Management Systems"
+            },
+            {
+              "label": "Financial Modelling",
+              "value": "Financial Modelling"
+            },
+            {
+              "label": "Installation",
+              "value": "Installation"
+            },
+            {
+              "label": "Persuading & Influencing",
+              "value": "Persuading & Influencing"
+            },
+            {
+              "label": "Power Bi",
+              "value": "Power Bi"
+            },
+            {
+              "label": "Programming",
+              "value": "Programming"
+            },
+            {
+              "label": "Project Implementation",
+              "value": "Project Implementation"
+            }
+          ],
+          "tooltip": null,
+          "extraData": {},
+          "displayCount": 10,
+          "translateOptions": false,
+          "allowFreeText": false
+        },
+        {
+          "type": "multi_select_facet_search",
+          "filterName": "function",
+          "title": "Function",
+          "options": [
+            {
+              "label": "Product Development",
+              "value": "product development"
+            },
+            {
+              "label": "Service Delivery",
+              "value": "service delivery"
+            },
+            {
+              "label": "Technology & Research",
+              "value": "technology & research"
+            },
+            {
+              "label": "Sales",
+              "value": "sales"
+            },
+            {
+              "label": "Finance",
+              "value": "finance"
+            },
+            {
+              "label": "Supply & Logistics",
+              "value": "supply & logistics"
+            },
+            {
+              "label": "It",
+              "value": "it"
+            },
+            {
+              "label": "Hr",
+              "value": "hr"
+            },
+            {
+              "label": "Marketing & Communications",
+              "value": "marketing & communications"
+            },
+            {
+              "label": "Product Management",
+              "value": "product management"
+            },
+            {
+              "label": "Sourcing",
+              "value": "sourcing"
+            },
+            {
+              "label": "Legal",
+              "value": "legal"
+            },
+            {
+              "label": "Performance & Transformation",
+              "value": "performance & transformation"
+            },
+            {
+              "label": "Security",
+              "value": "security"
+            },
+            {
+              "label": "Strategy",
+              "value": "strategy"
+            },
+            {
+              "label": "Sustainability & Cr",
+              "value": "sustainability & cr"
+            },
+            {
+              "label": "Business Services",
+              "value": "business services"
+            },
+            {
+              "label": "Fa Independent Job Roles",
+              "value": "fa independent job roles"
+            }
+          ],
+          "tooltip": null,
+          "extraData": {},
+          "displayCount": 10,
+          "translateOptions": false,
+          "allowFreeText": false
+        },
+        {
+          "type": "multi_select",
+          "filterName": "jobtype",
+          "title": "Job Type",
+          "options": [
+            {
+              "label": "Hybrid",
+              "value": "hybrid"
+            }
+          ],
+          "tooltip": null,
+          "extraData": {},
+          "displayCount": 10,
+          "translateOptions": false,
+          "allowFreeText": false
+        }
+      ]
+    },
+    "count": 3,
+    "sortBy": "distance",
+    "appliedFilters": {
+      "includeRemote": [
+        "1"
+      ],
+      "includeRelocation": [
+        "0"
+      ]
+    },
+    "debug": {},
+    "savedSearchMetadata": {},
+    "resultsMetaData": {
+      "usedFuzzSearch": false,
+      "mocTitle": null
+    }
+  },
+  "metadata": null
+}
