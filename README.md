@@ -5,21 +5,68 @@
 
 A data pipeline that collects job postings from 32 employers hiring in Egypt every day, models them with dbt, and publishes a dashboard of which skills and roles are in demand. It runs on GitHub Actions without anyone's machine being on: Python extractors write append-only Parquet files, dbt rebuilds the warehouse from them in DuckDB, and the dashboard is published to GitHub Pages. One mart is also rebuilt independently in PySpark, and CI checks that both give the same rows. If extraction or any dbt test fails, the dashboard is not updated and the previous one stays live. The day's raw data is committed before dbt runs, so a day that fails a dbt test still keeps its files.
 
-**Live dashboard: <https://mooo-9.github.io/egypt-tech-jobs-pipeline/>**
+![The five stages of the daily run](docs/images/pipeline-overview.png)
 
-![The dashboard, built from the first run](docs/images/dashboard.png)
+**Live dashboard: <https://mooo-9.github.io/egypt-tech-jobs-pipeline/>** (a screenshot is in [step 5](#5-publish-the-dashboard-on-github-pages))
 
-## What the first run found
+## How it works, step by step
 
-First run, 2026-10-08. The dashboard updates daily; these numbers are a dated snapshot.
+This follows one real posting, a Data Analyst role at Dubizzle Egypt, through the pipeline. Each section below links to the detailed reference further down.
+
+### 1. Extract: call each employer's career API
+
+Every day, `python -m pipeline.run` reads `companies.yml` and calls each employer's public job API: Workday, Workable, Oracle Cloud, Greenhouse, Lever and six more systems. These are the same endpoints the employers' own careers pages use. Only postings located in Egypt are kept. One employer failing is logged and the run carries on. See [Extraction](#extraction).
+
+### 2. Land: append-only Parquet, one folder per day
+
+Each run writes `data/raw/date=YYYY-MM-DD/postings.parquet` and commits it to the repo. Files are never edited, so every past day can be rebuilt. This is the Dubizzle posting as it was stored on 2026-10-13:
+
+| source_system | company_key | posting_id | title | location | posted_raw |
+|---|---|---|---|---|---|
+| workable | dubizzle | dubizzlemena:28E0D563A0 | Data Analyst | New Cairo City, Egypt | 2026-08-24 |
+
+### 3. Transform: dbt models on DuckDB
+
+dbt rebuilds the warehouse from every raw file on each run: staging cleans the rows, intermediate models work out the lifecycle, role and skills, and the marts are a small star schema. This is the lineage from the dbt docs (seeds on the left, marts on the right):
+
+![dbt lineage: raw postings and seeds through staging and intermediate models to the marts](docs/images/dbt-lineage.png)
+
+After the models run, the same posting looks like this:
+
+| Model | What it holds for this posting |
+|---|---|
+| `stg_postings` | city `Cairo`, posted date `2026-08-24` (parsed from the raw text) |
+| `fct_postings` | role family `data_analysis`, seniority `mid`, first seen `2026-10-08`, last seen `2026-10-13`, open, seen on 6 days |
+| `fct_posting_skills` | Excel, Power BI, Python, SQL, Tableau (one row per skill) |
+
+The weekly skills mart then counts it once in each of those five skills. See [Data model](#data-model).
+
+### 4. Test: nothing is published unless every check passes
+
+`dbt build` runs 31 data tests and 9 unit tests alongside the models, after a source freshness check. Keys must be unique, every fact must point to a known company, no posting can be dated in the future, and skill shares must sit between 0 and 1. If any test fails, the job stops and yesterday's dashboard stays live. On 2026-10-13 all 53 build steps passed. See [How each run is tested](#how-each-run-is-tested).
+
+### 5. Publish: the dashboard on GitHub Pages
+
+`python -m dashboard.build` reads the marts and writes a static page, which is deployed to GitHub Pages. This is one real daily run in GitHub Actions:
+
+![A daily run in GitHub Actions: collect, commit the raw data, source freshness, build the models, build the dashboard, deploy](docs/images/daily-run.png)
+
+And the page it publishes, on 2026-10-13:
+
+<img src="docs/images/dashboard.png" alt="The live dashboard on 2026-10-13: most-wanted skills, weekly trend, open postings by role and seniority, top hiring companies and pipeline health" width="760">
+
+## What the data shows
+
+A dated snapshot from 2026-10-13. The dashboard itself updates daily.
 
 | | |
 |---|---|
-| Postings collected | 745, from 30 of the 32 employers (Dell and Pfizer had none in Egypt that day). Amazon's list was cut at 100 that day; about 110 were open, and it is now read to the end |
-| Open tech postings | 155 (software 113, data analysis 19, AI/ML 19, data engineering 4) |
-| Most-asked skills in tech roles | Git 36%, Python 25%, Docker 25%, Kubernetes 25%, JavaScript 23% |
+| Open postings | 724, from 31 of the 32 employers (Dell had none in Egypt that day) |
+| Open tech postings | 146 (software 104, data analysis 20, AI/ML 18, data engineering 4) |
+| Most-asked skills in tech roles | Git 36%, Python 26%, Docker 25%, Kubernetes 25%, JavaScript 23% |
+| Seniority | 372 senior, 254 mid, 87 junior, 11 internships |
 
-Percentages are the share of open tech postings that mention the skill. Only one collection day exists so far, so the trend chart has a single point; it fills in as days accumulate.
+Percentages are the share of open tech postings that mention the skill. The first run, on 2026-10-08, collected 745 postings from 30 employers.
 
 ## Architecture
 
@@ -37,7 +84,7 @@ flowchart TD
 
 The solid path is what runs today. The dashed Airflow and Postgres path is planned.
 
-A daily run (`.github/workflows/daily.yml`, 04:00 UTC) does this:
+A daily run (`.github/workflows/daily.yml`, scheduled for 04:00 UTC; GitHub usually starts scheduled runs a few hours later) does this:
 
 1. `python -m pipeline.run` calls every employer's job API and writes that day's `postings.parquet` and a `run_summary.json` (status, rows, error and duration per company, and `truncated` when a capped API listed more postings than were read).
 2. The new files are committed to the repo as `data: YYYY-MM-DD`. The commit is the storage layer.
@@ -185,5 +232,5 @@ scripts/                add-a-company helpers and fixture generators
 tests/                  pytest tests and fixtures
 requirements-spark.txt  PySpark, needed only for the parity test and the Spark job
 .github/workflows/      ci.yml and daily.yml
-docs/                   design spec and the dashboard screenshot
+docs/                   design spec and the README images
 ```
