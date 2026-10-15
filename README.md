@@ -234,3 +234,7 @@ requirements-spark.txt  PySpark, needed only for the parity test and the Spark j
 .github/workflows/      ci.yml and daily.yml
 docs/                   design spec and the README images
 ```
+
+---
+
+© 2026 Mohab Mohamed Fawzy. All rights reserved. You may read this code, but you may not copy or reuse it without permission.
