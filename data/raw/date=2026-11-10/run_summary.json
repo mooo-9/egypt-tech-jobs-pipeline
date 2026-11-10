@@ -1,0 +1,296 @@
+{
+  "date": "2026-11-10",
+  "started_at": "2026-11-10T12:02:34.215010+00:00",
+  "duration_s": 51.71,
+  "rows": 714,
+  "companies": [
+    {
+      "key": "pwc",
+      "status": "ok",
+      "rows": 45,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 3.93
+    },
+    {
+      "key": "valeo",
+      "status": "ok",
+      "rows": 35,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.88
+    },
+    {
+      "key": "dell",
+      "status": "empty",
+      "rows": 0,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.36
+    },
+    {
+      "key": "oracle",
+      "status": "ok",
+      "rows": 18,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.89
+    },
+    {
+      "key": "amazon",
+      "status": "ok",
+      "rows": 86,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.24
+    },
+    {
+      "key": "mastercard",
+      "status": "ok",
+      "rows": 4,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.61
+    },
+    {
+      "key": "visa",
+      "status": "ok",
+      "rows": 7,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.81
+    },
+    {
+      "key": "ericsson",
+      "status": "ok",
+      "rows": 9,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.45
+    },
+    {
+      "key": "unilever",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 2.58
+    },
+    {
+      "key": "pepsico",
+      "status": "ok",
+      "rows": 70,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 8.2
+    },
+    {
+      "key": "mondelez",
+      "status": "ok",
+      "rows": 6,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 2.76
+    },
+    {
+      "key": "bcg",
+      "status": "ok",
+      "rows": 9,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.36
+    },
+    {
+      "key": "talabat",
+      "status": "ok",
+      "rows": 49,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.41
+    },
+    {
+      "key": "maf",
+      "status": "ok",
+      "rows": 78,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.48
+    },
+    {
+      "key": "pfizer",
+      "status": "ok",
+      "rows": 5,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.03
+    },
+    {
+      "key": "novartis",
+      "status": "empty",
+      "rows": 0,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.24
+    },
+    {
+      "key": "sanofi",
+      "status": "ok",
+      "rows": 7,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.2
+    },
+    {
+      "key": "gsk",
+      "status": "ok",
+      "rows": 34,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 3.44
+    },
+    {
+      "key": "thndr",
+      "status": "ok",
+      "rows": 8,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.1
+    },
+    {
+      "key": "tamara",
+      "status": "ok",
+      "rows": 12,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.21
+    },
+    {
+      "key": "jumia",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.86
+    },
+    {
+      "key": "foodics",
+      "status": "ok",
+      "rows": 5,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.16
+    },
+    {
+      "key": "tamatem",
+      "status": "ok",
+      "rows": 3,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.93
+    },
+    {
+      "key": "robusta",
+      "status": "ok",
+      "rows": 38,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.12
+    },
+    {
+      "key": "blabs",
+      "status": "ok",
+      "rows": 9,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.87
+    },
+    {
+      "key": "dubizzle",
+      "status": "ok",
+      "rows": 55,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.08
+    },
+    {
+      "key": "cequens",
+      "status": "ok",
+      "rows": 3,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.93
+    },
+    {
+      "key": "advansys",
+      "status": "ok",
+      "rows": 51,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.11
+    },
+    {
+      "key": "nowlun",
+      "status": "ok",
+      "rows": 6,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.89
+    },
+    {
+      "key": "petroapp",
+      "status": "ok",
+      "rows": 22,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.05
+    },
+    {
+      "key": "madar",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.95
+    },
+    {
+      "key": "yassir",
+      "status": "ok",
+      "rows": 37,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 7.45
+    }
+  ]
+}
