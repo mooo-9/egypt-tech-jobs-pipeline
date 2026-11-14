@@ -1,0 +1,296 @@
+{
+  "date": "2026-11-14",
+  "started_at": "2026-11-14T11:11:09.725706+00:00",
+  "duration_s": 36.45,
+  "rows": 666,
+  "companies": [
+    {
+      "key": "pwc",
+      "status": "ok",
+      "rows": 46,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 3.77
+    },
+    {
+      "key": "valeo",
+      "status": "ok",
+      "rows": 31,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.73
+    },
+    {
+      "key": "dell",
+      "status": "empty",
+      "rows": 0,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.33
+    },
+    {
+      "key": "oracle",
+      "status": "ok",
+      "rows": 18,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.77
+    },
+    {
+      "key": "amazon",
+      "status": "ok",
+      "rows": 96,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.05
+    },
+    {
+      "key": "mastercard",
+      "status": "error",
+      "rows": 0,
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.35
+    },
+    {
+      "key": "visa",
+      "status": "error",
+      "rows": 0,
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.19
+    },
+    {
+      "key": "ericsson",
+      "status": "ok",
+      "rows": 12,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.6
+    },
+    {
+      "key": "unilever",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 2.25
+    },
+    {
+      "key": "pepsico",
+      "status": "ok",
+      "rows": 69,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 8.25
+    },
+    {
+      "key": "mondelez",
+      "status": "ok",
+      "rows": 5,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.33
+    },
+    {
+      "key": "bcg",
+      "status": "ok",
+      "rows": 8,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.18
+    },
+    {
+      "key": "talabat",
+      "status": "ok",
+      "rows": 54,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.5
+    },
+    {
+      "key": "maf",
+      "status": "ok",
+      "rows": 75,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.37
+    },
+    {
+      "key": "pfizer",
+      "status": "error",
+      "rows": 0,
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.25
+    },
+    {
+      "key": "novartis",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 401 Client Error: Unauthorized for url: https://novartis.wd3.myworkdayjobs.com/wday/cxs/novartis/Novartis_Careers/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.58
+    },
+    {
+      "key": "sanofi",
+      "status": "ok",
+      "rows": 7,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.26
+    },
+    {
+      "key": "gsk",
+      "status": "error",
+      "rows": 0,
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.19
+    },
+    {
+      "key": "thndr",
+      "status": "ok",
+      "rows": 10,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.1
+    },
+    {
+      "key": "tamara",
+      "status": "ok",
+      "rows": 13,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.13
+    },
+    {
+      "key": "jumia",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.93
+    },
+    {
+      "key": "foodics",
+      "status": "ok",
+      "rows": 3,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.28
+    },
+    {
+      "key": "tamatem",
+      "status": "ok",
+      "rows": 2,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.81
+    },
+    {
+      "key": "robusta",
+      "status": "ok",
+      "rows": 37,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.21
+    },
+    {
+      "key": "blabs",
+      "status": "ok",
+      "rows": 9,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.81
+    },
+    {
+      "key": "dubizzle",
+      "status": "ok",
+      "rows": 55,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.12
+    },
+    {
+      "key": "cequens",
+      "status": "ok",
+      "rows": 3,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.86
+    },
+    {
+      "key": "advansys",
+      "status": "ok",
+      "rows": 52,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.19
+    },
+    {
+      "key": "nowlun",
+      "status": "empty",
+      "rows": 0,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.83
+    },
+    {
+      "key": "petroapp",
+      "status": "ok",
+      "rows": 21,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.08
+    },
+    {
+      "key": "madar",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.92
+    },
+    {
+      "key": "yassir",
+      "status": "ok",
+      "rows": 37,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.01
+    }
+  ]
+}
