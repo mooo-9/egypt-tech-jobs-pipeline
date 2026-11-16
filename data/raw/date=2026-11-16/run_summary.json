@@ -1,0 +1,296 @@
+{
+  "date": "2026-11-16",
+  "started_at": "2026-11-16T12:24:02.203908+00:00",
+  "duration_s": 110.76,
+  "rows": 581,
+  "companies": [
+    {
+      "key": "pwc",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://pwc.wd3.myworkdayjobs.com/wday/cxs/pwc/Global_Campus_Careers/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 9.14
+    },
+    {
+      "key": "valeo",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://valeo.wd3.myworkdayjobs.com/wday/cxs/valeo/valeo_jobs/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 9.24
+    },
+    {
+      "key": "dell",
+      "status": "empty",
+      "rows": 0,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.3
+    },
+    {
+      "key": "oracle",
+      "status": "ok",
+      "rows": 18,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.11
+    },
+    {
+      "key": "amazon",
+      "status": "ok",
+      "rows": 94,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.01
+    },
+    {
+      "key": "mastercard",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 7.24
+    },
+    {
+      "key": "visa",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://visa.wd5.myworkdayjobs.com/wday/cxs/visa/Visa/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 7.24
+    },
+    {
+      "key": "ericsson",
+      "status": "ok",
+      "rows": 11,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.26
+    },
+    {
+      "key": "unilever",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://unilever.wd3.myworkdayjobs.com/wday/cxs/unilever/Unilever_Early_Careers/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 19.06
+    },
+    {
+      "key": "pepsico",
+      "status": "ok",
+      "rows": 71,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 8.89
+    },
+    {
+      "key": "mondelez",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://mdlz.wd3.myworkdayjobs.com/wday/cxs/mdlz/External/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 9.12
+    },
+    {
+      "key": "bcg",
+      "status": "ok",
+      "rows": 8,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.34
+    },
+    {
+      "key": "talabat",
+      "status": "ok",
+      "rows": 56,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.55
+    },
+    {
+      "key": "maf",
+      "status": "ok",
+      "rows": 77,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.62
+    },
+    {
+      "key": "pfizer",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://pfizer.wd1.myworkdayjobs.com/wday/cxs/pfizer/PfizerCareers/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 7.19
+    },
+    {
+      "key": "novartis",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.25
+    },
+    {
+      "key": "sanofi",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://sanofi.wd3.myworkdayjobs.com/wday/cxs/sanofi/SanofiCareers/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 9.23
+    },
+    {
+      "key": "gsk",
+      "status": "error",
+      "rows": 0,
+      "error": "HTTPError: 429 for https://gsk.wd5.myworkdayjobs.com/wday/cxs/gsk/GSKCareers/jobs",
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 7.2
+    },
+    {
+      "key": "thndr",
+      "status": "ok",
+      "rows": 10,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.15
+    },
+    {
+      "key": "tamara",
+      "status": "ok",
+      "rows": 14,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.18
+    },
+    {
+      "key": "jumia",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.87
+    },
+    {
+      "key": "foodics",
+      "status": "ok",
+      "rows": 4,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.25
+    },
+    {
+      "key": "tamatem",
+      "status": "ok",
+      "rows": 2,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.86
+    },
+    {
+      "key": "robusta",
+      "status": "ok",
+      "rows": 39,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.21
+    },
+    {
+      "key": "blabs",
+      "status": "ok",
+      "rows": 8,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.8
+    },
+    {
+      "key": "dubizzle",
+      "status": "ok",
+      "rows": 54,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.21
+    },
+    {
+      "key": "cequens",
+      "status": "ok",
+      "rows": 3,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.81
+    },
+    {
+      "key": "advansys",
+      "status": "ok",
+      "rows": 54,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.17
+    },
+    {
+      "key": "nowlun",
+      "status": "empty",
+      "rows": 0,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.82
+    },
+    {
+      "key": "petroapp",
+      "status": "ok",
+      "rows": 20,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 1.09
+    },
+    {
+      "key": "madar",
+      "status": "ok",
+      "rows": 1,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.91
+    },
+    {
+      "key": "yassir",
+      "status": "ok",
+      "rows": 35,
+      "error": null,
+      "describe_errors": 0,
+      "truncated": false,
+      "duration_s": 0.29
+    }
+  ]
+}
